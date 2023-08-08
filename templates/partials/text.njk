@@ -1,0 +1,31 @@
+{% macro text(info) %}
+
+  {% if info.prefix %}
+    <p class="prefix">{{ info.prefix }}</p>
+  {% endif %}
+
+  {% if info.title %}
+    {% if info.header === "h1" %}
+      <h1 class="title">
+        <span is="truncated-aptitle" {% if info.apstyle %}apstyle{% endif %} {% if info.textlength %}textlength='{{ info.textlength }}'{% endif %}>{{ info.title }}</span>
+      </h1>
+    {% elif info.header === "h2" %}
+      <h2 class="title">
+        <span is="truncated-aptitle" {% if info.apstyle %}apstyle{% endif %} {% if info.textlength %}textlength='{{ info.textlength }}'{% endif %}>{{ info.title }}</span>
+      </h2>
+    {% else %}
+      <h3 class="title">
+        <span is="truncated-aptitle" {% if info.apstyle %}apstyle{% endif %} {% if info.textlength %}textlength='{{ info.textlength }}'{% endif %}>{{ info.title }}</span>
+      </h3>
+    {% endif %}
+  {% endif %}
+
+  {% if info.subtitle %}
+    <p class="sub-title">{{ info.subtitle }}</p>
+  {% endif %}
+
+  {% if info.prose %}
+    <div class="prose">{{ info.prose | mdToHTML | safe }}</div>
+  {% endif %}
+
+{% endmacro %}

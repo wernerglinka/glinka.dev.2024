@@ -1,0 +1,45 @@
+{#
+  Related Blogs
+  Renders a set of related blogposts
+  Get the relevant blogposts fields from the blog collection
+  blogTitle, date, image, path
+
+  params: {
+    blockClass: string - optional class to add to the block
+    selections: array - selection of blogposts to display
+  }
+  collections: {
+    blog: array - all blogposts
+  }
+  metadata: {
+    site: {
+      imagePrefix: string - path to images
+    }
+  } 
+#}
+
+{% from "../partials/card.njk" import card %}
+
+<div class="block block-related-blogposts{% if params.blockClass %} {{ params.blockClass }}{% endif %}">
+  <div class="container">
+    <h2 class="title">
+      <span is="truncated-aptitle" {% if params.apstyle %}apstyle{% endif %} textlength='{{ params.textlength }}'>{{ params.title }}</span>
+    </h2>
+
+    <ul class="related-blogposts cards">
+      {% for blogPost in collections.blog %}
+        {% if blogPost | isRelated(params.selections)  %}
+          {% set thisCard = {
+            title: blogPost.blogTitle,
+            prose: blogPost.excerpt,
+            thumbnail: blogPost.image.src,
+            link: "/" ~ blogPost.path
+          } %}  
+          <li class="simple-card">
+            {{ card(thisCard, metadata.site.imagePrefix) }}
+          </li>
+        {% endif %}
+    {% endfor %}
+    </ul>
+  </div>
+</div>

@@ -1,0 +1,15 @@
+#clampCalculator {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  aspect-ratio: 1.5;
+
+  iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+}

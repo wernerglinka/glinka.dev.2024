@@ -1,0 +1,69 @@
+// using CSS variables and SCSS for media queries
+
+$max-content-width: 1200px;
+$mid-sized-screen: 1200px;
+$tablet-pro-width-landscape: 1366px;
+$tablet-pro-width-portrait: 1024px;
+$tablet-width-landscape: 1024px;
+$tablet-width-portrait: 767px;
+$small-screen-width: 600px;
+$very-small-screen-width: 360px;
+
+:root {
+  --color-primary: #023047;
+  --color-primary-complement: #e7f6fe;
+  --color-secondary: #219ebc;
+  --color-tertiary: #8ecae6;
+  --color-highlight: #ffb703;
+  --color-highlight-bold: #fb8500;
+  --color-white: #fff;
+  --color-black: #000;
+  --color-light-gray: #f0f0f0;
+  --color-link: #fb8500;
+  --color-link-hover: #ffb703;
+  --color-large-text: #a8a7a7;
+
+
+  --default-box-shadow: 0px 4px 10px 0px rgba(51,51,51,0.2);
+  --default-text-shadow: 0px 0px 4px rgba(0, 0, 0, 1);
+  --default-glass-background: rgba(255, 255, 255, 0.15);
+  --high-contrast-glass-background: rgba(255, 255, 255, 0.7);
+  --default-glass-blur: blur(5px);
+  --dark-glass-background: rgba(0, 0, 0, 0.1);
+  --nav-background: rgba(0, 0, 0, 0.3);
+  --dark-screen: rgba(0, 0, 0, 0.7);
+
+  --header-background-color: rgba(0, 0, 0, 0.5);
+  --header-height: 100px;
+  --header-height-small-screen: 80px;
+  --hamburger-height: 36px;
+
+  --font-family-header: 'Montserrat', 'Optima', sans-serif;
+  --font-family-body: 'Open Sans', sans-serif;
+
+  // calculations with: https://codesandbox.io/s/clamp-linear-intepolation-based-on-viewport-width-builder-xgkft
+  
+  --font-size-h1: clamp(3.790rem, 1.4vw + 3.243rem, 5.211rem);
+  --font-size-h2: clamp(2.843rem, 1.0vw + 2.433rem, 3.909rem);
+  --font-size-h3: clamp(2.133rem, 0.8vw + 1.825rem, 2.933rem);
+  --font-size-h4: clamp(1.6rem, 0.6vw + 1.369rem, 2.2rem);
+  --font-size-h5: clamp(1.2rem, 0.4vw + 1.025rem, 1.6rem);
+  --font-size-h6: clamp(1.0rem, 0.4vw + 0.685rem, 1.2rem);
+  --font-size-body: clamp(1.6rem, 1.4000rem + 0.5000vw, 2rem);
+
+  --font-size-nav: 1.6rem;
+  
+  --font-weight-bold: 500;  
+  --font-weight-normal: 300;
+
+  --tablet-width-portrait: 767px;
+  --large-screen-padding: 40px;
+  --small-screen-padding: 20px;
+  --max-content-width: 1200px;
+  --max-blogpost-width: 800px;
+  
+  --max-card-width: 320px;
+
+  --default-padding: clamp(2rem, 1.0000rem + 2.5000vw, 4rem);
+}
+

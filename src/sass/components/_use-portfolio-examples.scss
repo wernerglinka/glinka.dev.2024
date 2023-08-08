@@ -1,0 +1,30 @@
+@use "../variables" as *;
+
+/**
+  * @file _use-portfolio.scss
+  * @brief portfolio component is composed of two columns, one for the image and the other for the text.
+  */
+  
+.portfolio-example {
+
+  .with-highlight {
+    background-color: var(--color-primary-complement);
+    height: 100%;
+
+    .title {
+      margin: 0;
+      font-size: clamp(2.4rem, 0.6vw + 2.7248rem, 3.6rem);
+    }
+    .sub-title {
+      margin: 0 0 1rem;
+      color: var(--color-primary);
+    }
+    .tech-tags {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: var(--color-primary);
+      text-transform: uppercase;
+      margin: 2rem 0 0;
+    }
+  }
+}

@@ -1,0 +1,54 @@
+@use "../variables" as *;
+
+/**
+  * @file _blockl-all-blogposts.scss
+  * @brief blog landing page lists all blog posts via a card component
+  */
+  
+.all-blogposts {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 3rem;
+  margin: 3rem auto;
+
+  .image-wrapper {
+    height: 10rem;
+  }
+}
+
+.blogs-pagination {
+  display: flex;
+  justify-content: center;
+  margin: 3rem auto;
+
+  li {
+    padding: 0 1rem;
+    margin: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #f0f0f0;
+
+    &:hover {
+      background-color: #f0f0f0;
+      cursor: pointer;
+    }
+
+    a {
+      text-decoration: none;
+      color: var(--color-primary);
+    }
+
+    &.active {
+      background-color: #f0f0f0;
+      cursor: default;
+      pointer-events: none;
+
+      a {
+        color: var(--color-white);
+      }
+    }
+  }
+}
+

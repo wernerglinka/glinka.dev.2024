@@ -1,0 +1,20 @@
+{#
+  renderBlock
+  renderBlock is a generic nunjucks macro that uses the name parameter to 
+  compose the name of the target block macro. Since Nunjucks doesn't support 
+  dynamic macro names, we have to use a helper function to do this.
+
+  Using a macro isolates the block params from the global scope so other 
+  blocks which use the same params cannot be overwriten.
+
+  params: {
+    name: string - name of the block macro to render
+    params: object - parameters to pass to the block macro
+    metadata: object - metadata to pass to the block macro
+    collections: object - collections to pass to the block macro
+  }
+#}
+
+{% macro renderBlock(name, params, metadata, collections) %}
+  {% include "../blocks/" + name + ".njk" ignore missing %}
+{% endmacro %}

@@ -1,0 +1,21 @@
+@use '../variables' as *;
+
+.block-recent-blogposts {
+  
+  .cards {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 0;
+
+    li {
+      flex: 0 0 50%;
+
+      @media (max-width: $tablet-width-portrait) {
+        flex: 0 0 100%;
+      }
+    }
+  }
+}

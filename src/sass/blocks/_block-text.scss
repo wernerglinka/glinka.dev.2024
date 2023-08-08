@@ -1,0 +1,144 @@
+@use "../variables" as *;
+
+.block-text {
+  padding: clamp(2rem, -0.1798rem + 5.4496vw, 4rem);
+  > .prose {
+    p:first-child {
+      margin-top: 0;
+    }
+    p:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &.page-intro {
+    width: 100%;
+    max-width: $max-content-width;
+    margin: 0 auto;
+  }
+
+  &.more-space {
+    padding: clamp(2rem, -1.0000rem + 7.5000vw, 8rem);
+  }
+
+  ul {
+    padding: 0;
+    margin: 0;
+
+    li {
+      padding-left: 20px;
+      position: relative;
+      margin-bottom: 10px;
+
+      &:before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 10px;
+        width: 5px;
+        height: 5px;
+        background-color: var(--color-highlight);
+      }
+    }
+  }
+
+  &.intro-text {
+    max-width: calc($max-content-width / 2);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    font-size: clamp(2rem, -1.0899rem + 2.7248vw, 3rem);
+
+    @media screen and (max-width: $tablet-width-portrait) {
+      max-width: 100%;
+    }
+
+    h2 {
+      display: inline-block;
+      margin: 0 0 2rem;
+      font-size: 2rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      color: var(--color-primary);
+      border-bottom: 2px solid var(--color-highlight-bold);
+    }
+
+    p {
+      margin: 0;
+      font-weight: bold;
+      color: #a8a7a7;
+    }
+  }
+
+  &.customers {
+    background-color: var(--color-highlight-bold);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .prose {
+      color: var(--color-white);
+      font-size: clamp(1.6rem, 0.8841rem + 2.2371vw, 2.6rem);
+
+      p {
+        margin: 0;
+      }
+
+      span {
+        &.highlight {
+          background-color: var(--default-glass-background);
+        }
+      }
+    }
+  }
+
+  &.blogpost-text {
+    max-width: var(--max-blogpost-width);
+    margin: 0 auto;
+  }
+
+  code {
+    font-size: 0.8em;
+  }
+
+  pre code { 
+    font-size: 0.9em;
+  }
+
+  blockquote {
+    background-color: #f5f5f5;
+    margin: 1em 0;
+    padding: clamp(2rem, -0.1798rem + 5.4496vw, 4rem);
+
+    p {
+      font-style: italic;
+    }
+  }
+
+  .featured-link {
+    font-size: 1.6rem;
+    color: var(--color-large-text);
+    transition: color 0.3s ease-in-out;
+
+    &:hover {
+      color: var(--color-highlight);
+    }
+  }
+
+  // scf ui images in blogposts
+  .acf-ui {
+    display: block;
+    width: 100%;
+    max-width: 600px;
+    margin: 3rem auto;
+  }
+
+  img {
+    margin: 3rem auto;
+  }
+
+  pre {
+    margin: 0 0 3rem 0;
+  }
+}

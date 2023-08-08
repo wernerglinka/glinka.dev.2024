@@ -1,0 +1,69 @@
+{% extends "layout.njk" %}
+
+{% from "./blocks/block.njk" import renderBlock %}
+
+{% block body %}
+  {% for section in sections %}
+
+    {# build the sections class string #}
+    {% set sectionClasses = "block-wrapper" %}
+    {% if section.containerFields.containerClass %}
+      {% set sectionClasses = sectionClasses ~ " " ~ section.containerFields.containerClass %}
+    {% endif %}
+    {% if section.containerFields.inContainer %}
+      {% set sectionClasses = sectionClasses ~ " inContainer" %}
+    {% endif %}
+    {% if section.containerFields.background.isDark %}
+      {% set sectionClasses = sectionClasses ~ " isDark" %}
+    {% endif %}
+
+    {# get the sections id string #}
+    {% if section.containerFields.containerId %}
+      {% set sectionId = section.containerFields.containerId %}
+    {% else %}
+      {% set sectionId = "" %}
+    {% endif %}
+
+    {# build the section inline styles string #}
+    {% set sectionStyles = "" %}
+    {% if section.containerFields.background.color %}
+      {% set sectionStyles = sectionStyles ~ "background-color:" ~ section.containerFields.background.color ~ ";" %}
+    {% endif %}
+    
+    {# section || article || aside || div #}
+    <{{section.container}} 
+      class="{{ sectionClasses }}" 
+      {% if sectionId %} id="{{ sectionId }}" {% endif %} 
+      {% if sectionStyles %} style="{{ sectionStyles }}" {% endif %}
+    >
+      {# render background image element if required #}
+      {% set background = section.containerFields.background %}
+      {% if background.image %}
+        <div class="background-image">
+          <cloudinary-image 
+            base="{{ metadata.site.imagePrefix }}"
+            imageId="{{ background.image }}"
+            alt=""
+          ></cloudinary-image>
+        </div>
+      {% endif %}
+        
+      <div class="columns cols{{ section.columns | length }}{% if section.columnsDirection == "reverse" %} reverse{% endif %}">
+        {# render the section columns #}
+        {% for column in section.columns %}
+          {# render individual columns and their respective blocks #}
+          <div class="column">  
+            {% for block in column.blocks %}
+              {% set name = block.name %}
+              {% set params = block %}
+
+              {# name determines which block is rendered #}
+              {{ renderBlock(name, params, metadata, collections) }}
+            {% endfor %}
+          </div>
+        {% endfor %}
+      </div>   
+    </{{section.container}}>
+
+  {% endfor %}
+{% endblock %}

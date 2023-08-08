@@ -1,0 +1,63 @@
+.main-menu {
+  position: fixed;
+  top: 200px;
+  right: 0;
+  z-index: 10;
+  background-color: var(--nav-background);
+  transform: translateX(80%);
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    transform: translateX(0);
+  }
+
+  a {
+    display: block;
+    position: relative;
+    text-decoration: none;
+    color: var(--color-white);
+    font-size: var(--font-size-nav);
+    padding: 1rem 3rem 1rem 5rem;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      color: var(--color-link-hover);
+
+      &:before {
+        background-color: var(--color-link-hover);
+        border-color: var(--color-link-hover);
+      }
+    }
+
+    &:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 50%;
+      width: 1rem;
+      height: 1rem;
+      margin: -0.4rem 0 0 1rem;
+      border: 1px solid var(--color-white);
+      border-radius: 50%;
+      transition: all 0.3s ease-in-out;
+    }
+  }
+}
+
+// active state
+[pagename="home"] #home,
+[pagename="projects"] #projects,
+[pagename="portfolio"] #portfolio,
+[pagename="blog"] #blog,
+[pagename="contact"] #contact {
+  color: var(--color-white);
+  opacity: 0.7;
+  cursor: default;
+  pointer-events: none;
+
+  &:before {
+    background-color: var(--color-white);
+    border-color: var(--color-white);
+    opacity: 0.7;
+  }
+}

@@ -1,0 +1,7 @@
+<nav class="main-menu slide-in">
+    <ul>
+      {% for item in metadata.site.mainMenu %}
+        <li><a id="{{ item.id }}" {% if preventTransition %}data-barba-prevent{% endif %} href="{{ item.url }}">{{ item.title }}</a></li>
+      {% endfor %}  
+    </ul>
+</nav>

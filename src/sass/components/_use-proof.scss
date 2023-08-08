@@ -1,0 +1,18 @@
+@use "../variables" as *;
+
+/**
+  * @file _use-proof.scss
+  * @brief proof component is composed of two columns, one for a testimonial and the other for tabs.
+  */
+
+.proof {
+  .block-testimonials, 
+  .block-tabs {
+    max-width: calc($max-content-width / 2);
+    height: 100%;
+
+    @media screen and (max-width: $tablet-width-portrait) {
+      max-width: 100%;
+    }
+  }
+}

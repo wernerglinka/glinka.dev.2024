@@ -1,0 +1,9 @@
+- scope: Skills
+  item:
+    - Metalsmith
+    - Gatsby
+    - Remix
+    - Wordpress
+    - Drupal
+    - Javascript/React
+    - HTML/CSS

@@ -1,0 +1,12 @@
+{% from "./icon.njk" import icon %}
+
+{% macro socialLinks(links) %}
+  <ul class="social-links">
+    {% for link in links %}  
+      <li class="social-link"> 
+        {% set iconSource = link.icon %}
+        <a class="icon-link" href="{{link.url}}">{{ icon(iconSource) }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+{% endmacro %}

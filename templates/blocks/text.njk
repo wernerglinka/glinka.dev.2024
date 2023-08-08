@@ -1,0 +1,58 @@
+{#
+  Text
+  Renders text
+  
+  params: {
+    blockClass: string - optional class to add to the block
+    prefix: string - prefix to the title (optional)
+    title: string - title of the blog post (optional)
+    header: string - header of the blog post, e.g. "h1", "h2", etc. (optional)
+    subtitle: string - subtitle of the blog post (optional)
+    prose: string - prose of the blog post (optional)
+  }
+
+  YAML example:
+  - column
+    blocks:
+      - name: text
+        blockClass: "more-space page-intro"
+        prefix: ""
+        title: ""
+        header: ""
+        subtitle: ""
+        prose: |-
+          My primary focus of interest lies in [Metalsmith](https://metalsmith.io/), a static site generator that motivates ...
+  
+#}
+
+<div class="block block-text{% if params.blockClass %} {{ params.blockClass }}{% endif %}">
+  
+  {% if params.prefix %}
+    <p class="prefix">{{ params.prefix }}</p>
+  {% endif %}
+
+  {% if params.title %}
+    {% if params.header === "h1" %}
+      <h1 class="title">
+        <span is="truncated-aptitle" {% if params.apstyle %}apstyle{% endif %} {% if params.textlength %}textlength='{{ params.textlength }}'{% endif %}>{{ params.title }}</span>
+      </h1>
+    {% elif params.header === "h2" %}
+      <h2 class="title">
+        <span is="truncated-aptitle" {% if params.apstyle %}apstyle{% endif %} {% if params.textlength %}textlength='{{ params.textlength }}'{% endif %}>{{ params.title }}</span>
+      </h2>
+    {% else %}
+      <h3 class="title">
+        <span is="truncated-aptitle" {% if params.apstyle %}apstyle{% endif %} {% if params.textlength %}textlength='{{ params.textlength }}'{% endif %}>{{ params.title }}</span>
+      </h3>
+    {% endif %}
+  {% endif %}
+
+  {% if params.subtitle %}
+    <p class="sub-title">{{ params.subtitle }}</p>
+  {% endif %}
+
+  {% if params.prose %}
+    <div class="prose">{{ params.prose | mdToHTML | safe }}</div>
+  {% endif %}
+
+</div>

@@ -1,0 +1,46 @@
+{#
+  Blog Banner
+  Renders a blog banner
+  
+  params: {
+    title: string - title of the blog post
+    header: string - header of the blog post, e.g. "h1", "h2", etc.
+    date: string - date of the blog post
+  }
+
+  YAML example:
+  - column:
+    blocks:
+      - name: blog-banner
+        blockClass: ""
+        text:
+          prefix: ""
+          title: "Adding Netlify CMS to Metalsmith"
+          header: "h1"
+          subtitle: ""
+          prose: ""
+        date: 2022-03-28
+#}
+
+{% from "../partials/text.njk" import text %}
+
+<div class="block block-blog-banner">
+  {# site is in scope, was passed via the component macro #}
+  
+  <div class="container">
+    <div class="content">
+      {% set info = {
+          title: params.text.title,
+          header: params.text.header,
+          textlength: "80",
+          apstyle: true
+        }
+      %}
+
+      {{ text(info) }}
+      
+      <time class="date" datetime="{{ params.date }}">{{ params.date | blogDate }}</time>
+    
+    </div><!-- /.content -->
+  </div><!-- /.container -->
+</div>

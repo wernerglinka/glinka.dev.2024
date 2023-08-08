@@ -1,0 +1,40 @@
+{#
+  Contact info
+  Renders a contact info block including social media links
+  
+  params: {
+    blockClass: string - optional class to add to the block
+    socialLinks: array - social media links
+  }
+
+  YAML example:
+  - column:
+    blocks:
+      - name: contact-info
+        blockClass: ""
+        copyrightOwner:
+          name: "Werner Glinka"
+          url: "https://glinka.co"
+          tel: "650.867.0778"
+          notice: "© 2023 Werner Glinka"
+        socialLinks:
+        - label: "LinkedIn"
+          icon: linkedin
+          url: "https://www.linkedin.com/in/werner-glinka-2a427/"
+        - label: "Github"
+          icon: github
+          url: "https://github.com/wernerglinka"
+#}
+
+{% from "../partials/social-links.njk" import socialLinks %}
+
+<div class="block block-contact-info{% if params.blockClass %}  {{ params.blockClass }}{% endif %}">
+  <div class="info-wrapper">
+    <h2>{{ params.copyrightOwner.name }}</h2>
+    <p class="tel">{{ params.copyrightOwner.tel }}</p>
+    
+    {{ socialLinks(params.socialLinks) }}
+
+    <p class="copyright">{{ params.copyrightOwner.notice}}</p>
+  </div><!-- /.info-wrapper -->
+</div><!-- /.block-contact-info -->

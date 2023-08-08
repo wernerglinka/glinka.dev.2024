@@ -1,0 +1,16 @@
+{% set videoData = params %}
+
+<div class="block block-image{% if params.blockClass %}  {{ params.blockClass }}{% endif %}">
+  <div class="container">
+    <div class="video"  >
+      <button class="js-modal-video" data-videoid="{{ videoData.id}}" data-videosrc="{{ videoData.src }}">
+        <div class="play-button"></div>
+        <cloudinary-image 
+          base="{{ metadata.site.imagePrefix }}"
+          imageId="{{ videoData.tn }}"
+          alt=""
+        ></cloudinary-image>
+      </button>
+    </div>
+  </div>
+</div>

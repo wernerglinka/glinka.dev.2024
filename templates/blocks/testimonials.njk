@@ -1,0 +1,60 @@
+{#
+  Testimonials
+  Renders a set testimonials
+  Get the selected testimonials from the testimonials metadata object
+
+  params: {
+    blockClass: string - optional class to add to the block
+    source: string - name of the data file to use
+    scope: string - all || selections
+    selections: array - selection of blogposts to display
+  }
+  metadata: {
+    source: array - the source metadata object
+  }
+
+  YAML example:
+  - column:
+    blocks:
+      - name: testimonials
+        blockClass: "more-space"
+        source: "testimonials"
+        scope: "selections" # all || selections
+        selections:
+          - item: "247"
+          - item: "1185"
+          - item: "busse"
+          - item: "loma"
+          - item: "ltse"     
+#}
+
+{% from "../partials/icon.njk" import icon %}
+
+<div class="block block-testimonials {% if params.blockClass %} {{ params.blockClass }}{% endif %}">
+ 
+  {# if scope is set to all, show all testimonials that are located in src/content/data/<params.source> #}
+  {% if params.scope === "all" %}
+    {% set testimonialsList = metadata[params.source] %}
+  {% endif %}
+  {# if scope is set to selections, show testimonials that are listed in params.selections #}
+  {% if params.scope === "selections" %}
+    {% set testimonialsList = metadata[params.source] | filterList(params.selections) %}
+  {% endif %}
+
+  {{ icon("quotes") }}
+
+  <ul class="testimonials js-testimonials">
+  {% for item in testimonialsList %}
+    <li class="js-testimonial{% if loop.index === 1 %} active{% endif %}">
+      <blockquote class="quote">
+        <p>{{ item.quote }}</p>
+        <footer>
+          <cite class="quotee">{{ item.name }}</cite>
+          <p class="company">{{ item.company }}</p>
+        </footer>
+      </blockquote>
+    </li>
+  {% endfor %}
+  </ul>
+ 
+</div>

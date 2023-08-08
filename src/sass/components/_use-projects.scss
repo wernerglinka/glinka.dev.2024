@@ -1,0 +1,23 @@
+@use "../variables" as *;
+
+/**
+  * @file _use-projects.scss
+  * @brief projects component is composed of multiple cards.
+  */
+
+.projects {
+  margin: 8rem 0;
+
+  .cards {
+    display: flex;
+    gap: 5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 0;
+
+    .image-wrapper {
+      height: 18rem;
+    }
+  }
+}

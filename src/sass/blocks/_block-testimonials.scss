@@ -1,0 +1,80 @@
+.block-testimonials {
+  position: relative;
+  overflow: hidden;
+  background: var(--color-highlight-bold);
+  padding: clamp(2rem, -0.1798rem + 5.4496vw, 4rem);
+  color: #fff;
+
+  &.more-space {
+    padding: clamp(2rem, -1.0000rem + 7.5000vw, 8rem)
+  }
+
+  li {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+  blockquote {
+    p {
+      font-size: clamp(1.6rem, 0.8841rem + 2.2371vw, 2.6rem);
+    }
+    footer {
+      margin-top: 2rem;
+    }
+    .quotee,
+    .company {
+      font-style: normal;
+      text-transform: uppercase;
+      font-weight: bold;
+      font-size: 0.7em;
+      color: #fff;
+    }
+    .company {
+      font-size: 0.6em;
+      color: var(--color-primary);
+    }
+  }
+
+  svg {
+    position: absolute;
+    top: -3rem;
+    left: -2rem;
+    width: 40%;
+    height: 40%;
+    opacity: 0.05;
+  }
+
+  .testimonials {
+    position: relative;
+    min-height: 300px;
+    padding-block: 4rem;
+
+    li {
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      transition: opacity 0.8s ease-in-out;
+      
+      &.active {
+        opacity: 1;
+      }
+    }
+  }
+  
+  blockquote {
+    margin: 0;
+
+    p {
+      margin: 0;
+    }
+  }
+  footer {
+    background: transparent;
+    color: var(--color-primary);
+    min-height: auto;
+    padding: 0;
+  }
+}

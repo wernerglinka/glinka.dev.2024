@@ -1,0 +1,102 @@
+.simple-card {
+  position: relative;
+  padding: 1rem 1rem 3rem;
+  width: 28rem;
+  background-color: var(--color-white);
+  border: 1px solid #f5f5f5;
+  transition: all 0.3s ease-in-out;
+  
+  &:hover {
+    cursor: pointer;
+    border: 1px solid #ccc;
+
+    cloudinary-image {
+      transform: scale(1.1);
+    }
+  }
+
+  a {
+    text-decoration: none;
+    color: var(--color-primary);
+
+    &:after {
+      background: none;
+      display: none;
+    }
+  }
+
+  time {
+    font-size: 0.7em;
+    padding-bottom: 1rem;
+  }
+
+  .title {
+    margin: 0 0 1rem;
+    font-size: 1.6rem;
+
+    span {
+      text-transform: uppercase;
+      white-space: normal;
+      line-height: 1.2;
+    }
+  }
+  
+  .image-wrapper {
+    position: relative;
+    z-index: 1;
+  }
+
+  .prose {
+    font-size: 1.6rem;
+    margin-block: 1rem;
+  }
+
+  .card-footer {
+    position: absolute;
+    bottom: 1rem;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 2rem;
+
+    svg {
+      width: 30px;
+      height: 30px;
+      stroke: var(--color-link);
+    }
+  }
+
+  &.is-horizontal {
+    max-width: 60rem;
+    padding: 0;
+    border: none;
+
+    a {
+      display: flex;
+
+      > * {
+        flex: 0 0 50%;
+      }
+
+      > div {
+        aspect-ratio: 1 / 1;
+        position: relative;
+      }
+      .text-wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: clamp(2rem, -0.1798rem + 5.4496vw, 4rem);
+      }
+
+      .card-footer {
+        position: static;
+
+        svg {
+          float: none;
+        }
+      }
+
+    }
+  }
+}

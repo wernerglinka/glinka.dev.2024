@@ -1,0 +1,63 @@
+@use "../variables" as *;
+
+.block-contact-form {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  display: flex;
+  justify-content: flex-end;
+  
+  @media screen and (max-width: $tablet-width-portrait) {
+    padding: var(--default-padding);
+  }
+
+  .form-wrapper {
+    width: 100%;
+    max-width: calc(var(--max-content-width) / 2);
+    padding: var(--default-padding);
+
+    @media screen and (max-width: $tablet-width-portrait) {
+      max-width: 100%;
+    }
+  }
+
+  h2 {
+    color: var(--color-white);
+  }
+
+  // form styles
+  .hidden {
+    display: none;
+  }
+  .form-row {
+    padding: 20px 0;
+  }
+  input, textarea {
+    width: 100%;
+    max-width: 400px;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid var(--color-white);
+    padding: 5px;
+    color: var(--color-white);
+  }
+  ::placeholder {
+    color: var(--color-white);
+  }
+  textarea {
+    height: 100px;
+    resize: none;
+  }
+  .btn-submit {
+    display: inline-block;
+    border: 1px solid var(--color-white);
+    padding: 10px 30px;
+    width: auto;
+    transition: all 0.5s ease-in-out;
+    cursor: pointer;
+
+    &:hover {
+      background-color: var(--color-white);
+      color: var(--color-primary);
+    }
+  }
+}

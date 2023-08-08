@@ -1,0 +1,22 @@
+@use "../variables" as *;
+
+/**
+  * @file _use-portfolio.scss
+  * @brief portfolio component is composed of two columns, one for the image and the other for the text.
+  */
+  
+.portfolio {
+  .reverse {
+    .intro-text {
+      margin-left: auto;
+    }
+  }
+  .customers {
+    max-width: calc($max-content-width / 2);
+    
+    @media screen and (max-width: $tablet-width-portrait) {
+      max-width: 100%;
+    }
+  }
+
+}

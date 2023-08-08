@@ -1,0 +1,52 @@
+@use "../variables" as *;
+
+.blog-banner, .page-banner {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  // margin-top is adjusted between -5rem and -10rem based on viewport width
+  // and fixed at -10rem for viewport widths above 800px and -5rem for 
+  // viewport widths below 400px
+  // this offsets the header height
+  margin-top: calc(-1 * clamp(5rem, 0.0000rem + 12.5000vw, 10rem));
+  // min-height is adjusted between 20rem and 40rem based on viewport width 
+  // and fixed at 40rem for viewport widths above 1200px and 20rem for 
+  // viewport widths below 400px
+  min-height: clamp(20rem, 10.0000rem + 25.0000vw, 40rem);
+
+  // set the image height of the custom web component
+  cloudinary-image {
+    // insure that the background is covered
+    --image-height: 100%;
+  }
+
+  h1 {
+    font-size: var(--font-size-h1);
+    color: var(--color-white);
+    text-shadow: var(--default-text-shadow);
+  }
+  .sub-title {
+    color: var(--color-white);
+  }
+  
+  .date {
+    display: block;
+    color: var(--color-white);
+    text-shadow: var(--default-text-shadow);
+    margin: 0 0 2rem;
+    font-size: 0.8em;
+  }
+
+  .background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -1;
+  }
+}

@@ -1,0 +1,85 @@
+{% from "./icon.njk" import icon %}
+{% from "./text.njk" import text %}
+
+{#
+  Renders a card with thumbnail, title and prose
+  
+  params:
+    props: {
+      title: string,
+      thumbnail: string,
+      prose: string
+    }
+    imagePrefix: string
+
+  Usage:
+  {% from "../partials/card.njk" import card %}
+  ...
+  {{ card.card(props, imagePrefix) }}
+#}
+
+{% macro card(props, imagePrefix) %}
+  {% if props.horizontal %}
+    <a href="{{ props.link }}">
+      <div class="image-wrapper">
+        <cloudinary-image 
+          base="{{ imagePrefix }}"
+          imageId="{{ props.thumbnail }}"
+          alt=""
+          fitimage=true
+        ></cloudinary-image>
+      </div>
+
+      <div class="text-wrapper">
+        {% if props.date %}
+          <time class="date" datetime="{{ props.date }}">{{ props.date | blogDate }}</time>
+        {% endif %}
+        
+        {% set info = {
+          title: props.title,
+          textlength: "40",
+          apstyle: false
+        } 
+      %}
+      {{ text(info) }}
+
+        <div class="card-footer">
+          {{ icon('arrow-right') }}
+        </div>
+      </div>
+    </a>
+
+  {% else %}
+    <a href="{{ props.link }}">
+      {% if props.date %}
+        <time class="date" datetime="{{ props.date }}">{{ props.date | blogDate }}</time>
+      {% endif %}
+
+      {% set info = {
+          title: props.title,
+          textlength: "40",
+          apstyle: false
+        } 
+      %}
+      {{ text(info) }}
+
+      <div class="image-wrapper">
+        <cloudinary-image 
+          base="{{ imagePrefix }}"
+          imageId="{{ props.thumbnail }}"
+          alt=""
+          fitimage=true
+        ></cloudinary-image>
+      </div>
+
+      <div class="prose">
+        {{ props.prose | safe }}
+      </div>
+
+      <div class="card-footer">
+        {{ icon('arrow-right') }}
+      </div>
+    </a>
+  {% endif %}
+  
+{% endmacro %}

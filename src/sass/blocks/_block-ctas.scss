@@ -1,0 +1,11 @@
+.block-ctas {
+  padding: 40px;
+}
+
+.block-text + .block-ctas {
+  padding-top: 0;
+}
+
+link-component {
+  --btn-line-height: 2.5;
+}

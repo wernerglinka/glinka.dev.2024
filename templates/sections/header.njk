@@ -1,0 +1,17 @@
+{% from "../partials/icon.njk" import icon %}
+
+<div class="header-wrapper js-header">
+  <header>
+    <div class="container">
+      <div class="brand">
+        {% set iconSource = "site-logo" %}
+        <a class="js-home-link home-link" href="/"><span>{</span>Werner Glinka<span>}</span></a>
+      </div>
+
+      <div class="to-blogs">
+        <a class="js-blog-link blog-link" href="/blog/" title="My blog">{{ icon("layers") }}</a>
+      </div>
+
+    </div>
+  </header>
+</div>

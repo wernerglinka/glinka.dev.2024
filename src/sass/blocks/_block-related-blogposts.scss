@@ -1,0 +1,22 @@
+.block-related-blogposts {
+  padding: var(--default-padding) 0;
+
+  .container {
+    border-top: 1px solid var(--color-light-gray);
+    padding-top: 4rem;
+  }
+
+  .cards {
+    list-style: none;
+    display: flex;
+    gap: 5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  .image-wrapper {
+    height: 10rem;
+  }
+}

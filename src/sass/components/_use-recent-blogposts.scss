@@ -1,0 +1,36 @@
+@use "../variables" as *;
+
+/**
+  * @file _use-recent-blogposts.scss
+  * @brief recent-blogposts component is composed of four cards.
+  */
+
+.recent-blogposts {
+  .simple-card {
+    a {
+      flex-direction: row-reverse;
+    }
+    
+    &:nth-child(1),
+    &:nth-child(2) {
+      a {
+        flex-direction: row;
+      }
+    }
+
+    @media screen and (max-width: $tablet-width-portrait) {
+      &:nth-child(odd) {
+        a {
+          flex-direction: row;
+        }
+      }
+      &:nth-child(even) {
+        a {
+          flex-direction: row-reverse;
+        }
+      }
+    
+      
+    }
+  }
+}

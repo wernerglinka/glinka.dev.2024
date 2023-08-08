@@ -1,0 +1,77 @@
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  //scroll-padding-top: 90px;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.cf:before,
+.cf:after {
+  content: " ";
+  display: table;
+}
+.cf:after {
+  clear: both;
+}
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+// class attached to body when overlay is open. prevents scrolling under overlay
+.modal-active, .menu-active {
+  overflow: hidden;
+}
+
+.container {
+  max-width: var(--max-content-width);
+  padding: 0 clamp(2rem, 1.0000rem + 2.5000vw, 4rem);
+  width: 100%;
+  margin: 0 auto;
+
+  &.blog-page {
+    max-width: 1024px;
+    padding-bottom: 50px;
+
+    @media (max-width: 1104px) {
+      padding: 0 40px 50px;
+    }
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+
+/*
+ * Images are shown with the cloudinary-image web component. The are shown in
+ * an image-wrapper div. The overflow is hidden to achieve a hover effect without
+ * the image overflowing the card.
+ */
+.image-wrapper {
+  overflow: hidden;
+}
+/*
+ * ensure that image always fills the image-wrapper
+ */
+cloudinary-image {
+  --figure-height: 100%;
+  --image-height: 100%;
+
+  display: block;
+  height: 100%;
+  transition: all 0.3s ease-in-out;
+}

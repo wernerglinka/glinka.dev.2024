@@ -1,0 +1,16 @@
+@use "../variables" as *;
+
+/**
+  * @file _use-introduction.scss
+  * @brief introduction component is composed of two columns, one for the image and the other for the text.
+  */
+
+.introduction {
+  .block-image {
+    position: relative;
+    opacity: 0.5;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+  }
+}

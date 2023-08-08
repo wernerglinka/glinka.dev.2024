@@ -1,0 +1,14 @@
+@use "./header";
+@use "./footer";
+
+
+// the use- prefix is used to indicate the context 
+// in which blocks are composed to form a section
+@use "use-introduction";
+@use "use-proof";
+@use "use-projects";
+@use "use-recent-blogposts";
+@use "use-portfolio";
+@use "use-portfolio-examples";
+@use "use-ctas-banner";
+@use "navigation";

@@ -1,0 +1,24 @@
+.button {
+  display: inline-block;
+  padding: 12px 30px;
+  margin-right: 30px;
+  font-size: 14px;
+  color: var(--color-primary);
+  border-width: 2px;
+  border-style: solid;
+  transition: background-color 0.3s ease-in-out;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  background-color: transparent;
+  border-color: var(--color-primary);
+
+  &:hover {
+    color: var(--color-primary-complement);
+    background-color: var(--color-primary);;
+  }
+}
+
+.isDark .button {
+  border-color: var(--color-white);
+}

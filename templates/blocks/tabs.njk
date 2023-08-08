@@ -1,0 +1,54 @@
+{#
+  Tabs
+  Renders a tabs block
+  
+  params: {
+    blockClass: string - optional class to add to the block
+    source: string - the name of the metadata source to use
+    selections: array - the list of items to display in the tabs
+  }
+  metadata: {
+    source: array - the source metadata object
+  }
+
+  YAML example:
+  - column:
+    blocks:
+      - name: tabs
+        blockClass: "work"
+        source: "work"
+        selections:
+          - item: "skills"
+          - item: "clients"
+          - item: "openSource"
+#}
+
+<div class="block block-tabs js-tabs {% if params.blockClass %} {{ params.blockClass }}{% endif %}">
+  {% set workList = metadata[params.source] %}
+
+  <ul class="tabs-labels">
+    {% for tab in workList %}
+      <li class="tab-label {% if loop.index0 == 0 %} active {% endif %}">
+        {{ tab.scope }}
+      </li>
+    {% endfor %}
+  </ul>
+  <div class="tabs-content">
+    {% for tab in workList %}
+      <div class="tab-content {% if loop.index0 == 0 %} active {% endif %}">
+        {% if tab.scope == "Skills" %}
+          <ul class="skills">
+            {% for skill in tab.item %}
+            <li>
+              {{ skill }}
+            </li>
+            {% endfor %}
+          </ul>
+        {% else %}
+          {{ tab.item }}
+        {% endif %}
+      </div><!-- .tab-content -->
+    {% endfor %}
+  </div><!-- .tabs-content --> 
+  
+</div>

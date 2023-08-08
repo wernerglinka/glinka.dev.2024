@@ -1,0 +1,31 @@
+{% from "./partials/icon.njk" import icon %}
+
+<!DOCTYPE html>
+<html>
+  <head>
+    {% include "sections/head.njk" %}
+  </head>
+</h1>
+
+<body class="{{ bodyClasses }}" >
+  <div id="at-top"></div>
+  {% include "sections/header.njk" %}
+  {% include "sections/nav.njk" %}
+  <div data-barba="wrapper">
+    <main data-barba="container" data-barba-namespace="barbaPage">
+      
+      {% block body %}
+        This is the default contents
+      {% endblock %}
+      
+    </main>
+  </div>
+
+  {% include "sections/footer.njk" %}
+
+  <a class="to-top" href="#at-top">{{ icon("arrow-up-circle") }}</a>
+
+  {% include "partials/scripts.njk" %}
+
+</body>
+</html>

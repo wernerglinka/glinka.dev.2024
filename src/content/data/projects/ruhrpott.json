@@ -1,0 +1,9 @@
+[
+  {
+    "item": "ruhrpott",
+    "title": "Ruhrpott",
+    "thumbnail": "v1690304803/ruhrpott_wkl3df.jpg",
+    "prose": "Uses the Sanity.io CMS to build a user-friendly user interface for editing content for Metalsmith.",
+    "link": "https://ruhrpott.netlify.app"
+  }
+]

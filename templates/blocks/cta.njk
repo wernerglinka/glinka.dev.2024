@@ -1,0 +1,32 @@
+{#
+  CTA
+  Renders a link as either a button or a text link
+
+  params: {
+    name: "cta",
+    url: "https://metalsmith.io/",
+    label: "Metalsmith Website",
+    isExternal: true,
+    isButton: true,
+    buttonStyle: "primary"
+  }
+
+  YAML Example:
+  - column:
+    blocks:
+      - name: cta
+        url: "https://metalsmith.io/"
+        label: "Metalsmith Website"
+        isExternal: true
+        isButton: true
+        buttonStyle: "primary"
+#}
+
+<div class="block block-ctas{% if params.blockClass %}  {{ params.blockClass }}{% endif %}">  
+  <link-component
+    url="{{ params.url }}"
+    isexternal="{{ params.isExternal }}"
+    isButton="{{ params.isButton }}"
+    colorscheme="{{ params.buttonStyle }}"
+  >{{ params.label }}</link-component>
+</div>

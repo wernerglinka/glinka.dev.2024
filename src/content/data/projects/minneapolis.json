@@ -1,0 +1,9 @@
+[
+  {
+    "item": "mpls",
+    "title": "Minneapolis",
+    "thumbnail": "v1690304803/minneapolis_uqni14.jpg",
+    "prose": "Uses Wordpress to build a user-friendly user interface for editing content for Metalsmith.",
+    "link": "https://mpls.netlify.app"
+  }
+]

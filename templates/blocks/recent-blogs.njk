@@ -1,0 +1,41 @@
+{#
+  Recent Blogs
+  Renders a set of recent blogposts
+  Get the relevant blogposts fields from the blog collection
+  blogTitle, date, image, path
+
+  params: {
+    blockClass: string - optional class to add to the block
+    quantity: number - number of blogposts to show
+  }
+  collections: {
+    blog: array - array of blogposts
+  }
+  metadata: {
+    site: {
+      imagePrefix: string - path to images
+    }
+  } 
+#}
+
+{% from "../partials/card.njk" import card %}
+
+<div class="block block-recent-blogposts {% if params.blockClass %} {{ params.blockClass }}{% endif %}">
+  <ul class="recent-blogposts cards">
+      {% for blogPost in collections.blog %}
+        {% if loop.index < 5  %}
+          {% set thisCard = {
+            title: blogPost.blogTitle,
+            prose: blogPost.excerpt,
+            thumbnail: blogPost.image.src,
+            link: "/" ~  blogPost.path,
+            horizontal: params.horizontal,
+            date: blogPost.date
+          } %}  
+          <li class="simple-card{% if params.horizontal %} is-horizontal{% endif %}">
+            {{ card(thisCard, metadata.site.imagePrefix) }}
+          </li>
+        {% endif %}
+    {% endfor %}
+    </ul>
+</div>

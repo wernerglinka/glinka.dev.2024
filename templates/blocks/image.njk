@@ -1,0 +1,37 @@
+{#
+  Image
+  Renders an image with a caption
+  
+  params: {
+    blockClass: string - optional class to add to the block
+    src: string - the image id
+    alt: string - the alt text
+    caption: string - the caption
+    fitimage: boolean - if true, the image will be object fit to the container
+  }
+  metadata: {
+    site: {
+      imagePrefix: string - the prefix for the image url
+    }
+  }
+
+  YAML example:
+  - column:
+    blocks:
+      - name: image
+        blockClass: "limit-width"
+        src: 'v1645224179/tgc2022/blogImages/orca1/what-is-metalsmith_co5vzn.jpg'
+        alt: 'How Metalsmith Works'
+        caption: 'How Metalsmith Works'
+        fitimage: false
+#}
+
+<div class="block block-image{% if params.blockClass %}  {{ params.blockClass }}{% endif %}">
+  <cloudinary-image 
+    base="{{ metadata.site.imagePrefix }}"
+    imageId="{{ params.src }}"
+    alt="{{ params.alt }}"
+    {% if params.fitimage %}fitimage{% endif%}
+  ></cloudinary-image>
+  <p class="caption">{{ params.caption }}</p>
+</div>

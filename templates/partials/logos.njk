@@ -1,0 +1,35 @@
+{% macro logos(info, metadata) %}
+  {% set copies = 2 %}
+  
+  {# is scope is set to all we will show all logos that are located in src/content/data/<info.source> #}
+  {% if info.scope === "all" %}
+    {% set logosList = metadata[info.source] %}
+  {% endif %}
+  {# is scope is set to selections we will show all logos that are listed in info.selections #}
+  {% if info.scope === "selections" %}
+    {% set logosList = metadata[info.source] | filterList(info.selections) %}
+  {% endif %}
+
+  {% set logoWidth = info.logoWidth %}
+  {% set logosListLength = logosList | length  *  logoWidth ~ "px" %}
+
+  <div class="marquee" style="--list-width: {{ logosListLength }}">
+    <div class="logos-wrapper">
+
+      {% for i in range(0, copies) -%}
+      <ul class="logos js-logos-list">
+      {% for item in logosList %}
+        {# assemble the logo url #}
+        {% set source = metadata.site.imagePrefix ~ "w_200,c_fill,g_auto,f_auto/" ~ item.logo %}
+        <li>
+          <a href="{{ item.web }}" title="{{ item.name }}">
+            <img src="{{ source }}" alt="{{ item.name }}" />
+          </a>
+        </li>
+      {% endfor %}
+      </ul>
+      {% endfor %}
+    </div> <!-- marquee-inner -->
+  </div> <!-- marquee -->
+
+{% endmacro %}

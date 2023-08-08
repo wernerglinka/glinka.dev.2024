@@ -1,0 +1,45 @@
+{#
+  Page Banner
+  Renders a page banner
+  
+  params: {
+    title: string - title of the blog post
+    header: string - header of the blog post, e.g. "h1", "h2", etc.
+    subtitle: string - subtitle of the blog post
+  }
+
+  YAML example:
+  - column:
+    blocks:
+      - name: page-banner
+          blockClass: ''
+          text:
+            prefix: ''
+            title: Projects
+            header: h1
+            subtitle: Dabbling in Open Source
+            prose: ''
+#}
+
+{% from "../partials/text.njk" import text %}
+
+<div class="block block-page-banner">
+  {# site is in scope, was passed via the component macro #}
+  
+  <div class="container">
+    <div class="content">
+      
+      {% set info = {
+          title: params.text.title,
+          header: params.text.header,
+          subtitle: params.text.subtitle,
+          textlength: "80",
+          apstyle: true
+        }
+      %}
+
+      {{ text(info) }}
+      
+    </div><!-- /.content -->
+  </div><!-- /.container -->
+</div>

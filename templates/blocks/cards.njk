@@ -1,0 +1,55 @@
+{#
+  Cards
+  Renders set of cards
+
+  Example: Projects list on home page
+
+  params: {
+    source: string - name of the data file to use
+    scope: string - "all" or "selections"
+    selections: array - card names to show
+    blockClass: string - optional class to add to the block
+  }
+
+  Note: metadata is available to the template
+  metadata: {
+    site: {
+      imagePrefix: string - path to images
+    }
+  } 
+
+  YAML example:
+  - name: cards
+    blockClass: ""
+    source: "projects"
+    scope: "selections" # all || selections
+    horizontal: false
+    selections:
+      - item: "ruhrpott"
+      - item: "mpls"
+      - item: "components"
+#}
+
+{% from "../partials/card.njk" import card %}
+
+<div class="block block-cards {% if params.blockClass %} {{ params.blockClass }}{% endif %}">
+ 
+  {# if scope is set to all, show all cards that are located in src/content/data/<params.source> #}
+  {% if params.scope === "all" %}
+    {% set cardsList = metadata[params.source] %}
+  {% endif %}
+  {# if scope is set to selections, show cards that are listed in params.selections #}
+  {% if params.scope === "selections" %}
+    {% set cardsList = metadata[params.source] | filterList(params.selections) %}
+  {% endif %}
+
+ 
+  <ul class="cards">
+  {% for thisCard in cardsList %}
+    <li class="simple-card">
+      {{ card(thisCard, metadata.site.imagePrefix) }}
+    </li>
+  {% endfor %}
+  </ul>
+ 
+</div>

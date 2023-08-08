@@ -1,0 +1,96 @@
+{#
+  Full Page Image
+  Renders a full page image with text and CTAs
+  
+  params: {
+    image: {
+      src: string - cloudinary image id
+      alt: string - alt text for image
+      caption: string - caption for image
+    }
+    text: {
+      prefix: string - prefix text
+      title: string - title text
+      header: string - header tag, e.g. h1, h2, etc.
+      subtitle: string - subtitle text
+      prose: string - prose text
+    }
+    ctas: [
+      {
+        url: string - url for link
+        label: string - label for link
+        isExternal: boolean - true if external link
+        isButton: boolean - true if button style
+        buttonStyle: string - button style, e.g. primary, secondary, etc.
+      }
+    ]
+    scrollTarget: string - id of element to scroll to
+  }
+  metadata: {
+    site: {
+      imagePrefix: string - path to images
+    }
+  } 
+
+  YAML example:
+  - column:
+    blocks:
+      - name: full-page-image
+        blockClass: ""
+        image: 
+          src: "v1688513430/bob-dylan-mural_anzmom.jpg"
+          alt: "Minneapolis Uptown"
+          caption: "Photo by @tjbednar on freeImages.com"
+        text:
+          prefix: "My Latest Project"
+          title: Minneapolis
+          header: "h1"
+          subtitle: "Minneapolis is a proof-of-concept project to use a WordPress backend as a Content Management System for a Metalsmith static site generator."
+          prose: ""
+        ctas:
+          - url: "/blog/minneapolis-using-wordpress-headless-cms-metalsmith/"
+            label: "Read about it here"
+            isExternal: false
+            isButton: false
+            buttonStyle: ""
+        scrollTarget: "section1" 
+#}
+
+{% from "../partials/icon.njk" import icon %}
+{% from "../partials/text.njk" import text %}
+
+<div class="block block-full-page-image">
+  {# site is in scope, was passed via the component macro #}
+  <div class="image-wrapper">
+    <cloudinary-image 
+      base="{{ metadata.site.imagePrefix }}"
+      imageId="{{ params.image.src }}"
+      alt="{{ params.image.alt }}"
+    ></cloudinary-image>
+  </div>
+  <div class="container">
+    <div class="content">
+      
+      {% set info = {
+          prefix: params.text.prefix,
+          title: params.text.title,
+          header: params.text.header,
+          subtitle: params.text.subtitle,
+          textlength: "40",
+          apstyle: false
+        }
+      %}
+      {{ text(info)}}
+
+      {% for cta in params.ctas %}
+        <link-component
+          url="{{ cta.url }}"
+          isexternal="{{ cta.isExternal }}"
+          colorscheme="{{ cta.buttonStyle }}"
+        >{{ cta.label }}</link-component>
+      {% endfor %}
+
+      <a class="scroll-to" href="#{{params.scrollTarget}}">{{ icon("arrow-down") }}</a>
+    </div><!-- /.content -->
+  </div><!-- /.container -->
+</div>

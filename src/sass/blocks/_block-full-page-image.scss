@@ -1,0 +1,112 @@
+@use "../variables" as *;
+
+.block-full-page-image {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+
+  .container {
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .image-wrapper {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    padding: 0 !important;
+    overflow: hidden;
+  }
+  cloudinary-image {
+    --image-height: 100vh;
+  }
+  .content {
+    position: relative;
+    margin: 0 auto;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    background-color: rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    padding: unquote("clamp(2rem, calc(2rem + (4 - 2) * (100vw - 40rem) / (76.8 - 40.0)), 4rem)");
+    animation: fadeInAnimation ease 2s;
+
+    @keyframes fadeInAnimation {
+      0% {
+        opacity: 0;
+        transform: translateY(-4rem);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: $small-screen-width) {
+      width: 100%;
+    }
+  }
+  .prefix {
+    font-family: var(--font-family-body);
+    font-size: clamp(1.8rem, 0.6vw + 1.569rem, 2.4rem);
+    color: var(--color-highlight);
+  }
+  h1 {
+    font-family: var(--font-family-header);
+    font-size: clamp(3.790rem, 1.4vw + 3.243rem, 5.211rem);
+    color: #fff;
+  }
+  .sub-title {
+    font-family: var(--font-family-body);
+    font-size: clamp(1.8rem, 0.6vw + 1.569rem, 2.4rem);
+    font-weight: 300;
+    color: #fff;
+  }
+
+  link-component {
+    --link-color: var(--color-highlight);
+  }
+
+  .scroll-to {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 1000;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+    .icon-wrapper {
+      pointer-events: none;
+    }
+
+    svg {
+      width: 30px;
+      height: 30px;
+      pointer-events: none;
+
+      * {
+        stroke: var(--color-white);
+      }
+    }
+    
+
+    &:hover {
+      svg {
+        * {
+          stroke: var(--color-highlight);
+        }
+      }
+    }
+  }
+}
+
+

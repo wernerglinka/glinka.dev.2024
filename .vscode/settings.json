@@ -1,0 +1,543 @@
+{
+  "frontMatter.taxonomy.contentTypes": [
+    {
+      "name": "default",
+      "pageBundle": false,
+      "fields": [
+        {
+          "title": "layout",
+          "name": "layout",
+          "type": "string"
+        },
+        {
+          "title": "draft",
+          "name": "draft",
+          "type": "datetime"
+        },
+        {
+          "title": "pageType",
+          "name": "pageType",
+          "type": "string"
+        },
+        {
+          "title": "disableDefaultFooter",
+          "name": "disableDefaultFooter",
+          "type": "datetime"
+        },
+        {
+          "title": "item",
+          "name": "item",
+          "type": "string"
+        },
+        {
+          "title": "seo",
+          "name": "seo",
+          "type": "fields",
+          "fields": [
+            {
+              "title": "title",
+              "name": "title",
+              "type": "string"
+            },
+            {
+              "title": "description",
+              "name": "description",
+              "type": "string"
+            },
+            {
+              "title": "socialImage",
+              "name": "socialImage",
+              "type": "image"
+            },
+            {
+              "title": "canonicalOverwrite",
+              "name": "canonicalOverwrite",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "title": "blogTitle",
+          "name": "blogTitle",
+          "type": "datetime"
+        },
+        {
+          "title": "date",
+          "name": "date",
+          "type": "datetime"
+        },
+        {
+          "title": "author",
+          "name": "author",
+          "type": "string"
+        },
+        {
+          "title": "image",
+          "name": "image",
+          "type": "fields",
+          "fields": [
+            {
+              "title": "src",
+              "name": "src",
+              "type": "string"
+            },
+            {
+              "title": "alt",
+              "name": "alt",
+              "type": "string"
+            },
+            {
+              "title": "caption",
+              "name": "caption",
+              "type": "datetime"
+            }
+          ]
+        },
+        {
+          "title": "excerpt",
+          "name": "excerpt",
+          "type": "string"
+        },
+        {
+          "title": "sections",
+          "name": "sections",
+          "type": "block",
+          "fields": [
+            {
+              "title": "0",
+              "name": "0",
+              "type": "fields",
+              "fields": [
+                {
+                  "title": "container",
+                  "name": "container",
+                  "type": "string"
+                },
+                {
+                  "title": "description",
+                  "name": "description",
+                  "type": "string"
+                },
+                {
+                  "title": "containerFields",
+                  "name": "containerFields",
+                  "type": "fields",
+                  "fields": [
+                    {
+                      "title": "animateSection",
+                      "name": "animateSection",
+                      "type": "datetime"
+                    },
+                    {
+                      "title": "disabled",
+                      "name": "disabled",
+                      "type": "datetime"
+                    },
+                    {
+                      "title": "containerId",
+                      "name": "containerId",
+                      "type": "string"
+                    },
+                    {
+                      "title": "containerClass",
+                      "name": "containerClass",
+                      "type": "string"
+                    },
+                    {
+                      "title": "inContainer",
+                      "name": "inContainer",
+                      "type": "datetime"
+                    },
+                    {
+                      "title": "background",
+                      "name": "background",
+                      "type": "fields",
+                      "fields": [
+                        {
+                          "title": "color",
+                          "name": "color",
+                          "type": "string"
+                        },
+                        {
+                          "title": "image",
+                          "name": "image",
+                          "type": "image"
+                        },
+                        {
+                          "title": "isDark",
+                          "name": "isDark",
+                          "type": "datetime"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "title": "columns",
+                  "name": "columns",
+                  "type": "block",
+                  "fields": [
+                    {
+                      "title": "0",
+                      "name": "0",
+                      "type": "fields",
+                      "fields": [
+                        {
+                          "title": "column",
+                          "name": "column",
+                          "type": "datetime"
+                        },
+                        {
+                          "title": "blocks",
+                          "name": "blocks",
+                          "type": "block",
+                          "fields": [
+                            {
+                              "title": "0",
+                              "name": "0",
+                              "type": "fields",
+                              "fields": [
+                                {
+                                  "title": "name",
+                                  "name": "name",
+                                  "type": "string"
+                                },
+                                {
+                                  "title": "blockClass",
+                                  "name": "blockClass",
+                                  "type": "string"
+                                },
+                                {
+                                  "title": "text",
+                                  "name": "text",
+                                  "type": "fields",
+                                  "fields": [
+                                    {
+                                      "title": "prefix",
+                                      "name": "prefix",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "title": "title",
+                                      "name": "title",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "title": "header",
+                                      "name": "header",
+                                      "type": "string"
+                                    },
+                                    {
+                                      "title": "subtitle",
+                                      "name": "subtitle",
+                                      "type": "datetime"
+                                    },
+                                    {
+                                      "title": "prose",
+                                      "name": "prose",
+                                      "type": "string"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "title": "date",
+                                  "name": "date",
+                                  "type": "datetime"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "title": "1",
+              "name": "1",
+              "type": "fields",
+              "fields": [
+                {
+                  "title": "container",
+                  "name": "container",
+                  "type": "string"
+                },
+                {
+                  "title": "description",
+                  "name": "description",
+                  "type": "string"
+                },
+                {
+                  "title": "containerFields",
+                  "name": "containerFields",
+                  "type": "fields",
+                  "fields": [
+                    {
+                      "title": "animateSection",
+                      "name": "animateSection",
+                      "type": "datetime"
+                    },
+                    {
+                      "title": "disabled",
+                      "name": "disabled",
+                      "type": "datetime"
+                    },
+                    {
+                      "title": "containerId",
+                      "name": "containerId",
+                      "type": "string"
+                    },
+                    {
+                      "title": "containerClass",
+                      "name": "containerClass",
+                      "type": "string"
+                    },
+                    {
+                      "title": "inContainer",
+                      "name": "inContainer",
+                      "type": "datetime"
+                    },
+                    {
+                      "title": "background",
+                      "name": "background",
+                      "type": "fields",
+                      "fields": [
+                        {
+                          "title": "color",
+                          "name": "color",
+                          "type": "string"
+                        },
+                        {
+                          "title": "image",
+                          "name": "image",
+                          "type": "image"
+                        },
+                        {
+                          "title": "isDark",
+                          "name": "isDark",
+                          "type": "datetime"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "title": "columns",
+                  "name": "columns",
+                  "type": "block",
+                  "fields": [
+                    {
+                      "title": "0",
+                      "name": "0",
+                      "type": "fields",
+                      "fields": [
+                        {
+                          "title": "column",
+                          "name": "column",
+                          "type": "datetime"
+                        },
+                        {
+                          "title": "blocks",
+                          "name": "blocks",
+                          "type": "block",
+                          "fields": [
+                            {
+                              "title": "0",
+                              "name": "0",
+                              "type": "fields",
+                              "fields": [
+                                {
+                                  "title": "name",
+                                  "name": "name",
+                                  "type": "string"
+                                },
+                                {
+                                  "title": "blockClass",
+                                  "name": "blockClass",
+                                  "type": "string"
+                                },
+                                {
+                                  "title": "prose",
+                                  "name": "prose",
+                                  "type": "string"
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "title": "2",
+              "name": "2",
+              "type": "fields",
+              "fields": [
+                {
+                  "title": "container",
+                  "name": "container",
+                  "type": "string"
+                },
+                {
+                  "title": "description",
+                  "name": "description",
+                  "type": "string"
+                },
+                {
+                  "title": "containerFields",
+                  "name": "containerFields",
+                  "type": "fields",
+                  "fields": [
+                    {
+                      "title": "disabled",
+                      "name": "disabled",
+                      "type": "datetime"
+                    },
+                    {
+                      "title": "containerId",
+                      "name": "containerId",
+                      "type": "string"
+                    },
+                    {
+                      "title": "containerClass",
+                      "name": "containerClass",
+                      "type": "string"
+                    },
+                    {
+                      "title": "inContainer",
+                      "name": "inContainer",
+                      "type": "datetime"
+                    },
+                    {
+                      "title": "background",
+                      "name": "background",
+                      "type": "fields",
+                      "fields": [
+                        {
+                          "title": "color",
+                          "name": "color",
+                          "type": "string"
+                        },
+                        {
+                          "title": "image",
+                          "name": "image",
+                          "type": "image"
+                        },
+                        {
+                          "title": "isDark",
+                          "name": "isDark",
+                          "type": "datetime"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "title": "columns",
+                  "name": "columns",
+                  "type": "block",
+                  "fields": [
+                    {
+                      "title": "0",
+                      "name": "0",
+                      "type": "fields",
+                      "fields": [
+                        {
+                          "title": "column",
+                          "name": "column",
+                          "type": "datetime"
+                        },
+                        {
+                          "title": "blocks",
+                          "name": "blocks",
+                          "type": "block",
+                          "fields": [
+                            {
+                              "title": "0",
+                              "name": "0",
+                              "type": "fields",
+                              "fields": [
+                                {
+                                  "title": "name",
+                                  "name": "name",
+                                  "type": "string"
+                                },
+                                {
+                                  "title": "blockClass",
+                                  "name": "blockClass",
+                                  "type": "string"
+                                },
+                                {
+                                  "title": "title",
+                                  "name": "title",
+                                  "type": "string"
+                                },
+                                {
+                                  "title": "horizontal",
+                                  "name": "horizontal",
+                                  "type": "datetime"
+                                },
+                                {
+                                  "title": "selections",
+                                  "name": "selections",
+                                  "type": "block",
+                                  "fields": [
+                                    {
+                                      "title": "0",
+                                      "name": "0",
+                                      "type": "fields",
+                                      "fields": [
+                                        {
+                                          "title": "item",
+                                          "name": "item",
+                                          "type": "string"
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "title": "1",
+                                      "name": "1",
+                                      "type": "fields",
+                                      "fields": [
+                                        {
+                                          "title": "item",
+                                          "name": "item",
+                                          "type": "string"
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "title": "2",
+                                      "name": "2",
+                                      "type": "fields",
+                                      "fields": [
+                                        {
+                                          "title": "item",
+                                          "name": "item",
+                                          "type": "string"
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

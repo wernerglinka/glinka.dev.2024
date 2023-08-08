@@ -1,0 +1,98 @@
+@use "../variables" as *;
+
+.header-wrapper {
+  position: relative;
+  z-index: 1000;
+  // fluid header height between 1200px/10rem and 400px/5rem
+  height: clamp(5rem, 0.0000rem + 12.5000vw, 10rem);
+
+
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1001;
+    width: 100%;
+    // fluid header height between 1200px/10rem and 400px/5rem
+    height: clamp(5rem, 2.5000rem + 6.2500vw, 10rem);
+    background-color: rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+  }
+
+  .container {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }  
+}
+
+.has-full-height-image .header-wrapper {
+  height: 0;
+  margin: 0;
+}
+
+.brand {
+  position: relative;
+  z-index: 3000;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  a {
+    display: block;
+    text-decoration: none;
+    font-family: monospace;
+    // fluid logo size - between 1200px/5rem to 400px/2rem
+	  font-size: clamp(2rem, 0.5000rem + 3.7500vw, 5rem);
+    color: var(--color-white);
+    vertical-align: middle;
+    transition: color 0.3s ease-in-out;
+    
+    span {
+      position: relative;
+      top: -2px;
+    }
+
+    &:hover {
+      color: var(--color-link);
+    }
+  }
+}
+
+.to-blogs {
+  position: relative;
+  z-index: 3000;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: auto;
+
+  a {
+    display: block;
+    text-decoration: none;
+    
+    svg {
+      // fluid icon size between 1200 and 400 pixels
+      width: clamp(2rem, 1.0000rem + 2.5000vw, 4rem);
+      height: clamp(2rem, 1.0000rem + 2.5000vw, 4rem);
+      stroke: var(--color-white);
+      cursor: pointer;
+      transition: stroke 0.3s ease-in-out;
+
+      &:hover {
+        stroke: var(--color-link);
+      }
+    }
+  }
+}
+
+/* home link on home page */
+[pagename='home'] .brand a,
+[pagename='blog'] .to-blogs a {
+  pointer-events: none;
+  cursor: default;
+  opacity: 0.7;
+}

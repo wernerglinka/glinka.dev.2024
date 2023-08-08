@@ -1,0 +1,35 @@
+@use "../variables" as *;
+
+.block-wrapper {
+  position: relative;
+  
+  // classes that are attached to the block-wrapper via frontmatter fields
+  &.inContainer {
+    max-width: var(--max-content-width);
+    margin: 0 auto;
+  }
+
+  &.isDark * {
+    color: #fff;
+  }
+
+  .columns {
+    display: flex;
+
+    @media screen and (max-width: $tablet-width-portrait) {
+      flex-direction: column;
+    }
+      
+    &.reverse {
+      flex-direction: row-reverse;
+
+      @media screen and (max-width: $tablet-width-portrait) {
+        flex-direction: column;
+      }
+    }
+  }
+  .column {
+    flex: 1 1 0;
+    max-width: 100%;
+  }
+}
