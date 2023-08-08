@@ -148,7 +148,7 @@ sections:
                   obj.image.url = obj.image.url?.mediaItemUrl;
               }
               ```
-              At this point we have build the `files` array with all pages.
+              At this point we have built the `files` array with all pages.
 
               ```javascript
               [
