@@ -29,7 +29,7 @@ import testimonials from "./modules/testimonials";
 import navigation from "./modules/navigation";
 
 function initPage() {
-  
+
   barba.init({
     transitions: [
       {
@@ -63,7 +63,6 @@ function initPage() {
       modalVideo.init();
     }
   });
-
 
   navigation.init();
   if (document.querySelector(".js-testimonials")) {
