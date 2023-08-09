@@ -7,15 +7,15 @@
   {% if info.title %}
     {% if info.header === "h1" %}
       <h1 class="title">
-        <span is="truncated-aptitle" {% if info.apstyle %}apstyle{% endif %} {% if info.textlength %}textlength='{{ info.textlength }}'{% endif %}>{{ info.title }}</span>
+        <truncated-aptitle {% if info.apstyle %}apstyle{% endif %} {% if info.textlength %}textlength='{{ info.textlength }}'{% endif %}>{{ info.title }}</truncated-aptitle>
       </h1>
     {% elif info.header === "h2" %}
       <h2 class="title">
-        <span is="truncated-aptitle" {% if info.apstyle %}apstyle{% endif %} {% if info.textlength %}textlength='{{ info.textlength }}'{% endif %}>{{ info.title }}</span>
+        <truncated-aptitle {% if info.apstyle %}apstyle{% endif %} {% if info.textlength %}textlength='{{ info.textlength }}'{% endif %}>{{ info.title }}</truncated-aptitle>
       </h2>
     {% else %}
       <h3 class="title">
-        <span is="truncated-aptitle" {% if info.apstyle %}apstyle{% endif %} {% if info.textlength %}textlength='{{ info.textlength }}'{% endif %}>{{ info.title }}</span>
+        <truncated-aptitle {% if info.apstyle %}apstyle{% endif %} {% if info.textlength %}textlength='{{ info.textlength }}'{% endif %}>{{ info.title }}</truncated-aptitle>
       </h3>
     {% endif %}
   {% endif %}

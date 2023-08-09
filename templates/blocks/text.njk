@@ -34,15 +34,15 @@
   {% if params.title %}
     {% if params.header === "h1" %}
       <h1 class="title">
-        <span is="truncated-aptitle" {% if params.apstyle %}apstyle{% endif %} {% if params.textlength %}textlength='{{ params.textlength }}'{% endif %}>{{ params.title }}</span>
+        <truncated-aptitle {% if params.apstyle %}apstyle{% endif %} {% if params.textlength %}textlength='{{ params.textlength }}'{% endif %}>{{ params.title }}</truncated-aptitle>
       </h1>
     {% elif params.header === "h2" %}
       <h2 class="title">
-        <span is="truncated-aptitle" {% if params.apstyle %}apstyle{% endif %} {% if params.textlength %}textlength='{{ params.textlength }}'{% endif %}>{{ params.title }}</span>
+        <truncated-aptitle {% if params.apstyle %}apstyle{% endif %} {% if params.textlength %}textlength='{{ params.textlength }}'{% endif %}>{{ params.title }}</truncated-aptitle>
       </h2>
     {% else %}
       <h3 class="title">
-        <span is="truncated-aptitle" {% if params.apstyle %}apstyle{% endif %} {% if params.textlength %}textlength='{{ params.textlength }}'{% endif %}>{{ params.title }}</span>
+        <truncated-aptitle {% if params.apstyle %}apstyle{% endif %} {% if params.textlength %}textlength='{{ params.textlength }}'{% endif %}>{{ params.title }}</truncated-aptitle>
       </h3>
     {% endif %}
   {% endif %}
