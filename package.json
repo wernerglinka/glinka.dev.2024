@@ -45,7 +45,7 @@
     "@metalsmith/permalinks": "^2.5.1",
     "@metalsmith/postcss": "^5.4.1",
     "@metalsmith/sass": "^1.6.0",
-    "@wernerglinka/cloudinaryimage": "^1.1.3",
+    "@wernerglinka/cloudinaryimage": "^1.1.4",
     "@wernerglinka/linkcomponent": "^1.0.6",
     "@wernerglinka/truncatedaptitle": "^1.0.1",
     "autoprefixer": "^10.4.14",
