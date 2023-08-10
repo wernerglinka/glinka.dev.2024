@@ -13,7 +13,7 @@
   // min-height is adjusted between 20rem and 40rem based on viewport width 
   // and fixed at 40rem for viewport widths above 1200px and 20rem for 
   // viewport widths below 400px
-  min-height: clamp(20rem, 10.0000rem + 25.0000vw, 40rem);
+  min-height: clamp(20rem, 5.0000rem + 37.5000vw, 50rem);
 
   // set the image height of the custom web component
   cloudinary-image {

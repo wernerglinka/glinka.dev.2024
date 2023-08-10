@@ -5,10 +5,9 @@
     max-width: 800px;
     margin: 0 auto;
   }
-
   
   cloudinary-image {
-    --image-height: 100%;
+    --image-height: auto;
   }
 
   .caption {
