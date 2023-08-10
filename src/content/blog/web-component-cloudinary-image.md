@@ -82,44 +82,66 @@ sections:
 
               ## Defining Properties and Attributes
 
-              The `CloudinaryImage` component accepts three attributes: `base`, `imageid,` and `alt`. These attributes will be used to build the Cloudinary URLs and provide alternative text for the images. Instead of dynamically defining getters and setters inside the constructor, we will define them explicitly within the class body. It is considered best practice to define getters and setters outside the constructor. Sticking to this convention ensures that your custom elements are consistent with other elements and libraries, making it easier for other developers to understand and work with our code.
+              The `CloudinaryImage` component accepts three attributes: `base`, `imageid,` and `alt`. These attributes will be used to build the Cloudinary URLs and provide alternative text for the images. 
+              
+              The state of these attributes will be reflected in the properties of the component and the properties state will be cached in an object called `props`. Changing attributes will update this `props` object and all element updates will be based on the `props` object.
+              
+              The `props` object will be defined in the constructor.
+
+              ```javascript
+              this.props = {
+                base: "",
+                imageid: "",
+                alt: ""
+              };
+              ```
+
+              Instead of defining getters and setters dynamically within the constructor, we'll explicitly set them in the class body. It's best practice to place getters and setters outside of the constructor. Adhering to this convention ensures our custom elements align with standards set by other elements and libraries, simplifying the process for other developers to understand and collaborate on our code.
+
+              It's important to note that we don't modify attributes when properties change. This convention aligns with typical behavior seen in HTML elements and other web components. Attributes are read once in the `connectedCallback` and subsequently cached in the `props` object. When properties alter, the `props` object updates, triggering an appropriate component update.
 
               ```javascript
               // explicitly define properties reflecting to attributes
               get base() {
-                return this.getAttribute('base');
+                return this.props.base;
               }
               set base(value) { 
-                if (value) {
-                  this.setAttribute('base', value); 
-                } else {
-                  this.removeAttribute('base');
-                }
+                this.props.base = value;
+                this.updateImage
               }
               get imageid() {
-                return this.getAttribute('imageid');
+                return this.props.imageid;
               }
               set imageid(value) { 
-                if (value) {
-                  this.setAttribute('imageid', value); 
-                } else {
-                  this.removeAttribute('imageid');
-                }
+                this.props.imageid = value;
+                this.updateImage();
               }
               get alt() {
-                return this.getAttribute('alt');
+                return this.props.alt;
               }
               set alt(value) { 
-                if (value) {
-                  this.setAttribute('alt', value); 
-                } else {
-                  this.removeAttribute('alt');
-                }
+                this.props.alt = value;
               }
               ```
+              
+              ## Updating the Image
+              We are using a method `udateImage` to update the image. This method will be called when the component is added to the DOM and when the `base` or `imageid` properties change. The method will update the aspect ratio of the image wrapper, load the low-resolution image, and start observing the component for intersection with the viewport to then load the high-resolution image.
 
-              Now, our component can update the properties whenever the corresponding attributes are changed and vice versa.
+              ```javascript
+              this.updateImage = async () => {
+                // update aspect ratio to image wrapper
+                const aspectRatio = await this.getAspectRatio(this.props.base, this.props.imageid);
+                this.imageWrapper.style.aspectRatio = aspectRatio;
 
+                // load low resolution image
+                this.lowResImage.src = `${this.props.base}w_100,c_fill,g_auto,f_auto/${this.props.imageid}`;
+                this.lowResImage.alt = this.props.alt;
+
+                // images are only loaded when they are visible in the viewport
+                this.observer.observe(this);
+              };
+              ```
+              
               ## Image Loading and Intersection Observer
 
               To load the images lazily and swap the low-resolution image with the high-resolution image when it becomes visible, we'll use the Intersection Observer API.
@@ -138,14 +160,11 @@ sections:
                 ...
 
                 connectedCallback() {
-                  ...
+                  this.props.base = this.getAttribute("base");
+                  this.props.imageid = this.getAttribute("imageid");
+                  this.props.alt = this.getAttribute("alt");
 
-                  // Load the low-resolution image
-                  this.lowResImage.src = `${this.base}w_100,c_fill,g_auto,f_auto/${this.imageid}`;
-                  this.lowResImage.alt = this.alt;
-
-                  // Start observing the component for intersection
-                  this.observer.observe(this);
+                  this.updateImage();
                 }
 
                 ...
@@ -173,12 +192,6 @@ sections:
               To prevent layout shifts when loading the images, we set the aspect ratio of the image on the container. We get the image dimensions by using the Cloudinary API so we cvan calculate the image aspect ratio.
 
               ```javascript
-              // Calculate and set the aspect ratio of the image container
-              const aspectRatio = await this.getAspectRatio();
-              this.imageWrapper.style.aspectRatio = aspectRatio;
-
-              ...
-
               async getAspectRatio() {
                 // Fetch the image properties from Cloudinary
                 const response = await fetch(`${this.base}fl_getinfo/${this.imageid}`, {
@@ -267,6 +280,27 @@ sections:
                 constructor() {
                   super();
 
+                  // cache the state of the component
+                  this.props = {
+                    base: "",
+                    imageid: "",
+                    alt: ""
+                  };
+
+                  // updated image
+                  this.updateImage = async () => {
+                    // update aspect ratio to image wrapper
+                    const aspectRatio = await this.getAspectRatio(this.props.base, this.props.imageid);
+                    this.imageWrapper.style.aspectRatio = aspectRatio;
+
+                    // load low resolution image
+                    this.lowResImage.src = `${this.props.base}w_100,c_fill,g_auto,f_auto/${this.props.imageid}`;
+                    this.lowResImage.alt = this.props.alt;
+
+                    // images are only loaded when they are visible in the viewport
+                    this.observer.observe(this);
+                  };
+
                   // Create an observer instance and load a high resolution image when the component is visible
                   this.observer = new IntersectionObserver(this.loadImage.bind(this));
 
@@ -311,7 +345,7 @@ sections:
                   this.lowResImage = this.shadowRoot.querySelector(".low-res");
                   this.highResImage = this.shadowRoot.querySelector(".high-res");
 
-                }
+                } // end constructor
 
                 static get observedAttributes() {
                   return ["base", "imageid", "alt"];
@@ -319,93 +353,53 @@ sections:
 
                 // explicitly define properties reflecting to attributes
                 get base() {
-                  return this.getAttribute('base');
+                  return this.props.base;
                 }
                 set base(value) { 
-                  if (value) {
-                    this.setAttribute('base', value); 
-                  } else {
-                    this.removeAttribute('base');
-                  }
+                  this.props.base = value;
+                  this.updateImage
                 }
                 get imageid() {
-                  return this.getAttribute('imageid');
+                  return this.props.imageid;
                 }
                 set imageid(value) { 
-                  if (value) {
-                    this.setAttribute('imageid', value); 
-                  } else {
-                    this.removeAttribute('imageid');
-                  }
+                  this.props.imageid = value;
+                  this.updateImage();
                 }
                 get alt() {
-                  return this.getAttribute('alt');
+                  return this.props.alt;
                 }
                 set alt(value) { 
-                  if (value) {
-                    this.setAttribute('alt', value); 
-                  } else {
-                    this.removeAttribute('alt');
-                  }
+                  this.props.alt = value;
                 }
 
                 async attributeChangedCallback(property, oldValue, newValue) {
                   if (!oldValue || oldValue === newValue) return;
 
-                  const { base, imageid, alt } = this.getAttributes();
-                  const imageParams = this.getImageTransformations();
-
                   switch (property) {
                     case "base":
-                    case "imageid":
-                      // change image source
-                      this.highResImage.src = `${base}${imageParams}/${imageid}`;
-
-                      // change the image wrapper aspect ratio
-                      const aspectRatio = await this.getAspectRatio(base, imageid);
-                      this.imageWrapper.style.aspectRatio = aspectRatio;
-
+                      this.props.base = newValue;
                       break;
-
+                    case "imageid":
+                      this.props.imageid = newValue;
+                      break;
                     case "alt":
-                      // change alt text
-                      this.highResImage.alt = alt;
+                      this.props.alt = newValue;
                       break;
                   }
+                  this.updateImage();
                 }
 
-                async connectedCallback() {
-                  const self = this;
-                  const { base, imageid, alt } = this.getAttributes();
+                connectedCallback() {
+                  this.props.base = this.getAttribute("base");
+                  this.props.imageid = this.getAttribute("imageid");
+                  this.props.alt = this.getAttribute("alt");
 
-                  // add aspect ratio to image wrapper
-                  const aspectRatio = await this.getAspectRatio(base, imageid);
-                  this.imageWrapper.style.aspectRatio = aspectRatio;
-
-                  // load low resolution image
-                  this.lowResImage.src = `${base}w_100,c_fill,g_auto,f_auto/${imageid}`;
-                  this.lowResImage.alt = alt;
-
-                  // images are only loaded when they are visible in the viewport
-                  this.observer.observe(this);
+                  this.updateImage();
                 }
 
                 disconnectedCallback() {
                   this.observer.unobserve(this);
-                }
-
-                /**
-                * Get the component attributes
-                * @returns {object} component attributes
-                * @private
-                * @example const attributes = getAttributes();
-                */
-                getAttributes() {
-                  const base = this.getAttribute("base");
-                  const imageid = this.getAttribute("imageid");
-                  const alt = this.getAttribute("alt");
-
-                  return { base, imageid, alt };
                 }
 
                 /**
@@ -462,11 +456,10 @@ sections:
                   // disconnect observer once image is loaded
                   this.observer.unobserve(this);
 
-                  const { base, imageid, alt } = this.getAttributes();
                   const imageParams = this.getImageTransformations();
                   // high res image source
-                  this.highResImage.src = `${base}${imageParams}/${imageid}`;
-                  this.highResImage.alt = alt;
+                  this.highResImage.src = `${this.props.base}${imageParams}/${this.props.imageid}`;
+                  this.highResImage.alt = this.props.alt;
 
                   // once the hi-res image has been loaded, fade-out the low-res image and remove it
                   this.highResImage.onload = () => {
@@ -488,6 +481,7 @@ sections:
 
               // register component
               customElements.define("cloudinary-image", CloudinaryImage);
+
               ```
               ## Conclusion
 
