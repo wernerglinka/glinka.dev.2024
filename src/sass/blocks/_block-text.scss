@@ -26,10 +26,10 @@
     margin: 0;
 
     li {
-      padding-left: 20px;
+      padding-left: 2rem;
       position: relative;
-      margin-bottom: 10px;
-
+      margin-bottom: 3rem;
+      
       &:before {
         content: '';
         position: absolute;
@@ -38,6 +38,10 @@
         width: 5px;
         height: 5px;
         background-color: var(--color-highlight);
+      }
+
+      p {
+        margin: 0 0 1rem 0;
       }
     }
   }

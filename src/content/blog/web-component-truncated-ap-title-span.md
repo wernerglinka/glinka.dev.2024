@@ -66,11 +66,11 @@ sections:
             prose: |-
               Web Components are potent, offering reusability and encapsulation right in the browser. However, handling attribute changes in custom elements can sometimes be tricky. Today, let's take a closer look at a custom built-in web component `<truncated-aptitle>` that tackles this issue.
 
-              ## A Brief Intro to TruncatedAPTitle 
+              ## A Brief Intro to `TruncatedAPTitle`
 
-              Our `TruncatedAPTitle` component extends the HTML `span` element and adds a couple of unique attributes: `apstyle` and `textlength`. 
+              The `TruncatedAPTitle` component is used like a `span` element but adds a couple of unique attributes: `apstyle` and `textlength`. 
 
-              Used like this `<span is="truncated-aptitle" apstyle textlength="30">Headline goes here</span>`, it applies AP title case styling to the text within it and trims it down to the specified length.
+              Used like this `<truncated-aptitle apstyle textlength="30">headline goes here</truncated-aptitle>`, it applies AP title case styling to the text within it and trims it down to the specified length.
 
               The tricky part comes from the fact that boolean attributes don't exist on Custom Elements, rather they follow a common convention: an existing attribute means true, while the absense means it's false. This behavior is not unique to Custom Elements, but is common to HTML5 boolean attributes in general. HTML5 defines boolean attributes where the mere presence of the attribute, regardless of its actual value, means true, and its absence implies false.
 
@@ -84,10 +84,9 @@ sections:
 
               ```javascript
               attributeChangedCallback(property, oldValue, newValue) {
-                if (!oldValue || oldValue === newValue) return;
-
                 if (property === 'textlength') {
-                  this.updateTextContent(this.originalAttributes.text);
+                  this.props.textlength = newValue;
+                  this.updateTextContent(this.props.text);
                 }
               }
               ```
@@ -113,7 +112,8 @@ sections:
                   }
 
                   if (mutation.type === 'attributes' && mutation.attributeName === 'apstyle') {
-                    this.updateTextContent(this.originalAttributes.text);
+                      this.props.apstyle = mutation.target.hasAttribute('apstyle');
+                      this.updateTextContent(this.props.text);
                   }
                 });
               }
@@ -121,47 +121,46 @@ sections:
 
               This approach provides a solution for our attribute observation requirements. It gives us flexibility and control, effectively monitoring and responding to changes in our custom element.
 
-              ## Defining Attribute Getters and Setters
+              ## Defining Properties and Attributes
 
-              Instead of dynamically defining getters and setters inside the constructor, we will define them explicitly within the class body. It is considered best practice to define getters and setters outside the constructor. Sticking to this convention ensures that your custom elements are consistent with other elements and libraries, making it easier for other developers to understand and work with our code. 
-
-              ```javascript
-              get textlength() {
-                  return this.getAttribute('textlength');
-                }
-                set textlength(value) { 
-                  if (value) {
-                    this.setAttribute('textlength', value); 
-                  } else {
-                    this.removeAttribute('textlength');
-                  }
-                }
-                get apstyle() {
-                  return this.hasAttribute('apstyle');
-                }
-                set apstyle(value) {
-                  if (value) {
-                    this.setAttribute('apstyle', '');
-                  } else {
-                    this.removeAttribute('apstyle');
-                  }
-                }
-                
-              ```
-
-              ## Keeping Track of Original Attributes
-
-              We need to cache the original textContent attribute to reflect it, especially when the `textlength` attribute changes. That's why we've got an `originalAttributes` object that holds the initial values `text`. Note that we initializing the `originalAttributes` object in the constructor, and then updating it in the `connectedCallback. This is because the element is not yet part of the document's DOM when the constructor is called, so querying for attributes in the constructor might not always work as expected.
-
-              ```javascript
-              this.originalAttributes = {}
-              ```
+              The `TruncatedAPTitle` component accepts two attributes: `textlength` and `apstyle`. The state of these attributes will be reflected in the properties of the component and the properties state will be cached in an object called `props`. Changing attributes will update this `props` object and all element updates will be based on the `props` object.
               
-              The `connectedCallback` is called each time the custom element is inserted into the DOM. This is a good place to initialize the `originalAttributes` object, as we can be sure that the element is part of the DOM at this point.
+              The `props` object is defined in the constructor.
 
               ```javascript
-              this.originalAttributes = {
-                text: this.textContent
+              this.props = {
+                text: "",
+                textlength: "",
+                apstyle: false
+              };
+              ```
+
+              Instead of defining getters and setters dynamically within the constructor, we'll explicitly set them in the class body. It's best practice to place getters and setters outside of the constructor. Adhering to this convention ensures our custom elements align with standards set by other elements and libraries, simplifying the process for other developers to understand and collaborate on our code.
+
+              It's important to note that we don't modify attributes when properties change. This convention aligns with typical behavior seen in HTML elements and other web components. Attributes are read once in the `connectedCallback` and subsequently cached in the `props` object. When properties alter, the `props` object updates, triggering an appropriate component update.
+
+              ```javascript
+              // explicitly define properties reflecting to attributes
+              get text() {
+                return this.props.text;
+              }
+              set text(value) { 
+                this.props.text = value;
+                this.updateTextContent(value);
+              }
+              get textlength() {
+                return this.props.textlength;
+              }
+              set textlength(value) { 
+                this.props.textlength = value;
+                this.updateTextContent(this.props.text);
+              }
+              get apstyle() {
+                return this.props.apstyle;
+              }
+              set apstyle(value) {
+                this.props.apstyle = !!value;
+                this.updateTextContent(this.props.text);
               }
               ```
 
@@ -170,15 +169,16 @@ sections:
               To encapsulate the logic needed for handling text changes, we've created the `updateTextContent` method. It takes in the text, trims it down to the specified length, applies the AP style (if specified), and updates the component's `textContent`. 
 
               ```javascript
-              updateTextContent(text) {
-                const textlength = this.getAttribute('textlength');
+              this.updateTextContent = text => {
+                if (!text) return;
+                const textlength = this.props.textlength;
                 const trimmedText = this.truncateAfterWord(text, textlength);
-                const apstyle = this.hasAttribute('apstyle');
+                const apstyle = this.props.apstyle;
                 this.textContent = apstyle ? this.apStyleTitleCase(trimmedText) : trimmedText;
-              }
+              };
               ```
 
-              ## Tidying Up with Title Case
+              ## Applying the AP Title Case
 
               We've also added a simple `apStyleTitleCase` method to handle the title-casing of the text according to Associated Press (AP) style. It takes care of all those pesky small words and punctuation and ensures the text is cased just right.
 
@@ -213,31 +213,49 @@ sections:
               ```javascript
               /**
               * @name TruncatedAPTitle
-              * @description span with text length and ap title style
-              * @example <span is="truncated-aptitle" apstyle textlength="30">everything you need to know about headline style 
-              *          and capitalization</span> will result in "Everything You Need to Know..."
+              * @description Custom element with text length and ap title style
+              * @example <truncated-aptitle apstyle textlength="30">everything you need to know about headline style 
+              *          and capitalization</truncated-aptitle> will result in "Everything You Need to Know..."
               * @param {boolean} apstyle - styling according to AP style
-              * @param {string} textlength - number of characters to trim to 
+              * @param {string} textlength - number of characters to trim to
+              * 
+              * @notes Due to the Custom Elements API's current specifications, there might 
+              * be limitations with `attributeChangedCallback`. It may not properly support 
+              * lifecycle callbacks like `attributeChangedCallback` and `adoptedCallback` 
+              * for customized built-in elements. To monitor changes to the element, I utilize
+              * the `MutationObserver` interface.
               */
 
-              class TruncatedAPTitle extends HTMLSpanElement {
+              class TruncatedAPTitle extends HTMLElement {
                 
                 constructor() {
                   super();
 
-                  // need to cache the original attributes so we can reflect the textContent
-                  // properly. For example a change to the textlength attribute will need to
-                  // be reflected in the textContent.
-                  this.originalAttributes = {};
+                  // cache the state of the component
+                  this.props = {
+                    text: "",
+                    textlength: "",
+                    apstyle: false
+                  };
+
+                  // reflect internal state to textContent
+                  this.updateTextContent = text => {
+                    if (!text) return;
+                    const textlength = this.props.textlength;
+                    const trimmedText = this.truncateAfterWord(text, textlength);
+                    const apstyle = this.props.apstyle;
+                    this.textContent = apstyle ? this.apStyleTitleCase(trimmedText) : trimmedText;
+                  };
 
                   // watch for textContent and boolean attribute changes
                   this.mutationObserver = new MutationObserver(this.mutationObserverCallback.bind(this));
                   this.mutationObserver.observe(this, { 
-                    attributes: true,
                     characterData: true, 
-                    childList: true
+                    childList: true,
+                    attributes: true
                   });
-                }
+                } // end constructor
+
 
                 // observe these component attributes
                 static get observedAttributes() {
@@ -245,72 +263,80 @@ sections:
                 }
 
                 // explicitly define properties reflecting to attributes
+                get text() {
+                  return this.props.text;
+                }
+                set text(value) { 
+                  this.props.text = value;
+                  this.updateTextContent(value);
+                }
                 get textlength() {
-                  return this.getAttribute('textlength');
+                  return this.props.textlength;
                 }
                 set textlength(value) { 
-                  if (value) {
-                    this.setAttribute('textlength', value); 
-                  } else {
-                    this.removeAttribute('textlength');
-                  }
+                  this.props.textlength = value;
+                  this.updateTextContent(this.props.text);
                 }
                 get apstyle() {
-                  return this.hasAttribute('apstyle');
+                  return this.props.apstyle;
                 }
                 set apstyle(value) {
-                  if (value) {
-                    this.setAttribute('apstyle', '');
-                  } else {
-                    this.removeAttribute('apstyle');
-                  }
+                  this.props.apstyle = !!value;
+                  this.updateTextContent(this.props.text);
                 }
                 
                 // attribute change
-                attributeChangedCallback(property, oldValue, newValue) {}
+                attributeChangedCallback(property, oldValue, newValue) {
+                  if (property === 'textlength') {
+                    this.props.textlength = newValue;
+                    this.updateTextContent(this.props.text);
+                  }
+                }
 
-                // boolean attributes are watched with a mutation observer
                 mutationObserverCallback(mutations) {
                   mutations.forEach((mutation) => {
-                    // characterData and childList mutations are for textContent changes
-                    // characterData when textContent is changed directly with dev tools
-                    // childList when textContent is changed with js via properties
+                    // characterData and childList mutations are for text changes
                     if (mutation.type === 'characterData' || mutation.type === 'childList') {
-                      // if the new text is not a substring of the original text 
-                      // update the textContent in originalAttributes so we can reflect it
-                      // properly
+                      /**
+                      * @notes
+                      * We store the original text in `this.props.text`. If changes occur, we verify if 
+                      * it's due to truncation or AP style adjustments. If so, we don't update the 
+                      * props. However, if the new text isn't a substring of the original, we 
+                      * recognize it as a genuine change and update the `this.props.text`.
+                      */
                       const newtext = mutation.target.textContent.toLowerCase().slice(0, -3);
-                      if (!this.originalAttributes.text.toLowerCase().includes(newtext)) {
-                        this.originalAttributes.text = mutation.target.textContent;
-                        this.updateTextContent(mutation.target.textContent);
-                      } else {
-                        this.updateTextContent(this.originalAttributes.text);
-                      }
+                      if (!this.props.text.toLowerCase().includes(newtext)) {
+                        this.props.text = mutation.target.textContent;
+                        this.updateTextContent(this.props.text);
+                      } 
+                    }
+                    
+                    /**
+                    * @notes
+                    * For boolean attributes, we use attribute mutations since they don't trigger 
+                    * the `attributeChangedCallback`. All other attribute changes are managed by the 
+                    * `attributeChangedCallback`.
+                    */
+                    if (mutation.type === 'attributes' && mutation.attributeName === 'apstyle') {
+                        this.props.apstyle = mutation.target.hasAttribute('apstyle');
+                        this.updateTextContent(this.props.text);
                     }
 
-                    // attributes mutations are for boolean attributes as they do not 
-                    // trigger the attributeChangedCallback. All other attributes are handled 
-                    // by the attributeChangedCallback.
-                    if (mutation.type === 'attributes') {
-                        this.updateTextContent(this.originalAttributes.text);
-                    }
+                    
                   });
+                } // end mutationObserverCallback
+
+                connectedCallback() {
+                  // set the props to the current attributes
+                  this.props.text = this.textContent;
+                  this.props.textlength = this.getAttribute('textlength');
+                  this.props.apstyle = this.hasAttribute('apstyle');
+                  // and initialize textContent
+                  this.updateTextContent(this.props.text);
                 }
 
-                async connectedCallback() {
-                  // cache original textContent
-                  this.originalAttributes = {
-                    text: this.textContent
-                  };
-                  // update textContent according to all attributes
-                  this.updateTextContent(this.originalAttributes.text);
-                }
-
-                updateTextContent(text) {
-                  const textlength = this.getAttribute('textlength');
-                  const trimmedText = this.truncateAfterWord(text, textlength);
-                  const apstyle = this.hasAttribute('apstyle');
-                  this.textContent = apstyle ? this.apStyleTitleCase(trimmedText) : trimmedText;
+                disconnectedCallback() {
+                  this.mutationObserver.disconnect();
                 }
 
                 truncateAfterWord (str, chars) {
@@ -322,6 +348,15 @@ sections:
                   return value.charAt(0).toUpperCase() + value.slice(1);
                 }
 
+                /**
+                * 
+                * @param {*} str 
+                * @returns An AP style formatted string
+                * Simple implementation of title-casing according to the AP Stylebook. 
+                * One general rule is to capitalize the first word, the last word, and 
+                * all words in between except for certain short conjunctions, 
+                * prepositions, and articles. 
+                */
                 apStyleTitleCase(str) {
                   if (!str) return ''
                   const lowercaseWords = ['a', 'an', 'and', 'at', 'but', 'by', 'for', 'in', 'nor', 'of', 'on', 'or', 'so', 'the', 'to', 'up', 'yet'];
@@ -334,11 +369,11 @@ sections:
                       // Otherwise, only capitalize if it's not in the list of lowercase words
                       return lowercaseWords.includes(word) ? word : word.charAt(0).toUpperCase() + word.substr(1);
                     });
-                }
+                } // end apStyleTitleCase
               }
 
               // register component
-              customElements.define( 'truncated-aptitle', TruncatedAPTitle, { extends: 'span' } );
+              customElements.define( 'truncated-aptitle', TruncatedAPTitle );
               ```
               The code can be found on [GitHub](https://github.com/wernerglinka/truncatedAPTitle) and on [NPM](https://www.npmjs.com/package/@wernerglinka/truncatedaptitle).
 

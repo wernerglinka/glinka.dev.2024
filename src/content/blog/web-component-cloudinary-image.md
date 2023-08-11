@@ -86,7 +86,7 @@ sections:
               
               The state of these attributes will be reflected in the properties of the component and the properties state will be cached in an object called `props`. Changing attributes will update this `props` object and all element updates will be based on the `props` object.
               
-              The `props` object will be defined in the constructor.
+              The `props` object is defined in the constructor.
 
               ```javascript
               this.props = {
@@ -125,7 +125,7 @@ sections:
               ```
               
               ## Updating the Image
-              We are using a method `udateImage` to update the image. This method will be called when the component is added to the DOM and when the `base` or `imageid` properties change. The method will update the aspect ratio of the image wrapper, load the low-resolution image, and start observing the component for intersection with the viewport to then load the high-resolution image.
+              We are using a method `updateImage` to update the image. This method will be called when the component is added to the DOM and when any property changes. The method will update the aspect ratio of the image wrapper, load the low-resolution image, and start observing the component for intersection with the viewport to then load the high-resolution image.
 
               ```javascript
               this.updateImage = async () => {
@@ -189,22 +189,44 @@ sections:
 
               ## Image Aspect Ratio
 
-              To prevent layout shifts when loading the images, we set the aspect ratio of the image on the container. We get the image dimensions by using the Cloudinary API so we cvan calculate the image aspect ratio.
+              To prevent layout shifts when loading the images, we set the aspect ratio of the image on the container. We get the image dimensions by using the Cloudinary API so we can calculate the image aspect ratio.
 
               ```javascript
-              async getAspectRatio() {
-                // Fetch the image properties from Cloudinary
-                const response = await fetch(`${this.base}fl_getinfo/${this.imageid}`, {
-                  headers: { 'Accept': 'application/json' },
-                });
-                const data = await response.json();
+              async getAspectRatio(base, imageid) {
+                try {
+                  // get the image properties from cloudinary
+                  // ref: https://cloudinary.com/documentation/image_transformation_reference#fl_getinfo
+                  const response = await fetch(`${base}fl_getinfo/${imageid}`, {
+                    headers: { Accept: "application/json" },
+                  });
 
-                // Calculate the aspect ratio and return it
-                const imageWidth = data.input.width;
-                const imageHeight = data.input.height;
-                const aspectRatio = (imageWidth / imageHeight).toFixed(3);
+                  // Check if the response status is not OK (i.e., not a 2xx status)
+                  if (!response.ok) {
+                    throw new Error(`Failed to fetch aspect ratio. Status: ${response.status}`);
+                  }
 
-                return aspectRatio;
+                  const data = await response.json();
+
+                  // Ensure the expected properties exist in the returned data
+                  if (!data.input || typeof data.input.width !== "number" || typeof data.input.height !== "number") {
+                    throw new Error("Unexpected response format from Cloudinary");
+                  }
+
+                  // image dimensions
+                  const imageWidth = data.input.width;
+                  const imageHeight = data.input.height;
+
+                  if (imageHeight === 0) {
+                    throw new Error("Image height is 0, cannot compute aspect ratio");
+                  }
+
+                  const aspectRatio = (Math.round((imageWidth / imageHeight) * 100) / 100).toFixed(3);
+                  return aspectRatio;
+
+                } catch (error) {
+                  console.error(`Error getting aspect ratio: ${error.message}`);
+                  return "1"; // Default aspect ratio (1:1) if there's an error.
+                }
               }
               ```
 
@@ -216,38 +238,7 @@ sections:
 
               The low-resolution image is initially blurred and then fades out when the high-resolution image has been loaded. The high-resolution image is positioned absolutely with a `z-index` to place it behind the low-resolution image.
 
-              ```css
-              <style>
-                :host {
-                  --image-height: auto;
-                }
-                figure {
-                  position: relative;
-                  width: 100%;
-                  height: 100%;
-                  overflow: hidden;
-                  margin: 0;
-                  transition: all 0.3s ease-in-out;
-                }
-                img {
-                  display: block;
-                  width: 100%;
-                  height: var(--image-height);
-                  object-fit: cover;
-                }
-                .low-res {
-                  filter: blur(10px);
-                  transition: opacity 0.4s ease-in-out;
-                }
-                .high-res {
-                  display: block;
-                  position: absolute;
-                  z-index: -1;
-                  top: 0;
-                  left: 0;
-                }
-              </style>
-              ```
+
               ### Putting It All Together
 
               Finally, we register the custom element with `customElements.define`.
@@ -326,8 +317,12 @@ sections:
                       }
                       .low-res {
                         filter: blur(10px);
-                        transition: opacity 0.4s ease-in-out;
                       }
+                      .low-res.remove {
+                        transition: opacity 1s ease-in-out;
+                        opacity: 0;
+                      }
+
                       .high-res {
                         display: block;
                         position: absolute;
@@ -357,7 +352,7 @@ sections:
                 }
                 set base(value) { 
                   this.props.base = value;
-                  this.updateImage
+                  this.updateImage();
                 }
                 get imageid() {
                   return this.props.imageid;
@@ -422,26 +417,49 @@ sections:
                 }
 
                 /**
-                * Get the aspect ratio of the image
-                * @returns {number} aspect ratio
-                * @private
-                * @async
-                * @example const aspectRatio = await getAspectRatio();
-                */
-                async getAspectRatio(base, imageid) {
+              * Get the aspect ratio of the image
+              * @returns {number} aspect ratio
+              * @private
+              * @async
+              * @example const aspectRatio = await getAspectRatio();
+              */
+              async getAspectRatio(base, imageid) {
+                try {
                   // get the image properties from cloudinary
                   // ref: https://cloudinary.com/documentation/image_transformation_reference#fl_getinfo
                   const response = await fetch(`${base}fl_getinfo/${imageid}`, {
                     headers: { Accept: "application/json" },
                   });
+
+                  // Check if the response status is not OK (i.e., not a 2xx status)
+                  if (!response.ok) {
+                    throw new Error(`Failed to fetch aspect ratio. Status: ${response.status}`);
+                  }
+
                   const data = await response.json();
+
+                  // Ensure the expected properties exist in the returned data
+                  if (!data.input || typeof data.input.width !== "number" || typeof data.input.height !== "number") {
+                    throw new Error("Unexpected response format from Cloudinary");
+                  }
+
                   // image dimensions
                   const imageWidth = data.input.width;
                   const imageHeight = data.input.height;
-                  const aspectRatio = (Math.round((imageWidth / imageHeight) * 100) / 100).toFixed(3);
 
+                  if (imageHeight === 0) {
+                    throw new Error("Image height is 0, cannot compute aspect ratio");
+                  }
+
+                  const aspectRatio = (Math.round((imageWidth / imageHeight) * 100) / 100).toFixed(3);
                   return aspectRatio;
+
+                } catch (error) {
+                  console.error(`Error getting aspect ratio: ${error.message}`);
+                  return "1"; // Default aspect ratio (1:1) if there's an error.
                 }
+              }
+
 
                 /**
                 * Load the initial high-res image
@@ -463,24 +481,19 @@ sections:
 
                   // once the hi-res image has been loaded, fade-out the low-res image and remove it
                   this.highResImage.onload = () => {
-                    let opacity = 1;
-                    let fadeOut = setInterval(() => {
-                      if (opacity <= 0) {
-                        clearInterval(fadeOut);
-                        // remove low-res image after transition ends
-                        this.lowResImage.addEventListener("transitionend", () => {
-                          this.lowResImage.remove();
-                        });
-                      }
-                      this.lowResImage.style.opacity = opacity;
-                      opacity -= 0.1;
-                    }, 100);
+                    this.lowResImage.classList.add("remove");
+                    
+                    this.lowResImage.addEventListener("transitionend", () => {
+                      this.lowResImage.remove();
+                    });
+                      
                   };
                 };
               }
 
               // register component
               customElements.define("cloudinary-image", CloudinaryImage);
+
 
               ```
               ## Conclusion
