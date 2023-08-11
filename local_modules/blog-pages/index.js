@@ -21,8 +21,8 @@ function normalizeOptions(options) {
 }
 
 /**
- * A Metalsmith plugin to build blog landing pages and provide the
- * params to build pagination for the blog
+ * A Metalsmith plugin to provide the params to build pagination 
+ * for the blog landing pages.
  * This plugin requires that the blog posts are build with sections
  * NO contents is used in the blog posts
  *

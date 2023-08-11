@@ -11,8 +11,8 @@ seo:
   socialImage: "https://res.cloudinary.com/glinkaco/image/upload/v1646849499/tgc2022/social_yitz6j.png"
   canonicalOverwrite: ""
 
-blogTitle: "Building Web Components - What I Learned"
-date: 2023-08-011
+blogTitle: "What I Learned Building Web Components"
+date: 2023-08-11
 author: ""
 image:
   src: "v1691778282/what-i-learned_ssixre.jpg"

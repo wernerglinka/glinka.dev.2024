@@ -100,4 +100,7 @@ sections:
             horizontal: false
             selections:
               - item: "developer-fatique"
+              - item: "web-component-links"
+              - item: "web-component-cloudinary-image"
+              - item: "web-component-truncated-ap-title-span"
 ---

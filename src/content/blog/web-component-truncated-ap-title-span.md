@@ -7,7 +7,7 @@ item: "web-component-truncated-ap-title-span" # used as a key for bloglist filte
 
 seo:
   title: "Building a Custom Web Component: TruncatedAPTitle | Werner Glinka"
-  description: "Explore the creation of TruncatedAPTitle, a custom web component handling attribute changes with MutationObserver. Learn how it truncates and title-cases text, all inside a span."
+  description: "Explore the creation of TruncatedAPTitle, a custom web component handling attribute changes with MutationObserver. Learn how it truncates and title-cases text."
   socialImage: "https://res.cloudinary.com/glinkaco/image/upload/v1646849499/tgc2022/social_yitz6j.png"
   canonicalOverwrite: ""
 
@@ -397,6 +397,7 @@ sections:
             header: "h2"
             horizontal: false
             selections:
-              - item: "building-netlify-cms-content-model"
-              - item: "using-forestry-cms-with-metalsmith"
+              - item: "web-component-links"
+              - item: "web-component-cloudinary-image"
+              - item: "exploring-web-components"
 ---

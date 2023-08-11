@@ -524,4 +524,7 @@ sections:
             selections:
               - item: "using-responsive-images"
               - item: "building-responsive-progressive-image-component"
+              - item: "web-component-links"
+              - item: "web-component-truncated-ap-title-span"
+              - item: "exploring-web-components"
 ---
