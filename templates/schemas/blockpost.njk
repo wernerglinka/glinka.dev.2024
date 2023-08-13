@@ -20,13 +20,13 @@
     "blogPost": [
         {
             "@type": "BlogPosting",
-            "@id": "https://dataliberate.com/2019/05/14/library-metadata-evolution-final-mile/#BlogPosting",
-            "mainEntityOfPage": "https://dataliberate.com/2019/05/14/library-metadata-evolution-final-mile/",
-            "headline": "Library Metadata Evolution: The Final Mile",
-            "name": "Library Metadata Evolution: The Final Mile",
-            "description": "When Schema.org arrived on the scene I thought we might have arrived at the point where library metadata  could finally blossom; adding value outside of library systems to help library curated resources become first class citizens, and hence results, in the global web we all inhabit.  But as yet it has not happened.",
-            "datePublished": "2019-05-14",
-            "dateModified": "2019-05-14",
+            "@id": {{ metadata.site.siteURL ~ path }},
+            "mainEntityOfPage": {{ metadata.site.siteURL ~ path }},
+            "headline": {{ seo.title}},
+            "name": {{ seo.title }},
+            "description": {{ seo.description }},
+            "datePublished": {{ date }},
+            "dateModified": {{ date }},
             "author": {
                 "@type": "Person",
                 "@id": "https://glinka.co",
@@ -34,17 +34,13 @@
             },
             "image": {
                 "@type": "ImageObject",
-                "@id": "https://dataliberate.com/wp-content/uploads/2019/05/Metadata_Evolution_the_Final_Mile.jpg",
-                "url": "https://dataliberate.com/wp-content/uploads/2019/05/Metadata_Evolution_the_Final_Mile.jpg",
-                "height": "362",
-                "width": "388"
+                "@id": "{{ seo.socialImage}}",
+                "url": "{{ seo.socialImage}}",
+                "height": "",
+                "width": ""
             },
-            "url": "https://dataliberate.com/2019/05/14/library-metadata-evolution-final-mile/",
-            "keywords": [
-                "Bibframe2Schema.org",
-                "Libraries",
-                "Library of Congress"
-            ]
+            "url": {{ metadata.site.siteURL ~ path }},
+            "keywords": []
         }
     ]
 }
