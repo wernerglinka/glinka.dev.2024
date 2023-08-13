@@ -14,6 +14,7 @@ const htmlMinifier = require("metalsmith-html-minifier");
 const assets = require("metalsmith-static-files");
 const metadata = require("@metalsmith/metadata");
 const include = require('metalsmith-include-files');
+const sitemap = require('metalsmith-sitemap');
 
 const blogPages = require("./local_modules/blog-pages");
 
@@ -26,6 +27,7 @@ const marked = require("marked");
 
 
 const { dependencies } = require("./package.json");
+const { use } = require("browser-sync");
 const isProduction = process.env.NODE_ENV === "production";
 
 // functions to extend Nunjucks environment
@@ -235,6 +237,20 @@ function msBuild() {
         done();
       }
     )
+
+    .use(sitemap({
+      hostname: 'https://www.glinka.co',
+      omitIndex: true,
+      omitExtension: true,
+      changefreq: 'weekly',
+      lastmod: new Date(),
+      pattern: ['**/*.html', '!**/404.html'],
+      defaults: {
+        priority: 0.5,
+        changefreq: 'weekly',
+        lastmod: new Date()
+      }
+    }))
 
     .build(err => {
       if (err) throw err;

@@ -4,7 +4,7 @@ bodyClasses: "blocks-page blog"
 
 seo:
   title: Werner Glinka - My Blog
-  description: "Werner Glinka - My Blog"
+  description: "Random Notes to Myself about my projects which include Metalsmith, a static site generator and the use of structured content."
   socialImage: "/assets/images/metalsmith-starter-social.png"
   canonicalOverwrite: ""
 

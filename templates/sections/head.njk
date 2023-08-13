@@ -28,17 +28,17 @@
 
 {# social tags #}
 <meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:site" content="{{ site.description }}"/>
-<meta name="twitter:title" content="{{ site.title }}"/>
-<meta name="twitter:description" content="{{ site.description }}"/>
-<meta name="twitter:creator" content="{{ site.author }}"/>
+<meta name="twitter:site" content="{{ metadata.site.description }}"/>
+<meta name="twitter:title" content="{{ metadata.site.title }}"/>
+<meta name="twitter:description" content="{{ metadata.site.description }}"/>
+<meta name="twitter:creator" content="{{ metadata.site.author }}"/>
 <meta name="twitter:image" content="{{ seo.socialImage }}"/>
 <meta property="og:locale" content="en_US"/>
 <meta property="og:type" content="article"/>
-<meta property="og:title" content="{{ site.title }}"/>
-<meta property="og:description" content="{{ site.description }}"/>
-<meta property="og:url" content="{{ site.siteURL }}"/>
-<meta property="og:site_name" content="{{ site.title }}"/>
+<meta property="og:title" content="{{ metadata.site.title }}"/>
+<meta property="og:description" content="{{ metadata.site.description }}"/>
+<meta property="og:url" content="{{ metadata.site.siteURL }}"/>
+<meta property="og:site_name" content="{{ metadata.site.title }}"/>
 <meta property="og:image" content="{{ seo.socialImage }}"/>
 <meta property="og:updated_time" content=""}/>
 
@@ -49,8 +49,13 @@
 <link rel="stylesheet" href="/assets/prism-line-numbers.css">
 <link rel="stylesheet" href="/assets/styles.css">
 
+<link rel="canonical" href={{ metadata.site.siteURL ~ path }} />
+
 {# Custom  Components #}
 {# must have defer attrib ute set #}
 <script src="/assets/custom-components/cloudinaryImage.js" defer></script>
 <script src="/assets/custom-components/link.js" defer></script>
 <script src="/assets/custom-components/truncaptitle.js" defer></script>
+
+{# Include page schema #}
+{% include "../schemas/index.njk" %}

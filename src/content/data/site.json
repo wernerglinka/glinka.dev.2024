@@ -1,9 +1,9 @@
 {
   "site" : {
-    "title": "Metalsmith Company Starter",
-    "description": "Metalsmith company starter with Nunjucks templating and page sections",
+    "title": "Werner Glinka",
+    "description": "Web developer with 15+ year experiance building websites with HTML, CSS, JavaScript, PHP, MySQL, WordPress, and more.",
     "author": "werner@glinka.co",
-    "siteURL": "https://metalsmith-company-starter.netlify.app/",
+    "siteURL": "https://glinka.co/",
     "siteOwner": "Werner Glinka",
     "validate": {
       "google": "",
