@@ -8,7 +8,7 @@ item: "sanatize-marketo-form" # used as a key for bloglist filters
 seo:
   title: Sanitize Marketo forms | Werner Glinka
   description: "In the world of Marketo form styling, frustration is often a constant companion. With countless styles to override and a continuous requirement for tweaks, I've decided to strip all Marketo styles and begin afresh."
-  socialImage: "https://res.cloudinary.com/glinkaco/image/upload/v1646849499/tgc2022/social_yitz6j.png"
+  socialImage: "https://res.cloudinary.com/glinkaco/image/upload/v1645217047/tgc2022/blogImages/sanitize-marketo-form/styling-marketo-forms_czplhw.jpg"
   canonicalOverwrite: ""
 
 blogTitle: "How to Strip Styling from a Marketo Form"
