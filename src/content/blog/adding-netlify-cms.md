@@ -91,7 +91,7 @@ sections:
 
               #### 1 Configure the Netlify CMS proxy server port number
               
-              Create a `.env` file in the `metalsmith` root folder and define the PORT you'd like the proxy server to use. The dev server runs on http://localhost:3000.
+              Create a `.env` file in the `metalsmith` root folder and define the PORT you'd like the proxy server to use. The dev server runs on <span>http:/</span>/localhost:3000.
               
               ```bash
               PORT=3002
