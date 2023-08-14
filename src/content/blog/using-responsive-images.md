@@ -8,7 +8,7 @@ item: "using-responsive-images" # used as a key for bloglist filters
 seo:
   title: Using responsive images | Werner Glinka
   description: "Responsive images, essential for modern web development, improve user experience and reduce loading times. Using the Responsive Image Breakpoints Generator, create images tailored for all screen sizes."
-  socialImage: "https://res.cloudinary.com/glinkaco/image/upload/v1646849499/tgc2022/social_yitz6j.png"
+  socialImage: "https://res.cloudinary.com/glinkaco/image/upload/v1646867890/tgc2022/blogImages/building-responsive-progressive-image-component/responsive-image_o6hza7.png"
   canonicalOverwrite: ""
 
 blogTitle: "Using responsive images"

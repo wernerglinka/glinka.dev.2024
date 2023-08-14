@@ -8,7 +8,7 @@ item: "introducing-project-orca-part3" # used as a key for bloglist filters
 seo:
   title: Introducing Project Orca - Part 3 | Werner Glinka
   description: "Nunjucks, a JavaScript-based templating engine, is used in Project ORCA. Offering features such as variables, loops, conditionals, block inheritance, includes, and macros."
-  socialImage: "https://res.cloudinary.com/glinkaco/image/upload/v1646849499/tgc2022/social_yitz6j.png"
+  socialImage: "https://res.cloudinary.com/glinkaco/image/upload/v1645224098/tgc2022/blogImages/orca1/orca_ahjaat.jpg"
   canonicalOverwrite: ""
 
 blogTitle: "Introducing Project Orca - Part 3"

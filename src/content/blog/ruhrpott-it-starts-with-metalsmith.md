@@ -8,7 +8,7 @@ item: "ruhrpott-it-starts-with-metalsmith" # used as a key for bloglist filters
 seo:
   title: "Ruhrpott - it starts with Metalsmith | Werner Glinka"
   description: "Metalsmith is a versatile static site generator that allows for customization through various plugins. Using a structured content model, it enables building succinct, reusable page components. We'll explore this through a practical example."
-  socialImage: "https://res.cloudinary.com/glinkaco/image/upload/v1681162510/metalsmith-blog-header_gtfyum.png"
+  socialImage: "https://res.cloudinary.com/glinkaco/image/upload/v1690740357/blacksmith_cu4d0y.jpg"
   canonicalOverwrite: ""
 
 blogTitle: "Ruhrpott - it starts with Metalsmith"

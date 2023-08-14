@@ -8,7 +8,7 @@ item: "nunjucks-transformer" # used as a key for bloglist filters
 seo:
   title: Nunjucks and jsTransformer | Werner Glinka
   description: "Through the jstransformer-nunjucks plugin, we extend the Nunjucks environment in Metalsmith with configuration options like path, filters, and extensions. This includes converting string cases, replacing spaces with dashes, and capturing variables."
-  socialImage: "https://res.cloudinary.com/glinkaco/image/upload/v1646849499/tgc2022/social_yitz6j.png"
+  socialImage: "https://res.cloudinary.com/glinkaco/image/upload/v1645220774/tgc2022/blogImages/metalsmith-layouts-nunjucks/layout-options_apwj06.jpg"
   canonicalOverwrite: ""
 
 blogTitle: "Nunjucks and jsTransformer"

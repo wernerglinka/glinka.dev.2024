@@ -9,7 +9,7 @@ seo:
   title: Conscious uncoupling - Drupal 8 meets Metalsmith | Werner Glinka
   description: "The post recounts a presentation I gave about using a headless Drupal for a Metalsmith site. The interest stirred led to a series of blogposts named 'Introducing ORCA', focusing on Metalsmith.
 "
-  socialImage: "https://res.cloudinary.com/glinkaco/image/upload/v1646849499/tgc2022/social_yitz6j.png"
+  socialImage: "https://res.cloudinary.com/glinkaco/image/upload/v1645471283/tgc2022/blogImages/conscious-uncoupling-drupal-metalsmith/header_yrq0xy.png"
   canonicalOverwrite: ""
 
 blogTitle: "Conscious Uncoupling - Drupal 8 meets Metalsmith"

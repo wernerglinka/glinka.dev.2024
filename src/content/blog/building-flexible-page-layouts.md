@@ -8,7 +8,7 @@ item: "building-flexible-page-layouts"
 seo:
   title: Building flexible page layouts for Metalsmith | Werner Glinka
   description: "Explore creating flexible page layouts for Metalsmith using Markdown and Nunjucks. Learn about 'Sectioned Pages' composed of YAML-based structured data for intricate web designs."
-  socialImage: "https://res.cloudinary.com/glinkaco/image/upload/v1646849499/tgc2022/social_yitz6j.png"
+  socialImage: "https://res.cloudinary.com/glinkaco/image/upload/v1690576836/miineapolis-skyline_b3wl8d.jpg"
   canonicalOverwrite: ""
 
 blogTitle: "Building flexible page layouts for Metalsmith"

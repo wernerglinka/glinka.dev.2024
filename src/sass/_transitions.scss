@@ -1,27 +1,8 @@
 // page load fade-in
-.home-once {
-  opacity: 0;
-}
-.home-once-active {
-  transition: opacity 1s ease;
-}
-.home-once-to {
+html.is-changing .transition-fade {
+  transition: opacity 0.3s;
   opacity: 1;
 }
-
-// fade-in/out between pages
-.fade-leave-active,
-.fade-enter-active {
-  transition: opacity 450ms ease;
-}
-
-.fade-leave,
-.fade-enter-to {
-  opacity: 1;
-}
-
-.fade-enter,
-.fade-leave-to {
+html.is-animating .transition-fade {
   opacity: 0;
 }
-

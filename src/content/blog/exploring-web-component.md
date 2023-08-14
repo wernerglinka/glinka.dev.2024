@@ -8,7 +8,7 @@ item: "exploring-web-components" # used as a key for bloglist filters
 seo:
   title: "Exploring Web Components | Werner Glinka"
   description: "Unlock the true potential of web development with Web Components. Embrace reusability, efficiency, and elevate your projects to new heights! "
-  socialImage: "https://res.cloudinary.com/glinkaco/image/upload/v1646849499/tgc2022/social_yitz6j.png"
+  socialImage: "https://res.cloudinary.com/glinkaco/image/upload/v1691098518/web-components_xjqs5i.jpg"
   canonicalOverwrite: ""
 
 blogTitle: "Exploring Web Components

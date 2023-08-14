@@ -8,7 +8,7 @@ item: "building-netlify-cms-content-model" # used as a key for bloglist filters
 seo:
   title: Building a Netlify CMS content model | Werner Glinka
   description: "Built a Metalsmith Netlify starter with integrated CMS. Overcome YAML limitations with Manual Initialization. Content types defined in individual files; simplifies managing growing configurations. Code available on GitHub."
-  socialImage: "https://res.cloudinary.com/glinkaco/image/upload/v1646849499/tgc2022/social_yitz6j.png"
+  socialImage: "https://res.cloudinary.com/glinkaco/image/upload/v1648318622/tgc2022/blogImages/netlify-cms-content-model/content-model_zgup7u.jpg"
   canonicalOverwrite: ""
 
 blogTitle: "Building a Netlify CMS content model"

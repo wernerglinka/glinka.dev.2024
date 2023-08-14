@@ -8,7 +8,7 @@ item: "minneapolis-wordpress-setup" # used as a key for bloglist filters
 seo:
   title: Minneapolis - the WordPress setup | Werner Glinka
   description: "Our WordPress setup features Underscores theme for a customizable foundation. Key plugins include ACF Pro, CPT UI, WPGraphQL, and Netlify Deploy. We'll fetch content via WPGraphQL, manage images with Cloudinary, and host on Pantheon."
-  socialImage: "https://res.cloudinary.com/glinkaco/image/upload/v1646849499/tgc2022/social_yitz6j.png"
+  socialImage: "https://res.cloudinary.com/glinkaco/image/upload/v1685556092/mpls-night-snow_wuihss.jpg"
   canonicalOverwrite: ""
 
 blogTitle: "Minneapolis - the WordPress setup"

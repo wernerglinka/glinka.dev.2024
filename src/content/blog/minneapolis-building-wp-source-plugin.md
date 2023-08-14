@@ -8,7 +8,7 @@ item: "minneapolis-building-wp-source-plugin" # used as a key for bloglist filte
 seo:
   title: Minneapolis - building the WordPress source plugin for Metalsmith | Werner Glinka
   description: "This post will review integrating WordPress content into the Metalsmith static site generation process. This includes building a Metalsmith WordPress source plugin to fetch the site content from the WordPress API and convert it into Metalsmith file objects."
-  socialImage: "https://res.cloudinary.com/glinkaco/image/upload/v1646849499/tgc2022/social_yitz6j.png"
+  socialImage: "https://res.cloudinary.com/glinkaco/image/upload/v1687815985/minneapolis-downtown-skyline_ub97k1.jpg"
   canonicalOverwrite: ""
 
 blogTitle: "Minneapolis - building the WordPress source plugin for Metalsmith"

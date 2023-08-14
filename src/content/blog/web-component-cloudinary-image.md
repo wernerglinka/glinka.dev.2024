@@ -8,7 +8,7 @@ item: "web-component-cloudinary-image" # used as a key for bloglist filters
 seo:
   title: "Building a Custom Web Component: CloudinaryImage | Werner Glinka"
   description: "In this blog post, we will build a custom web component called CloudinaryImage that allows us to lazy load images from Cloudinary. "
-  socialImage: "https://res.cloudinary.com/glinkaco/image/upload/v1646849499/tgc2022/social_yitz6j.png"
+  socialImage: "https://res.cloudinary.com/glinkaco/image/upload/v1691099161/images_hlthlx.jpg""
   canonicalOverwrite: ""
 
 blogTitle: "Creating a Cloudinary Image Web Component

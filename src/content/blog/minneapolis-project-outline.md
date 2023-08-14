@@ -7,7 +7,7 @@ item: "minneapolis-project-outline" # used as a key for bloglist filters
 seo:
   title: Minneapolis - the project outline | Werner Glinka
   description: "Explore Minneapolis: where WordPress and Metalsmith combine for dynamic content delivery using the GraphQL API and a headless CMS in modern content management."
-  socialImage: "https://res.cloudinary.com/glinkaco/image/upload/v1646849499/tgc2022/social_yitz6j.png"
+  socialImage: "https://res.cloudinary.com/glinkaco/image/upload/v1685555154/mpls-banner_veuszb.jpg"
   canonicalOverwrite: ""
 
 blogTitle: "Minneapolis - the project outline"

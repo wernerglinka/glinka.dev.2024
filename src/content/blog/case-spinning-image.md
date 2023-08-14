@@ -8,7 +8,7 @@ item: "case-spinning-image" # used as a key for bloglist filters
 seo:
   title: The case of the spinning image | Werner Glinka
   description: "The blog covers creating responsive, spinning images using the Phi phenomenon. It details merging 36 images into a single sprite to minimize HTTP requests and increase load times. The challenge of maintaining image quality and responsive design is also discussed."
-  socialImage: "https://res.cloudinary.com/glinkaco/image/upload/v1646849499/tgc2022/social_yitz6j.png"
+  socialImage: "https://res.cloudinary.com/glinkaco/image/upload/v1645641434/tgc2022/blogImages/case-spinning-image/spinning-image-header_ipdkjl.jpg"
   canonicalOverwrite: ""
 
 blogTitle: "The case of the spinning image"

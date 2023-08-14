@@ -8,7 +8,7 @@ item: "wordpress-static-website" # used as a key for bloglist filters
 seo:
   title: Who needs a WordPress website? | Werner Glinka
   description: "Most contractors use WordPress sites but rarely update them, leading to security issues. Static websites could be a better fit, offering speed, security, low maintenance, and ease of content updates."
-  socialImage: "https://res.cloudinary.com/glinkaco/image/upload/v1646849499/tgc2022/social_yitz6j.png"
+  socialImage: "https://res.cloudinary.com/glinkaco/image/upload/v1645206748/tgc2022/blogImages/wordpress-static-website/contractors_ksplcd.jpg"
   canonicalOverwrite: ""
 
 blogTitle: "Who needs a WordPress website?"

@@ -8,7 +8,7 @@ item: "ruhrpott-metalsmith-sanity-match-just-right" # used as a key for bloglist
 seo:
   title: Ruhrpott - building a website with Metalsmith and Sanity.io | Werner Glinka
   description: "Metalsmith, while excellent for developers, can pose challenges for non-technical content creators. To address this, I explored sanity.io as a user-friendly interface. My proof-of-concept site illustrates the practicality of this solution."
-  socialImage: "https://res.cloudinary.com/glinkaco/image/upload/v1681158901/ruhrpott_suf3ls.jpg"
+  socialImage: "https://res.cloudinary.com/glinkaco/image/upload/v1690748683/ruhrpott-1_v9k4ot.jpg"
   canonicalOverwrite: ""
 
 blogTitle: "Ruhrpott - building a website with Metalsmith and Sanity.io"

@@ -8,7 +8,7 @@ item: "metalsmith-layouts-nunjucks" # used as a key for bloglist filters
 seo:
   title: Metalsmith, Layouts and Nunjucks | Werner Glinka
   description: "Transitioning from the older versions to the newer ones of the @metalsmith/layout (ML) and @metalsmith/in-place (MIP) plugins may have its hurdles. This post guides you through the process."
-  socialImage: "https://res.cloudinary.com/glinkaco/image/upload/v1646849499/tgc2022/social_yitz6j.png"
+  socialImage: "https://res.cloudinary.com/glinkaco/image/upload/v1645220774/tgc2022/blogImages/metalsmith-layouts-nunjucks/layout-options_apwj06.jpg"
   canonicalOverwrite: ""
 
 blogTitle: "Metalsmith, Layouts and Nunjucks"

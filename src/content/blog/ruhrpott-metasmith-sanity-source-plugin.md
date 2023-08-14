@@ -8,7 +8,7 @@ item: "ruhrpott-metalsmith-sanity-source-plugin" # used as a key for bloglist fi
 seo:
   title: "Ruhrpott - a Metalsmith Sanity source plugin | Werner Glinka"
   description: "This post discusses integrating Sanity content into the Metalsmith build process. Our custom plugin fetches data from Sanity, transforming it into a Metalsmith-compatible JSON object, considering the differences in rich text and image handling between both platforms."
-  socialImage: "https://res.cloudinary.com/glinkaco/image/upload/v1681233430/ms_sanity_poygpe.png"
+  socialImage: "https://res.cloudinary.com/glinkaco/image/upload/v1690749050/ruhrpott-2_bn9shm.jpg"
   canonicalOverwrite: ""
 
 blogTitle: "Ruhrpott - a Metalsmith Sanity source plugin"

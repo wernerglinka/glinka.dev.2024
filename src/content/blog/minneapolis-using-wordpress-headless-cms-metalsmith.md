@@ -8,7 +8,7 @@ item: "minneapolis-using-wordpress-headless-cms-metalsmith" # used as a key for 
 seo:
   title: Using WordPress as a headless CMS for Metalsmith | Werner Glinka
   description: "Faced with balancing static website advantages and an accessible editor experience, I considered multiple CMS options. Amidst costs and discontinuations, I realized WordPress was the ideal solution for Metalsmith."
-  socialImage: "https://res.cloudinary.com/glinkaco/image/upload/v1646849499/tgc2022/social_yitz6j.png"
+  socialImage: "https://res.cloudinary.com/glinkaco/image/upload/v1685383991/frustrated-user_dncxvp.jpg"
   canonicalOverwrite: ""
 
 blogTitle: "Minneapolis - using WordPress as a headless CMS for Metalsmith"

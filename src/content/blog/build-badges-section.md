@@ -8,7 +8,7 @@ item: "build-badges-section" # used as a key for bloglist filters
 seo:
   title: Building a badges section | Werner Glinka
   description: "Learn how to implement a versatile badge section for your website using Metalsmith and Nunjucks templating. This guide details how to list features, awards or customers, controlling what to display and the order, with ease and flexibility."
-  socialImage: "https://res.cloudinary.com/glinkaco/image/upload/v1646849499/tgc2022/social_yitz6j.png"
+  socialImage: "https://res.cloudinary.com/glinkaco/image/upload/v1690483186/badges_m3g2nr.jpg"
   canonicalOverwrite: ""
 
 blogTitle: "Building a badges section with Metalsmith and Nunjucks"

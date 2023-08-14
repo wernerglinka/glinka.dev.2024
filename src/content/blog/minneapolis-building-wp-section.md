@@ -8,7 +8,7 @@ item: "minnepolis-building-wp-section" # used as a key for bloglist filters
 seo:
   title: Minneapolis - building a WordPress page section | Werner Glinka
   description: "Discover the Minneapolis project's unique web design approach! This modular method transforms individual, purpose-driven sections into a seamless webpage. Learn how Advanced Custom Fields (ACF) shapes page sections, with the media object as an example."
-  socialImage: "https://res.cloudinary.com/glinkaco/image/upload/v1646849499/tgc2022/social_yitz6j.png"
+  socialImage: "https://res.cloudinary.com/glinkaco/image/upload/v1685658100/lake-harriet_lzj6xs.jpg"
   canonicalOverwrite: ""
 
 blogTitle: "Minneapolis - building a WordPress page section"

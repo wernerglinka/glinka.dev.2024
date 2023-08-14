@@ -8,7 +8,7 @@ item: "metalsmith-starters" # used as a key for bloglist filters
 seo:
   title: New Metalsmith Starters | Werner Glinka
   description: "A new set of three starters to help get started with Metalsmith quickly"
-  socialImage: "https://res.cloudinary.com/glinkaco/image/upload/v1646849499/tgc2022/social_yitz6j.png"
+  socialImage: "https://res.cloudinary.com/glinkaco/image/upload/v1690740357/blacksmith_cu4d0y.jpg"
   canonicalOverwrite: ""
 
 blogTitle: "New Metalsmith Starters"

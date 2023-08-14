@@ -8,7 +8,7 @@ item: "web-component-links" # used as a key for bloglist filters
 seo:
   title: "A simple link web component | Werner Glinka"
   description: "A versatile web component I value: seamlessly blends text links, buttons, color schemes, and link types (external/internal) into a single, efficient component."
-  socialImage: "https://res.cloudinary.com/glinkaco/image/upload/v1646849499/tgc2022/social_yitz6j.png"
+  socialImage: "https://res.cloudinary.com/glinkaco/image/upload/v1691783874/links_ugtrp8.jpg"
   canonicalOverwrite: ""
 
 blogTitle: "A simple link web component"

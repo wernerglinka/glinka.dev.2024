@@ -8,7 +8,7 @@ item: "using-forestry-cms-with-metalsmith" # used as a key for bloglist filters
 seo:
   title: Using the Forestry CMS with Metalsmith | Werner Glinka
   description: "Forestry.io is a Git-backed CMS for websites and web products built using static site generators. This post describes how to setup Forestry CMS with the Metalsmith Forestry Starter."
-  socialImage: "https://res.cloudinary.com/glinkaco/image/upload/v1646849499/tgc2022/social_yitz6j.png"
+  socialImage: "https://res.cloudinary.com/glinkaco/image/upload/v1690751163/dead-forrest_jmv6xv.jpg"
   canonicalOverwrite: ""
 
 blogTitle: "Using the Forestry CMS with Metalsmith"

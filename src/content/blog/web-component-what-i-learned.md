@@ -8,7 +8,7 @@ item: "web-component-what-i-learned" # used as a key for bloglist filters
 seo:
   title: "Building Web Components: What I Learned | Werner Glinka"
   description: "Web components are a blend of specifications, not a rigid framework. By seeking community wisdom I have learned a lot about the best practices and pitfalls of web components."
-  socialImage: "https://res.cloudinary.com/glinkaco/image/upload/v1646849499/tgc2022/social_yitz6j.png"
+  socialImage: "https://res.cloudinary.com/glinkaco/image/upload/v1691778282/what-i-learned_ssixre.jpg"
   canonicalOverwrite: ""
 
 blogTitle: "What I Learned Building Web Components"

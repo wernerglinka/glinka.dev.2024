@@ -8,7 +8,7 @@ item: "building-responsive-progressive-image-component" # used as a key for blog
 seo:
   title: Building a responsive/progressive image component | Werner Glinka
   description: "The post explores creating a lazy-loading image component for Metalsmith/Nunjucks using Cloudinary.io. It uses low-res images first, then high-res as they enter the viewport. It also covers the use of Intersection and Resize Observer APIs."
-  socialImage: "https://res.cloudinary.com/glinkaco/image/upload/v1646849499/tgc2022/social_yitz6j.png"
+  socialImage: "https://res.cloudinary.com/glinkaco/image/upload/v1646931839/tgc2022/blogImages/building-responsive-progressive-image-component/different-devices_hbtqd1.png"
   canonicalOverwrite: ""
 
 blogTitle: "Building a responsive/progressive image component"

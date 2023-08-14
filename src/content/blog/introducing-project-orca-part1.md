@@ -8,7 +8,7 @@ item: "introducing-project-orca-part1" # used as a key for bloglist filters
 seo:
   title: Introducing Project Orca - Part 1 | Werner Glinka
   description: "Project ORCA blends Drupal's superior CMS capabilities with a static website. Metalsmith, a Static Site Generator, played a crucial role in this project, thanks to its flexibility, security, and speed."
-  socialImage: "https://res.cloudinary.com/glinkaco/image/upload/v1646849499/tgc2022/social_yitz6j.png"
+  socialImage: "https://res.cloudinary.com/glinkaco/image/upload/v1645224098/tgc2022/blogImages/orca1/orca_ahjaat.jpg"
   canonicalOverwrite: ""
 
 blogTitle: "Introducing Project Orca - Part 1"

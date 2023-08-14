@@ -8,7 +8,7 @@ item: "developer-fatique" # used as a key for bloglist filters
 seo:
   title: The Ever-Changing Landscape of Front-End JavaScript Frameworks and Build Tools | Werner Glinka
   description: "In 2017, I started building static websites using Metalsmith. A client's request led me to switch to Gatsby, but the transition posed challenges. This made me reflect on framework fatigue in web development."
-  socialImage: "https://res.cloudinary.com/glinkaco/image/upload/v1646849499/tgc2022/social_yitz6j.png"
+  socialImage: "https://res.cloudinary.com/glinkaco/image/upload/v1689874875/developer-fatique_pefccp.jpg"
   canonicalOverwrite: ""
 
 blogTitle: "The Ever-Changing Landscape of Front-End JavaScript Frameworks and Build Tools"

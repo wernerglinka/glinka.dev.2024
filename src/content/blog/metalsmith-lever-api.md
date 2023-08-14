@@ -8,7 +8,7 @@ item: "metalsmith-lever-api" # used as a key for blogpost filters
 seo:
   title: Building job pages with Metalsmith and the Lever postings API | Werner Glinka
   description: "Discover the integration of dynamic job listings onto static websites using Lever's Postings REST API and Metalsmith, a flexible Static Site Generator. This post details how a custom Metalsmith plugin fetches job data from the Lever API and transforms it into a file object"
-  socialImage: "https://res.cloudinary.com/glinkaco/image/upload/v1646849499/tgc2022/social_yitz6j.png"
+  socialImage: "https://res.cloudinary.com/glinkaco/image/upload/v1645473940/tgc2022/blogImages/metalsmith-lever-api/header_iojiti.jpg"
   canonicalOverwrite: ""
 
 blogTitle: "Building Job pages with Metalsmith and the Lever Postings API"

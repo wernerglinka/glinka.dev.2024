@@ -186,6 +186,14 @@ function msBuild() {
         decode: true,
       })
     )
+
+    .use( (files, metalsmith, done) => {
+      //console.log(files);
+      //console.log(metalsmith.metadata().blog);
+      //console.log(JSON.stringify(metalsmith.metadata(),null, 4));
+      done();
+    }
+  )
     
     /**
      * Build assets - CSS and JS.

@@ -8,7 +8,7 @@ item: "adding-netlify-cms" # used as a key for bloglist filters
 seo:
   title: Adding Netlify CMS to Metalsmith | Werner Glinka
   description: "Static Site Generators (SSGs) often leave non-developer editors wanting a smoother experience. This post details how to integrate Netlify CMS with a Metalsmith site, providing an easy, code-free editing interface."
-  socialImage: "https://res.cloudinary.com/glinkaco/image/upload/v1646849499/tgc2022/social_yitz6j.png"
+  socialImage: "https://res.cloudinary.com/glinkaco/image/upload/v1648136437/tgc2022/blogImages/add-netlify-cms/adding-netlify-cms_klvybu.jpg"
   canonicalOverwrite: ""
 
 blogTitle: "Adding Netlify CMS to Metalsmith"

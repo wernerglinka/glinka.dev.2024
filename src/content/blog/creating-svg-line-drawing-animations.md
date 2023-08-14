@@ -7,7 +7,7 @@ item: "creating-svg-line-drawing-animations" # used as a key for bloglist filter
 seo:
   title: Creating SVG line drawing animations | Werner Glinka
   description: "Recently, I was inspired by an animated SVG line drawing on the Square Space site. This prompted my exploration into the mechanics of SVG line animation, particularly the use of the stroke-dash property."
-  socialImage: "https://res.cloudinary.com/glinkaco/image/upload/v1646849499/tgc2022/social_yitz6j.png"
+  socialImage: "https://res.cloudinary.com/glinkaco/image/upload/v1685376554/animate-svg-header_ycsv4u.jpg"
   canonicalOverwrite: ""
 
 blogTitle: "Creating SVG line drawing animations"
