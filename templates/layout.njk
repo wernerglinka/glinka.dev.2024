@@ -5,27 +5,26 @@
   <head>
     {% include "sections/head.njk" %}
   </head>
-</h1>
 
-<body class="{{ bodyClasses }}" >
-  <div id="at-top"></div>
-  
-  {% include "sections/header.njk" %}
-  {% include "sections/nav.njk" %}
-  
-  <main id="swup" class="transition-fade">
-      
-    {% block body %}
-      This is the default contents
-    {% endblock %}
-      
-  </main>
-  
-  {% include "sections/footer.njk" %}
+  <body class="{{ bodyClasses }}" >
+    <div id="at-top"></div>
+    
+    {% include "sections/header.njk" %}
+    {% include "sections/nav.njk" %}
+    
+    <main id="swup" class="transition-fade">
+        
+      {% block body %}
+        This is the default contents
+      {% endblock %}
+        
+    </main>
+    
+    {% include "sections/footer.njk" %}
 
-  <a class="to-top" href="#at-top">{{ icon("arrow-up-circle") }}</a>
+    <a class="to-top" href="#at-top"><span class="sr-only">Scroll to top</span>{{ icon("arrow-up-circle") }}</a>
 
-  {% include "partials/scripts.njk" %}
+    {% include "partials/scripts.njk" %}
 
-</body>
+  </body>
 </html>
