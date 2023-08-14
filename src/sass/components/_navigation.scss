@@ -6,6 +6,7 @@
   background-color: var(--nav-background);
   transform: translateX(80%);
   transition: all 0.3s ease-in-out;
+  will-change: transform;
 
   &:hover {
     transform: translateX(0);
@@ -24,7 +25,7 @@
       color: var(--color-link-hover);
 
       &:before {
-        background-color: var(--color-link-hover);
+        background: var(--color-link-hover);
         border-color: var(--color-link-hover);
       }
     }
@@ -56,7 +57,7 @@
   pointer-events: none;
 
   &:before {
-    background-color: var(--color-white);
+    background: var(--color-white);
     border-color: var(--color-white);
     opacity: 0.7;
   }
