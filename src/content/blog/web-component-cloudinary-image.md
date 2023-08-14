@@ -500,7 +500,7 @@ sections:
 
               In this blog post, we created a custom web component called `CloudinaryImage` that allows us to lazy load images from Cloudinary. The component uses the Intersection Observer API to load high-resolution images only when they become visible in the viewport, reducing page load times and improving performance. 
 
-              The complete source code for the `CloudinaryImage` component can be found in [this GitHub repository](link-to-repo).
+              The complete source code for the `CloudinaryImage` component can be found in [this GitHub repository](https://github.com/wernerglinka/cloudinaryImage).
 
   - container: aside # section || article || aside
     description: "section with related blogposts"
