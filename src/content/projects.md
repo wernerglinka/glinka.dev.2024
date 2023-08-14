@@ -6,8 +6,7 @@ pageType: page
 seo:
   title: Projects | Werner Glinka
   description: "My projects include Metalsmith plugins and starters, as well as contributions to other open source projects."
-  socialImage: >-
-    https://res.cloudinary.com/glinkaco/image/upload/v1646849499/tgc2022/social_yitz6j.png
+  socialImage: "https://res.cloudinary.com/glinkaco/image/upload/v1646849499/tgc2022/social_yitz6j.png"
   canonicalOverwrite: ''
 
 sections:

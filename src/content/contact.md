@@ -5,8 +5,8 @@ pageType: page
 
 seo:
   title: Contact | Werner Glinka
-  description: "Send me a message"
-  socialImage: "/assets/images/metalsmith-starter-social.png"
+  description: "I specialize in working with a diverse range of clients, from established corporate entities to new startups, globally. My expertise encompasses building static websites and popular content management systems such as WordPress, Drupal and others. I am passionate about supporting non-profit organizations and offer pro bono website development services. If you know any non-profits that could benefit from a website, please encourage them to reach out to me."
+  socialImage: "https://res.cloudinary.com/glinkaco/image/upload/v1646849499/tgc2022/social_yitz6j.png"
   canonicalOverwrite: ""
 
 sections:

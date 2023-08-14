@@ -6,9 +6,7 @@ pageType: page
 seo:
   title: Portfolio | Werner Glinka
   description: >-
-    Samples of my work. Most of the websites that I have build are for small to
-    medium size companies but I have also build sites for non-profit
-    organizations pro bono, from the Peninsula Museum of Art to TechnovationMN
+    Samples of my work. Most of the websites that I have build are for small to medium size companies but I have also build sites for non-profit organizations pro bono, from the Peninsula Museum of Art to TechnovationMN. Non-profits that could benefit from a website, please reach out to me.
   socialImage: >-
     https://res.cloudinary.com/glinkaco/image/upload/v1646849499/tgc2022/social_yitz6j.png
   canonicalOverwrite: ''
