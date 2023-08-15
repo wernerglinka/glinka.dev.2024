@@ -113,7 +113,7 @@ sections:
               "edit": "cross-env NODE_ENV=development NODE_PATH=./node_modules npx netlify-cms-proxy-server & npm run watch & npm run serve"
               ```
 
-              Run `npm run edit` will start the local site. Navigate to http://localhost:3000/admin/ and click the login button... et voilà... the Netlify CMS.
+              Run `npm run edit` will start the local site. Navigate to <span>http:/</span>/localhost:3000/admin/ and click the login button... et voilà... the Netlify CMS.
 
 
               ### Styling the preview pane
