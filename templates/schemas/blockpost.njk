@@ -20,13 +20,13 @@
     "blogPost": [
         {
             "@type": "BlogPosting",
-            "@id": {{ metadata.site.siteURL ~ path }},
-            "mainEntityOfPage": {{ metadata.site.siteURL ~ path }},
-            "headline": {{ seo.title}},
-            "name": {{ seo.title }},
-            "description": {{ seo.description }},
-            "datePublished": {{ date }},
-            "dateModified": {{ date }},
+            "@id": "{{ metadata.site.siteURL ~ path }}",
+            "mainEntityOfPage": "{{ metadata.site.siteURL ~ path }}",
+            "headline": "{{ seo.title}}",
+            "name": "{{ seo.title }}",
+            "description": "{{ seo.description }}",
+            "datePublished": "{{ date }}",
+            "dateModified": "{{ date }}",
             "author": {
                 "@type": "Person",
                 "@id": "https://glinka.co",
@@ -39,7 +39,7 @@
                 "height": "",
                 "width": ""
             },
-            "url": {{ metadata.site.siteURL ~ path }},
+            "url": "{{ metadata.site.siteURL ~ path }}",
             "keywords": []
         }
     ]
