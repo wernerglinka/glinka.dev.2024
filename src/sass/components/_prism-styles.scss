@@ -16,8 +16,7 @@
    word-spacing: normal;
    word-break: normal;
    word-wrap: normal;
-   line-height: 1.5;
- 
+   
    -moz-tab-size: 2;
    -o-tab-size: 2;
    tab-size: 2;
@@ -26,6 +25,10 @@
    -moz-hyphens: none;
    -ms-hyphens: none;
    hyphens: none;
+
+   & * {
+		line-height: 1.5 !important;
+	}
  }
  
  pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
