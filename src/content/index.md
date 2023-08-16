@@ -4,7 +4,7 @@ bodyClasses: "blocks-page has-full-height-image home"
 
 seo:
   title: Werner Glinka - Portfolio
-  description: "Web development for global clients, from corporates to startups. Skilled in WordPress, Drupal, and static sites. Passionate about aiding non-profits."
+  description: "Web development for global clients, from corporates to startups. Skilled in WordPress, Drupal, and Metalsmith static sites. Passionate about aiding non-profits."
   socialImage: "https://res.cloudinary.com/glinkaco/image/upload/v1646849499/tgc2022/social_yitz6j.png"
   canonicalOverwrite: ""
 
