@@ -4,7 +4,7 @@ bodyClasses: "blocks-page has-full-height-image home"
 
 seo:
   title: Werner Glinka - Portfolio
-  description: "I specialize in working with a diverse range of clients, from established corporate entities to new startups, globally. My expertise encompasses building static websites and popular content management systems such as WordPress, Drupal and others. I am passionate about supporting non-profit organizations and offer pro bono website development services."
+  description: "Web development for global clients, from corporates to startups. Skilled in WordPress, Drupal, and static sites. Passionate about aiding non-profits, I offer free services for non-profits."
   socialImage: "https://res.cloudinary.com/glinkaco/image/upload/v1646849499/tgc2022/social_yitz6j.png"
   canonicalOverwrite: ""
 

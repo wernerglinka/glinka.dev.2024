@@ -5,7 +5,7 @@ pageType: page
 
 seo:
   title: Projects | Werner Glinka
-  description: "My projects include Metalsmith plugins and starters, as well as contributions to other open source projects."
+  description: "My projects include Metalsmith plugins, starters and poc projects like ruhrpot and minneapolis, as well as contributions to other open source projects."
   socialImage: "https://res.cloudinary.com/glinkaco/image/upload/v1646849499/tgc2022/social_yitz6j.png"
   canonicalOverwrite: ''
 
