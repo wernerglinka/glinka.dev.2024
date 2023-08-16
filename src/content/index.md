@@ -9,6 +9,28 @@ seo:
   canonicalOverwrite: ""
 
 sections:
+  - container: section
+    description: hidden page title when using a full page image banner
+    containerFields:
+      disabled: false
+      containerId: ''
+      containerClass: 'sr-only page-title'
+      inContainer: false
+      background:
+        color: ''
+        image: ''
+        isDark: false
+    columns:
+      - blocks:
+          - name: text
+            blockClass: ""
+            title: "Werner Glinka - Web Developer - Portfolio"
+            header: "h1"
+            textlength: '60'
+            apstyle: true
+            subtitle: ""
+            prose: >-
+
   - container: section # section || article || aside
     description: "full page banner"
     containerFields:
@@ -32,7 +54,7 @@ sections:
             text:
               prefix: "My Latest Project"
               title: Minneapolis
-              header: "h1"
+              header: "h2"
               subtitle: "Minneapolis is a proof-of-concept project to use a WordPress backend as a Content Management System for a Metalsmith static site generator."
               prose: ""
             ctas:

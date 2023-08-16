@@ -13,14 +13,15 @@ const msBuild = require('../metalsmith');
       awaitWriteFinish: { pollInterval: 1000 }
     })
     .on('ready', () => {
-      browserSync.init({
-        host: 'localhost',
-        server: './build',
-        port: 3000,
-        injectChanges: false,
-        reloadThrottle: 0
-      });
-      console.log('Initializing browser-sync...');
+      setTimeout(() => {
+        browserSync.init({
+          host: 'localhost',
+          server: './build',
+          port: 3000,
+          injectChanges: false,
+          reloadThrottle: 0
+        });
+      }, 1000);
     })
     .on('all', async () => {
       await msBuild();

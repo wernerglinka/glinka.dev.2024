@@ -112,7 +112,7 @@ sections:
               ### Code
               Here is the code for the `LinkComponent` component:
 
-              ```javscript
+              ```javascript
               /**
               * @name LinkComponent
               * @description LinkComponent is a component for links to be rendered as either a text or a button link.
