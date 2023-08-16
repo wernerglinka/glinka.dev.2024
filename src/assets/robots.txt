@@ -1,2 +1,2 @@
 User-agent: *
-Sitemap: https://glinka.co/sitemap.xml
+Sitemap: https://www.glinka.co/sitemap.xml
