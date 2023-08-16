@@ -64,13 +64,13 @@ sections:
           - name: text
             blockClass: "blogpost-text"
             prose: |-
-              Page transitions between web pages have emerged as potent tools to enhance user interaction and engagement. One of their key strengths lies in significantly improving User Experience (UX). Such transitions provide a fluid and pleasant browsing experience, reminiscent of the seamlessness one finds in single-page apps.
+              Page transitions between web pages have become potent tools to enhance user interaction and engagement. One of their key strengths is significantly improving User Experience (UX). Such transitions provide a fluid and pleasant browsing experience, reminiscent of the seamlessness in single-page apps.
 
-              In the domain of web performance, the perception of speed and responsiveness often holds more weight than actual load times. Smooth transitions can cleverly mask page loading delays. This creates an illusion of a more responsive website, amplifying the perceived performance.
+              In web performance, the perception of speed and responsiveness often holds more weight than actual load times. Smooth transitions can cleverly mask page-loading delays. This creates an illusion of a more responsive website, amplifying the perceived performance.
 
-              This enhanced perception plays a pivotal role in user engagement. Seamless transitions captivate users, encouraging them to explore further and immerse themselves in the website's content.
+              This enhanced perception plays a pivotal role in user engagement. Seamless transitions captivate users, encouraging them to explore and immerse themselves in the website's content.
 
-              But the allure of transitions isn't just skin deep. From a cognitive perspective, these gradual shifts provide users with a brief pause—a moment to assimilate the incoming content. This is especially beneficial in mitigating the abruptness of sudden content changes, streamlining the user's cognitive journey.
+              But the allure of transitions isn't just skin deep. From a cognitive perspective, these gradual shifts give users with a brief pause—a moment to assimilate the incoming content. This is especially beneficial in mitigating the abruptness of sudden content changes, streamlining the user's cognitive journey.
 
               So, how do we incorporate this single-app-like experience into a Metalsmith-built static website?
 
@@ -89,7 +89,7 @@ sections:
               npm install @swup/head-plugin
               ```
 
-              Swup operates primarily within the `<main>` section of a webpage. We employ the head plugin to guarantee proper page initialization—ensuring meta tags are refreshed, new stylesheets are loaded, and JavaScript is executed. 
+              Swup operates primarily within a webpage's `<main>` section. We employ the head plugin to guarantee proper page initialization—ensuring meta tags are refreshed, new stylesheets are loaded, and JavaScript is executed. 
 
               ## Add Swup Attributes to Your Content Pages
               **layout.njk**
@@ -141,7 +141,7 @@ sections:
 
               ```
 
-              Swup initializes with the head plugin. Each time page content transitions, we re-run the `initPage()` function, ensuring new elements integrate seamlessly.
+              Swup initializes with the head plugin. We re-run the `initPage()` function each time page content transitions, ensuring new elements integrate seamlessly
 
               Achieving a fluid single-page-app behavior is as straightforward as these three steps.
 
