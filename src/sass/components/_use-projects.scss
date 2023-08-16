@@ -16,6 +16,10 @@
     margin: 0 auto;
     padding: 0;
 
+    .title {
+      min-height: 0;
+    }
+
     .image-wrapper {
       height: 18rem;
     }
