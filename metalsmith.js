@@ -15,6 +15,7 @@ const assets = require("metalsmith-static-files");
 const metadata = require("@metalsmith/metadata");
 const include = require('metalsmith-include-files');
 const sitemap = require('metalsmith-sitemap');
+const robots = require('metalsmith-robots');
 
 const blogPages = require("./local_modules/blog-pages");
 
@@ -220,6 +221,11 @@ function msBuild() {
         drop: [],
       })
     )
+
+    .use(robots({
+      "useragent": "*",
+      "sitemap": "https://www.glinka.co/sitemap.xml"
+    }))
 
     /**
      * Include custom components
