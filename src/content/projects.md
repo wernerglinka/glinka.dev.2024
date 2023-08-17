@@ -23,7 +23,8 @@ sections:
         image: v1691014699/projects-banner_znnxqf.jpg
         isDark: false
     columns:
-      - blocks:
+      - column:
+        blocks:
         - name: page-banner
           blockClass: ''
           text:
@@ -45,7 +46,8 @@ sections:
         image: ''
         isDark: false
     columns:
-      - blocks:
+      - column:
+        blocks:
         - name: text
           blockClass: "more-space page-intro"
           title: ""
@@ -67,7 +69,8 @@ sections:
         image: ''
         isDark: false
     columns:
-      - blocks:
+      - column:
+        blocks:
         - name: image
           blockClass: "limit-width"
           src: 'v1645224179/tgc2022/blogImages/orca1/what-is-metalsmith_co5vzn.jpg'
@@ -87,7 +90,8 @@ sections:
         image: ''
         isDark: false
     columns:
-      - blocks:
+      - column:
+        blocks:
         - name: text
           blockClass: "page-intro"
           title: ""
@@ -114,14 +118,16 @@ sections:
         image: ""
         isDark: false
     columns:
-      - blocks:
+      - column:
+        blocks:
         - name: cta
           url: "https://metalsmith.io/"
           label: "Metalsmith Website"
           isExternal: true
           isButton: true
           buttonStyle: "primary"
-      - blocks:
+      - column:
+        blocks:
         - name: cta
           url: "https://github.com/metalsmith"
           label: "Metalsmith Github Repository"
@@ -141,7 +147,8 @@ sections:
         image: ''
         isDark: false
     columns:
-      - blocks:
+      - column:
+        blocks:
         - name: text
           blockClass: "page-intro"
           title: "Plugins"
@@ -186,7 +193,8 @@ sections:
         image: ''
         isDark: false
     columns:
-      - blocks:
+      - column:
+        blocks:
         - name: text
           blockClass: "page-intro"
           title: "Starters"

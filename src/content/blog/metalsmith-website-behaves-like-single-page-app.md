@@ -74,7 +74,7 @@ sections:
 
               So, how do we incorporate this single-app-like experience into a Metalsmith-built static website?
 
-              Enter Swup.
+              Enter [Swup](https://swup.js.org/).
 
               Describing itself, Swup proclaims:
 

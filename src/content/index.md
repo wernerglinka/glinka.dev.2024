@@ -21,7 +21,8 @@ sections:
         image: ''
         isDark: false
     columns:
-      - blocks:
+      - column:
+        blocks:
           - name: text
             blockClass: ""
             title: "Werner Glinka - Web Developer - Portfolio"

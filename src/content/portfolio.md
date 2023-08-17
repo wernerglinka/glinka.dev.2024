@@ -25,7 +25,8 @@ sections:
         image: v1690990861/portfolio_xdgmfh.jpg
         isDark: false
     columns:
-      - blocks:
+      - column:
+        blocks:
           - name: page-banner
             blockClass: ''
             text:
@@ -49,7 +50,8 @@ sections:
         image: ''
         isDark: false
     columns:
-      - blocks:
+      - column:
+        blocks:
           - name: text
             blockClass: "more-space page-intro"
             title: ""
@@ -86,13 +88,15 @@ sections:
         image: ''
         isDark: false
     columns:
-      - blocks:
+      - column:
+        blocks:
           - name: image
             blockClass: ''
             src: v1683651036/netomi_etbvnc.png
             alt: Netomi homepage
             caption: ''
-      - blocks:
+      - column:
+        blocks:
           - name: text
             blockClass: "with-highlight more-space"
             title: Netomi
@@ -127,13 +131,15 @@ sections:
         image: ''
         isDark: false
     columns:
-      - blocks:
+      - column:
+        blocks:
           - name: image
             blockClass: ''
             src: v1683651036/safebreach_d4up9p.png
             alt: Safebreach homepage
             caption: ''
-      - blocks:
+      - column:
+        blocks:
           - name: text
             blockClass: "with-highlight more-space"
             title: Safebreach
@@ -169,13 +175,15 @@ sections:
         image: ''
         isDark: false
     columns:
-      - blocks:
+      - column:
+        blocks:
           - name: image
             blockClass: ''
             src: v1645142522/tgc2022/fdap_qnwwrc.jpg
             alt: FDAP homepage
             caption: ''
-      - blocks:
+      - column:
+        blocks:
           - name: text
             blockClass: "with-highlight more-space"
             title: FDAP
@@ -210,13 +218,15 @@ sections:
         image: ''
         isDark: false
     columns:
-      - blocks:
+      - column:
+        blocks:
           - name: image
             blockClass: ''
             src: v1645133715/tgc2022/perimeterx_n8blwa.jpg
             alt: PerimeterX' homepage
             caption: ''
-      - blocks:
+      - column:
+        blocks:
           - name: text
             blockClass: "with-highlight more-space"
             title: PerimeterX
@@ -258,13 +268,15 @@ sections:
         image: ''
         isDark: false
     columns:
-      - blocks:
+      - column:
+        blocks:
           - name: image
             blockClass: ''
             src: v1645139093/tgc2022/schumacher_zei39e.jpg
             alt: batterychargers.com homepage
             caption: ''
-      - blocks:
+      - column:
+        blocks:
           - name: text
             blockClass: "with-highlight more-space"
             title: batterychargers.com
@@ -297,13 +309,15 @@ sections:
         image: ''
         isDark: false
     columns:
-      - blocks:
+      - column:
+        blocks:
           - name: image
             blockClass: ''
             src: v1645140961/tgc2022/loma_hjjtir.jpg
             alt: Loma Communications homepage
             caption: ''
-      - blocks:
+      - column:
+        blocks:
           - name: text
             blockClass: "with-highlight more-space"
             title: Loma Communications
@@ -337,13 +351,15 @@ sections:
         image: ''
         isDark: false
     columns:
-      - blocks:
+      - column:
+        blocks:
           - name: image
             blockClass: ''
             src: v1645141904/tgc2022/technovation-mn_fb6gjy.jpg
             alt: 'Technovation[MN] homepage'
             caption: ''
-      - blocks:
+      - column:
+        blocks:
           - name: text
             blockClass: "with-highlight more-space"
             title: 'Technovation[MN]'
@@ -372,13 +388,15 @@ sections:
         image: ''
         isDark: false
     columns:
-      - blocks:
+      - column:
+        blocks:
           - name: image
             blockClass: ''
             src: v1645142102/tgc2022/witness_abgapu.jpg
             alt: Witness homepage
             caption: ''
-      - blocks:
+      - column:
+        blocks:
           - name: text
             blockClass: "with-highlight more-space"
             title: Witness
@@ -408,13 +426,15 @@ sections:
         image: ''
         isDark: false
     columns:
-      - blocks:
+      - column:
+        blocks:
           - name: image
             blockClass: ''
             src: v1645143228/tgc2022/instartlogic_sysrhf.jpg
             alt: InstartLogic homepage
             caption: ''
-      - blocks:
+      - column:
+        blocks:
           - name: text
             blockClass: "with-highlight more-space"
             title: InstartLogic
