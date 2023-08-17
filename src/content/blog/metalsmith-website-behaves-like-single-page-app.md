@@ -64,7 +64,7 @@ sections:
           - name: text
             blockClass: "blogpost-text"
             prose: |-
-              Page transitions between web pages have become potent tools to enhance user interaction and engagement. One of their key strengths is significantly improving User Experience (UX). Such transitions provide a fluid and pleasant browsing experience, reminiscent of the seamlessness in single-page apps.
+              Smooth transitions between web pages have become potent tools to enhance user interaction and engagement. One of their key strengths is significantly improving User Experience (UX). Such transitions provide a fluid and pleasant browsing experience, reminiscent of the seamlessness in single-page apps.
 
               In web performance, the perception of speed and responsiveness often holds more weight than actual load times. Smooth transitions can cleverly mask page-loading delays. This creates an illusion of a more responsive website, amplifying the perceived performance.
 

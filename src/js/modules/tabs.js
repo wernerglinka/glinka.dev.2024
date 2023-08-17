@@ -45,9 +45,16 @@ const tabs = (function() {
       resizeObserver.observe(document.body);
 
       allTabs.forEach(tab => {
-        tab.addEventListener("click", () => {
-          allTabs.forEach(tab => tab.classList.remove("active"));
+        tab.addEventListener("click", (e) => {
+          e.stopPropagation();
+          e.preventDefault();
+
+          allTabs.forEach(tab => {
+            tab.classList.remove("active");
+            tab.children[0].removeAttribute("aria-selected");
+          });
           tab.classList.add("active");
+          tab.children[0].setAttribute("aria-selected", "true");
           // convert allTabs nodelist to array and get index of clicked tab
           const clickedTabIndex = Array.prototype.slice.call(allTabs).indexOf(tab);
           // remove active class from all tab contents

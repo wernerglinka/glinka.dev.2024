@@ -26,16 +26,30 @@
 <div class="block block-tabs js-tabs {% if params.blockClass %} {{ params.blockClass }}{% endif %}">
   {% set workList = metadata[params.source] %}
 
-  <ul class="tabs-labels">
+  <ul class="tabs-labels" role="tablist">
     {% for tab in workList %}
-      <li class="tab-label {% if loop.index0 == 0 %} active {% endif %}">
-        {{ tab.scope }}
+      <li
+        id="tab{{ loop.index0 }}"
+        class="tab-label {% if loop.index0 == 0 %} active {% endif %}" 
+        role="presentation" 
+      >
+        <a 
+          role="tab" 
+          href="#{{ tab.scope }}"
+          {% if loop.index0 == 0 %}aria-selected="true"{% endif %}
+        >{{ tab.scope }}</a>
       </li>
     {% endfor %}
   </ul>
   <div class="tabs-content">
     {% for tab in workList %}
-      <div class="tab-content {% if loop.index0 == 0 %} active {% endif %}">
+      <div 
+        class="tab-content {% if loop.index0 == 0 %} active {% endif %}" 
+        id="{{ tab.scope }}" 
+        role="tabpanel" 
+        aria-labelledby="tab{{ loop.index0 }}" 
+        tabindex="0"
+      >
         {% if tab.scope == "Skills" %}
           <ul class="skills">
             {% for skill in tab.item %}

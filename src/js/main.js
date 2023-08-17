@@ -18,8 +18,13 @@ window.videoAPIReady = new Promise(resolve => {
 
 import Swup from 'swup';
 import SwupHeadPlugin from '@swup/head-plugin';
+import SwupA11yPlugin from '@swup/a11y-plugin';
+
 const swup = new Swup({
-  plugins: [new SwupHeadPlugin()]
+  plugins: [
+    new SwupHeadPlugin(),
+    new SwupA11yPlugin()
+  ]
 });
 
 import modalVideo from "./modules/modal-video";
