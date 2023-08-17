@@ -19,11 +19,13 @@ window.videoAPIReady = new Promise(resolve => {
 import Swup from 'swup';
 import SwupHeadPlugin from '@swup/head-plugin';
 import SwupA11yPlugin from '@swup/a11y-plugin';
+import SwupBodyClassPlugin from '@swup/body-class-plugin';
 
 const swup = new Swup({
   plugins: [
     new SwupHeadPlugin(),
-    new SwupA11yPlugin()
+    new SwupA11yPlugin(),
+    new SwupBodyClassPlugin()
   ]
 });
 

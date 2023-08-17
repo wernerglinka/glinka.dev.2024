@@ -46,6 +46,7 @@
     "@metalsmith/postcss": "^5.4.1",
     "@metalsmith/sass": "^1.6.0",
     "@swup/a11y-plugin": "^4.1.1",
+    "@swup/body-class-plugin": "^3.1.1",
     "@swup/head-plugin": "^2.1.1",
     "@wernerglinka/cloudinaryimage": "^1.2.0",
     "@wernerglinka/linkcomponent": "^1.0.7",

@@ -68,7 +68,7 @@ sections:
 
               I'll not go into too much detail of how I build web components. I have done so in previous posts [Building a Custom Web Component: Cloudinaryimage](/blog/web-component-cloudinary-image) or [Truncated Aptitle - a Custom Web Component](/blog/web-component-truncated-ap-title-span).
 
-              ### Introduction
+              ## Introduction
 
               The `LinkComponent` is designed to render links either as plain text or as a button. It offers several configurations like setting a color scheme, determining if the link opens in a new tab, and even customizing the label text. A simple usage looks like:
               
@@ -76,7 +76,7 @@ sections:
               <link-component url="<your-url>" isbutton colorscheme="primary" isexternal>Label</link-component>
               ```
 
-              ### Key Features
+              ## Key Features
 
               - **Encapsulation with Shadow DOM**: The component makes use of the Shadow DOM, ensuring styles and markup remain isolated from the rest of the page. This prevents accidental CSS leaks and style conflicts.
 
@@ -86,30 +86,30 @@ sections:
 
               - **Accessibility**: When rendered as a button, the link gets an `aria-label` attribute, making it more accessible to screen readers. External links get `target="_blank"` and `rel="noopener noreferrer"` attributes for security and performance reasons.
 
-              ### Usage
+              ## Usage
 
-              #### Rendering as a text link:
+              **Rendering as a text link:**
               ```html
               <link-component url="<your-url>">Your Label</link-component>
 
               // renders as: <a href="<your-url>" class="text-link">Your Label</a>
               ```
               
-              #### Rendering as a Button:
+              **Rendering as a Button:**
               ```html
               <link-component url="<your-url>" isbutton colorscheme="primary">Your Label</link-component>
 
               // renders as: <a href="<your-url>" class="btn primary">Your Label</a>
               ```
               
-              #### External Links:
+              **External Links:**
               ```html
               <link-component url="<your-url>" isexternal>Your Label</link-component>
 
               // renders as: <a href="<your-url>" class="text-link" target="_blank" rel="noopener noreferrer">Your Label</a>
               ```
 
-              ### Code
+              ## Code
               Here is the code for the `LinkComponent` component:
 
               ```javascript
