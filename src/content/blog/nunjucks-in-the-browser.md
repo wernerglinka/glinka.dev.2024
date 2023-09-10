@@ -121,6 +121,23 @@ sections:
               Now, let's delve into the JavaScript code responsible for making it all work:
 
               ```javascript
+              const sectionWrapper = {
+                container: "section",
+                name: "text",
+                containerFields: {
+                  isDisabled: false,
+                  isAnimated: false,
+                  containerId: "",
+                  containerClass: "",
+                  inContainer: true,
+                  isNarrow: true,
+                  background: {
+                    color: "",
+                    image: "",
+                    isDark: false
+                  }
+                }
+              };
               const getSection = function(templateName) {
                   // Retrieve the initial params for the template
                   const params = initialSectionStates[templateName];
@@ -161,7 +178,7 @@ sections:
               };
               ```
 
-              In this JavaScript code, we begin by defining a function `getSection` responsible for rendering Nunjucks templates dynamically. It retrieves initial parameters for the template, combines them with the 'sectionWrapper,' and sets up the Nunjucks environment with custom filters. Finally, it renders the specified Nunjucks template.
+              In this JavaScript code, we begin by defining the properties for a `sectionWrapper`, which is a template that wraps all sections. Next, we define a function `getSection` responsible for rendering Nunjucks templates dynamically. It retrieves initial parameters for the template, combines them with the 'sectionWrapper,' and sets up the Nunjucks environment with custom filters. Finally, it renders the specified Nunjucks template.
 
               The `init` function initializes the page by attaching event listeners to template elements. When a template is clicked, it retrieves the associated template name, renders the section using `getSection`, and inserts it into the template wrapper on the page.
 
