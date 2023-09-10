@@ -234,6 +234,6 @@ sections:
             header: "h2"
             horizontal: false
             selections:
-              - item: "building-netlify-cms-content-model"
-              - item: "using-forestry-cms-with-metalsmith"
+              - item: "nunjucks-transformer"
+              - item: "metalsmith-layouts-nunjucks"
 ---
