@@ -66,11 +66,11 @@ sections:
             prose: |-
               When faced with integrating Nunjucks into a browser-based application, I initially assumed that my prior experience using Nunjucks in Metalsmith websites would ease the transition. However, I quickly discovered that the scarcity of documentation made this endeavor more challenging than expected. In this article, I aim to share my insights and guidance for those in a similar situation.
 
-              My use case involved developing a Metalsmith documentation site that cataloged section components available for the ms-start CLI. Users needed the ability to select a section by name, with the corresponding content dynamically loading into the main body of the page for review. To achieve this, I intended to use the existing section templates from ms-start as they were. Here's what I learned along the way:
+              My use case involved developing a Metalsmith documentation site that cataloged section components available for the [`ms-start` CLI](https://github.com/wernerglinka/ms-start). Users needed the ability to select a section by name, with the corresponding content dynamically loading into the main body of the page for review. To achieve this, I intended to use the existing section templates from ms-start as they were. Here's what I learned along the way:
 
               ## Pre-Compile Nunjucks Templates for Browser Use
 
-              When working with Nunjucks in the browser, it's crucial to pre-compile all templates and then use 'nunjucks-slim' to render them. I created a small Metalsmith plugin to pre-compile all section templates to accomplish this. Below is a snippet of the plugin:
+              When working with [Nunjucks in the browser](https://mozilla.github.io/nunjucks/getting-started.html), it's crucial to pre-compile all templates and then use `nunjucks-slim.js` to render them. I created a small Metalsmith plugin to pre-compile all section templates to accomplish this. Below is a snippet of the plugin:
 
               ```javascript
               function precompileNunjucksTemplates(options) {
@@ -178,7 +178,7 @@ sections:
               };
               ```
 
-              In this JavaScript code, we begin by defining the properties for a `sectionWrapper`, which is a template that wraps all sections. Next, we define a function `getSection` responsible for rendering Nunjucks templates dynamically. It retrieves initial parameters for the template, combines them with the 'sectionWrapper,' and sets up the Nunjucks environment with custom filters. Finally, it renders the specified Nunjucks template.
+              In this JavaScript code, we begin by defining the properties for a `sectionWrapper`, which is a common template that wraps every section. Next, we define a function `getSection` responsible for rendering Nunjucks templates dynamically. It retrieves initial parameters for the template, combines them with the `sectionWrapper`, and sets up the Nunjucks environment with custom filters. Finally, it renders the specified Nunjucks template.
 
               The `init` function initializes the page by attaching event listeners to template elements. When a template is clicked, it retrieves the associated template name, renders the section using `getSection`, and inserts it into the template wrapper on the page.
 
@@ -198,7 +198,7 @@ sections:
               {% include "section/params.particles/text.njk" %}
               ```
 
-              As revealed in the 'precompiledTemplates.js' code, this crucial alteration allowed the templates to work seamlessly as intended.
+              As revealed in the `precompiledTemplates.js` code, this crucial alteration allowed the templates to work seamlessly as intended.
 
               Upon loading the page, the following essential files are now included:
 
@@ -210,7 +210,7 @@ sections:
               <script src="/assets/initialSectionStates.js"></script>
               ```
 
-              The inclusion of 'marked' is necessary for a Nunjucks custom filter. 'nunjucksCustomFilters.js' contains custom filters, as indicated by its name, while 'initialSectionStates.js' contains the initial properties for all templates.
+              The inclusion of `marked` is necessary for a Nunjucks custom filter. `nunjucksCustomFilters.js` contains custom filters, as indicated by its name, while `initialSectionStates.js` contains the initial properties for all templates.
 
               For a more comprehensive understanding of this implementation in its entirety, you can visit the following GitHub repository: [https://github.com/wernerglinka/ms-start-docs](https://github.com/wernerglinka/ms-start-docs) and explore the codebase.
 
