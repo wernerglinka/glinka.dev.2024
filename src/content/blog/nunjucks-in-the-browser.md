@@ -70,7 +70,7 @@ sections:
 
               ## Pre-Compile Nunjucks Templates for Browser Use
 
-              When working with [Nunjucks in the browser](https://mozilla.github.io/nunjucks/getting-started.html), it's crucial to pre-compile all templates and then use `nunjucks-slim.js` to render them. I created a small Metalsmith plugin to pre-compile all section templates to accomplish this. Below is a snippet of the plugin:
+              When working with [Nunjucks in the browser](https://mozilla.github.io/nunjucks/getting-started.html), it's crucial to pre-compile all templates and then use `nunjucks-slim.js` to render them. The slim version of Nunjucks doesn't come with the full compiler so it's smaller - 8K min/gzipped vs. 20K min/gzipped of `nunjucks.js`. I created a small Metalsmith plugin to pre-compile all section templates to accomplish this. Below is a snippet of the plugin:
 
               ```javascript
               function precompileNunjucksTemplates(options) {
@@ -112,7 +112,53 @@ sections:
 
               ## Constructing the Browser Page
 
-              Building the page where these templates would be utilized is relatively straightforward. As the entire HTML content would be inserted via a Nunjucks template, the HTML structure is simple:
+              Upon loading the page, the following files must be present:
+
+              ```html
+              <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+              <script src="/assets/nunjucksCustomFilters.js"></script>
+              <script src="/assets/nunjucks-slim.js"></script>
+              <script src="/assets/precompiledTemplates.js"></script>
+              <script src="/assets/initialSectionStates.js"></script>
+              ```
+
+              The inclusion of `marked` is necessary for a Nunjucks custom filter. `nunjucksCustomFilters.js` contains custom filters, as indicated by its name, while `initialSectionStates.js` contains the initial properties for the templates.
+
+              **`initialSectionStates.js`** is a JavaScript object containing the initial properties for all templates. It's structured as follows:
+              ```javascript
+              const initialSectionStates = {
+                audio: {
+                  audio: {
+                    ogg: "",
+                    mpeg: "https://file-examples.com/storage/fee055cea664f06ab9a43fb/2017/11/file_example_MP3_700KB.mp3"
+                  }
+                },
+                icon: {
+                  icon: {
+                    name: "feather",
+                    caption: ""
+                  }
+                },
+                image: {
+                  image: {
+                    src: "https://source.unsplash.com/random/800x600",
+                    alt: "",
+                    caption: ""
+                  }
+                },
+                ...
+                }
+              ```
+
+              **`nunjucksCustomFilters.js`** contains the custom filters used in the Nunjucks templates. It's structured as follows:
+
+              ```javascript
+              const mdToHTML = function(str) {
+                return marked(str);
+              };
+              ```
+
+              Building the page where these templates would be used is straightforward. As the entire HTML content would be inserted via a Nunjucks template, the HTML structure is simple:
 
               ```html
               <div class="doc-content js-template-wrapper"></div>
@@ -199,18 +245,6 @@ sections:
               ```
 
               As revealed in the `precompiledTemplates.js` code, this crucial alteration allowed the templates to work seamlessly as intended.
-
-              Upon loading the page, the following essential files are now included:
-
-              ```html
-              <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-              <script src="/assets/nunjucksCustomFilters.js"></script>
-              <script src="/assets/nunjucks-slim.js"></script>
-              <script src="/assets/precompiledTemplates.js"></script>
-              <script src="/assets/initialSectionStates.js"></script>
-              ```
-
-              The inclusion of `marked` is necessary for a Nunjucks custom filter. `nunjucksCustomFilters.js` contains custom filters, as indicated by its name, while `initialSectionStates.js` contains the initial properties for all templates.
 
               For a more comprehensive understanding of this implementation in its entirety, you can visit the following GitHub repository: [https://github.com/wernerglinka/ms-start-docs](https://github.com/wernerglinka/ms-start-docs) and explore the codebase.
 
