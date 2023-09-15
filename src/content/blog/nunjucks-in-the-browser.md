@@ -241,7 +241,7 @@ sections:
               To this revised format:
 
               ```javascript
-              {% include "section/params.particles/text.njk" %}
+              {% include "section/particles/text.njk" %}
               ```
 
               As revealed in the `precompiledTemplates.js` code, this crucial alteration allowed the templates to work seamlessly as intended.
