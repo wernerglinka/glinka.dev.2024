@@ -1,10 +1,8 @@
 /**
- * iterate
- * Transform Sanity portable text blocks to markdown and resolve image references
- * 
+ * @function assignDeep
  * @param {*} obj 
- * @param {*} client 
- * @param {*} options 
+ * @param {*} targetKey 
+ * @param {*} targetValue 
  */
 const assignDeep = (obj, targetKey, targetValue) => {
   Object.keys(obj).forEach(key => {

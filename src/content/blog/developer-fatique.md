@@ -120,7 +120,7 @@ sections:
             horizontal: false
             selections:
               - item: "wordpress-static-website"
-              - item: ""
+              - item: "use-the-platform"
               - item: "" 
 
 ---
