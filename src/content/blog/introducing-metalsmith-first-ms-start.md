@@ -166,4 +166,5 @@ sections:
             selections:
               - item: "metalsmith-starters"
               - item: "building-flexible-page-layouts"
+              - item: "use-the-platform"
 ---
