@@ -72,7 +72,7 @@ sections:
 
               ### Setting Up The Frontmatter
 
-              The section component's frontmatter offers all the necessary properties to render a map. Here's what this looks like for our component:
+              The section component's frontmatter offers all the necessary properties to render a map with a set of markers. Here's what this looks like for our component:
 
               ```yaml
               - container: "section"
