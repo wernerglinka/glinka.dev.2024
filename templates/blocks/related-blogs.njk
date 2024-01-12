@@ -33,7 +33,7 @@
             title: blogPost.blogTitle,
             prose: blogPost.excerpt,
             thumbnail: blogPost.image.src,
-            link: "/" ~ blogPost.path
+            link: "/" ~ blogPost.permalink
           } %}  
           <li class="simple-card">
             {{ card(thisCard, metadata.site.imagePrefix) }}
