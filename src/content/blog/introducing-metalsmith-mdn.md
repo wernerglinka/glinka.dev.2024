@@ -8,14 +8,14 @@ item: "introducing-metalsmith-mdn" # used as a key for bloglist filters
 seo:
   title: "Introducing Metalsmith MDN | Werner Glinka"
   description: "MDN is a Metalsmith plugin that revolutionizes the way we can reusa section components within markdown content, leveraging the power of Nunjucks templating."
-  socialImage: "https://res.cloudinary.com/glinkaco/image/upload/v1691098518/web-components_xjqs5i.jpg"
+  socialImage: "https://res.cloudinary.com/glinkaco/image/upload/v1711578702/m_n-header_yw6yhq.jpg"
   canonicalOverwrite: ""
 
 blogTitle: "Introducing Metalsmith MDN"
 date: 2024-03-27
 author: ""
 image:
-  src: "v1691098518/web-components_xjqs5i.jpg"
+  src: "/v1711578702/m_n-header_yw6yhq.jpg"
   alt: ""
   caption:
 excerpt: "By adopting MDN in your Metalsmith projects, you can significantly enhance your markdown files, making them more dynamic and reusable.  "
