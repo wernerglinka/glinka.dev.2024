@@ -2,6 +2,7 @@
   "name": "werner-glinka-website",
   "version": "0.0.3",
   "description": "A Metalsmith portfolio website",
+  "type": "module",
   "keywords": [
     "metalsmith",
     "portfolio"
@@ -9,17 +10,9 @@
   "author": "werner@glinka.co",
   "license": "MIT",
   "scripts": {
-    "start": "cross-env NODE_ENV=development node ./scripts/watch.js",
-    "build": "cross-env NODE_ENV=production node metalsmith.js",
-    "watch": "nodemon metalsmith.js",
-    "serve": "browser-sync start --server 'build' --files 'build/**'"
-  },
-  "nodemonConfig": {
-    "watch": [
-      "src",
-      "templates"
-    ],
-    "ext": "js css scss njk json html md"
+    "start": "cross-env NODE_ENV=development DEBUG=@metalsmith* node metalsmith-dev.js",
+    "build": "cross-env NODE_ENV=production node metalsmith-prod.js",
+    "serve": "browser-sync start --server 'build'"
   },
   "devDependencies": {
     "browser-sync": "^3.0.2",

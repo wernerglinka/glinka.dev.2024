@@ -7,15 +7,27 @@
   {% if info.title %}
     {% if info.header === "h1" %}
       <h1 class="title">
+        {% if info.titleCase %}
         <truncated-aptitle {% if info.apstyle %}apstyle{% endif %} {% if info.textlength %}textlength='{{ info.textlength }}'{% endif %}>{{ info.title }}</truncated-aptitle>
+        {% else %}
+        {{ info.title | trimString(80)}}
+        {% endif %}
       </h1>
     {% elif info.header === "h2" %}
       <h2 class="title">
+        {% if info.titleCase %}
         <truncated-aptitle {% if info.apstyle %}apstyle{% endif %} {% if info.textlength %}textlength='{{ info.textlength }}'{% endif %}>{{ info.title }}</truncated-aptitle>
+        {% else %}
+        {{ info.title | trimString(80)}}
+        {% endif %}
       </h2>
     {% else %}
       <h3 class="title">
+        {% if info.titleCase %}
         <truncated-aptitle {% if info.apstyle %}apstyle{% endif %} {% if info.textlength %}textlength='{{ info.textlength }}'{% endif %}>{{ info.title }}</truncated-aptitle>
+        {% else %}
+        {{ info.title | trimString(80)}}
+        {% endif %}
       </h3>
     {% endif %}
   {% endif %}

@@ -1,4 +1,20 @@
-const assignDeep = require('./assignDeep');
+/**
+ * @function assignDeep
+ * @param {*} obj 
+ * @param {*} targetKey 
+ * @param {*} targetValue 
+ */
+const assignDeep = ( obj, targetKey, targetValue ) => {
+  Object.keys( obj ).forEach( key => {
+    if ( key === targetKey ) {
+      obj[ key ] = targetValue;
+    }
+
+    if ( typeof obj[ key ] === 'object' && obj[ key ] !== null ) {
+      assignDeep( obj[ key ], targetKey, targetValue );
+    }
+  } );
+};
 
 /**
  * @typedef Options
@@ -9,15 +25,15 @@ const assignDeep = require('./assignDeep');
 const defaults = {
   "pagesPerPage": 6,
   "blogDirectory": "blog/",
-}
+};
 
 /**
  * Normalize plugin options
  * @param {Options} [options]
  * @returns {Object}
  */
-function normalizeOptions(options) {
-  return Object.assign({}, defaults, options || {});
+function normalizeOptions( options ) {
+  return Object.assign( {}, defaults, options || {} );
 }
 
 /**
@@ -29,12 +45,12 @@ function normalizeOptions(options) {
  * @param {Options} options
  * @returns {import('metalsmith').Plugin}
  */
-function blogPages(options) {
-  options = normalizeOptions(options);
+export default function blogPages( options ) {
+  options = normalizeOptions( options );
 
-  return function blogPages(files, metalsmith, done) {
-    const debug = metalsmith.debug('blogPages');
-    debug('Running with options: %O', options);
+  return function ( files, metalsmith, done ) {
+    const debug = metalsmith.debug( 'blogPages' );
+    debug( 'Running with options: %O', options );
 
     /**
      * build the list of blog posts
@@ -51,18 +67,18 @@ function blogPages(options) {
      * ]
      */
     const blogpostList = [];
-    for (const [file, path] of Object.entries(files)) {
-      if (file.startsWith(options.blogDirectory)) {
-        blogpostList.push(file);
+    for ( const [ file, path ] of Object.entries( files ) ) {
+      if ( file.startsWith( options.blogDirectory ) ) {
+        blogpostList.push( file );
       }
     }
     // get the number of landing pages to create for the blog
-    const numberOfPages = Math.ceil(blogpostList.length / options.pagesPerPage);
+    const numberOfPages = Math.ceil( blogpostList.length / options.pagesPerPage );
 
     /**
      * if there is only one page, then we don't need to do anything
      */
-    if (numberOfPages === 1) {
+    if ( numberOfPages === 1 ) {
       done();
       return;
     }
@@ -94,47 +110,45 @@ function blogPages(options) {
      *           pageStart: ""
      *           pageNumber: ""
      */
-    const blogContent = files["blog.md"];
+    const blogContent = files[ "blog.md" ];
     const blogSections = blogContent.sections;
     // loop over the sections until we find the hasPaging property
-    for (let i = 0; i < blogSections.length; i++) {
-      if (blogSections[i].hasPagingParams) {
-        assignDeep(blogSections[i], "numberOfBlogs", blogpostList.length);
-        assignDeep(blogSections[i], "numberOfPages", numberOfPages);
-        assignDeep(blogSections[i], "pageLength", options.pagesPerPage);
-        assignDeep(blogSections[i], "pageStart", 0);
-        assignDeep(blogSections[i], "pageNumber", 1);
+    for ( let i = 0; i < blogSections.length; i++ ) {
+      if ( blogSections[ i ].hasPagingParams ) {
+        assignDeep( blogSections[ i ], "numberOfBlogs", blogpostList.length );
+        assignDeep( blogSections[ i ], "numberOfPages", numberOfPages );
+        assignDeep( blogSections[ i ], "pageLength", options.pagesPerPage );
+        assignDeep( blogSections[ i ], "pageStart", 0 );
+        assignDeep( blogSections[ i ], "pageNumber", 1 );
         break;
       }
     }
 
     // create the additional landing pages
-    for (let i = 1; i < (numberOfPages) ; i++) {
+    for ( let i = 1; i < ( numberOfPages ); i++ ) {
       const page = i + 1;
-      const pageName = `blog/${page}.md`;
-      const blogContent = JSON.parse(JSON.stringify(files["blog.md"]));
+      const pageName = `blog/${ page }.md`;
+      const blogContent = JSON.parse( JSON.stringify( files[ "blog.md" ] ) );
 
       if ( numberOfPages > 1 ) {
-      // fill in the relevant data for the page
+        // fill in the relevant data for the page
         const blogSections = blogContent.sections;
         // loop over the sections until we find the hasPaging property
-        for (let j = 0; j < blogSections.length; j++) {
-          if (blogSections[j].hasPagingParams) {
-            assignDeep(blogSections[j], "numberOfBlogs", blogpostList.length);
-            assignDeep(blogSections[j], "numberOfPages", numberOfPages);
-            assignDeep(blogSections[j], "pageLength", options.pagesPerPage);
-            assignDeep(blogSections[j], "pageStart", (page - 1) * options.pagesPerPage);
-            assignDeep(blogSections[j], "pageNumber", page);
+        for ( let j = 0; j < blogSections.length; j++ ) {
+          if ( blogSections[ j ].hasPagingParams ) {
+            assignDeep( blogSections[ j ], "numberOfBlogs", blogpostList.length );
+            assignDeep( blogSections[ j ], "numberOfPages", numberOfPages );
+            assignDeep( blogSections[ j ], "pageLength", options.pagesPerPage );
+            assignDeep( blogSections[ j ], "pageStart", ( page - 1 ) * options.pagesPerPage );
+            assignDeep( blogSections[ j ], "pageNumber", page );
             break;
           }
         }
       }
       // add new landing page to the files object
-      files[pageName] = blogContent;
+      files[ pageName ] = blogContent;
     }
 
-    done()
-  }
+    done();
+  };
 }
-
-module.exports = blogPages;

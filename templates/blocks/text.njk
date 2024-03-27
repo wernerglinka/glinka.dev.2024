@@ -6,6 +6,7 @@
     blockClass: string - optional class to add to the block
     prefix: string - prefix to the title (optional)
     title: string - title of the blog post (optional)
+    titleCase: boolean - whether to title case the title (optional)
     header: string - header of the blog post, e.g. "h1", "h2", etc. (optional)
     subtitle: string - subtitle of the blog post (optional)
     prose: string - prose of the blog post (optional)
@@ -18,6 +19,7 @@
         blockClass: "more-space page-intro"
         prefix: ""
         title: ""
+        titleCase: true
         header: ""
         subtitle: ""
         prose: |-
@@ -25,34 +27,10 @@
   
 #}
 
+{% from "../partials/text.njk" import text %}
+
 <div class="block block-text{% if params.blockClass %} {{ params.blockClass }}{% endif %}">
-  
-  {% if params.prefix %}
-    <p class="prefix">{{ params.prefix }}</p>
-  {% endif %}
 
-  {% if params.title %}
-    {% if params.header === "h1" %}
-      <h1 class="title" [role=heading]>
-        <truncated-aptitle {% if params.apstyle %}apstyle{% endif %} {% if params.textlength %}textlength='{{ params.textlength }}'{% endif %}>{{ params.title }}</truncated-aptitle>
-      </h1>
-    {% elif params.header === "h2" %}
-      <h2 class="title" [role=heading]>
-        <truncated-aptitle {% if params.apstyle %}apstyle{% endif %} {% if params.textlength %}textlength='{{ params.textlength }}'{% endif %}>{{ params.title }}</truncated-aptitle>
-      </h2>
-    {% else %}
-      <h3 class="title" [role=heading]>
-        <truncated-aptitle {% if params.apstyle %}apstyle{% endif %} {% if params.textlength %}textlength='{{ params.textlength }}'{% endif %}>{{ params.title }}</truncated-aptitle>
-      </h3>
-    {% endif %}
-  {% endif %}
-
-  {% if params.subtitle %}
-    <p class="sub-title">{{ params.subtitle }}</p>
-  {% endif %}
-
-  {% if params.prose %}
-    <div class="prose">{{ params.prose | mdToHTML | safe }}</div>
-  {% endif %}
+  {{ text(params) }}
 
 </div>
