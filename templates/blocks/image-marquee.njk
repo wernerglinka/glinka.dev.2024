@@ -1,0 +1,41 @@
+{#
+  Image Marquee
+  Renders a set of images in a marquee
+  
+
+  params: {
+    imageFolder: string - local folder with images
+    selections: array - selection of images to display
+  }
+#}
+
+
+<div class="block block-image-marquee {% if params.blockClass %} {{ params.blockClass }}{% endif %}">
+  <div class="container">
+    <div class='enable-animation'>
+      <div class='marquee hover-pause'>
+        <ul class='marquee-content'>
+          {% for image in params.selections %}
+            <li>
+              <img src="{{ params.imageFolder }}{{ image.item }}" alt='{{ image.item }}' />
+            </li>
+          {% endfor %}
+        </ul>
+        <ul class='marquee-content'>
+          {% for image in params.selections %}
+            <li>
+              <img src="{{ params.imageFolder }}{{ image.item }}" alt='{{ image.item }}' />
+            </li>
+          {% endfor %}
+        </ul>
+        <ul class='marquee-content'>
+          {% for image in params.selections %}
+            <li>
+              <img src="{{ params.imageFolder }}{{ image.item }}" alt='{{ image.item }}' />
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
