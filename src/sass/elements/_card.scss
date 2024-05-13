@@ -34,7 +34,10 @@
     margin: 0 0 1rem;
     font-size: 1.6rem;
     text-transform: uppercase;
-    min-height: 4rem;
+    min-height: 6rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 
     span {
       text-transform: uppercase;
