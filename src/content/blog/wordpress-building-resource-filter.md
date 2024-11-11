@@ -116,7 +116,7 @@ sections:
                 return;
               }
 
-              if (isset($_GET['keyword-search'])) {
+              if (isset($_GET['keyword-search']) || isset($_GET['category']) || isset($_GET['auth']) || isset($_GET['type'])) {
                 if (!isset($_GET['resources_nonce']) || !wp_verify_nonce($_GET['resources_nonce'], 'resources_filter')) {
                   wp_die(__('Invalid security token sent.', 'rde01'));
                 }
