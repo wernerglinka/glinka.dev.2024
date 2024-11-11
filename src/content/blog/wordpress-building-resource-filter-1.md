@@ -70,17 +70,17 @@ sections:
 
               ![](https://res.cloudinary.com/glinkaco/image/upload/v1731285239/filters-view_vbxfpk.png)
 
-              We implemented a filtering system that offers multiple ways to explore the content: users can search by keywords, browse by category, filter by author, or focus on specific resource types. However, one crucial requirement emerged during development: We needed to prevent user frustration by avoiding the dreaded "No Resources Found" message. Instead of letting users select filter combinations that would yield no results, we built a system that intelligently turns off invalid options.
+              We implemented a filtering system that offers multiple ways to explore the content: users can search by keywords, browse by category, filter by author, or focus on specific resource types. However, one crucial requirement emerged during development: We wanted to prevent user frustration by avoiding the dreaded "No Resources Found" message. Instead of letting users select filter combinations that would yield no results, we built a system that intelligently turns off invalid options.
 
               This series of blog posts chronicles our journey in building this filtering system, sharing the technical solutions and lessons learned along the way. Whether you're building a resource library, a product catalog, or any other filterable content in WordPress, these insights should prove valuable.
 
               When building complex functionality in WordPress, organizing code logically and maintainably is essential. Our resource filtering system splits its code across several files, each with a specific responsibility. This separation helps keep the code manageable and maintainable and makes debugging easier.
 
-              The main template file, resources.php, lives in the template-parts directory alongside other templates. This file orchestrates the overall flow of our filtering system. It processes user input, builds queries, and coordinates the display of our filtered content.
+              The main template file, `resources.php`, lives in the `template-parts` directory alongside other templates. This file orchestrates the overall flow of our filtering system. It processes user input, builds queries, and coordinates the display of our filtered content.
 
-              The display logic is divided into three template files in the inc/resources directory: card.php handles the display of individual resource items, filters.php handles the filtering interface, and results.php handles the results list and pagination. This separation allows us to modify how things look without touching the underlying logic.
+              The display logic is divided into three template files in the `inc/resources directory`: `card.php` handles the display of individual resource items, `filters.php` handles the filtering interface, and `results.php` handles the results list and pagination. This separation allows us to modify how things look without touching the underlying logic.
 
-              All the functional code—the functions that power our filtering system—is located in resources-function.php. This includes functions for URL generation, category management, author retrieval, and the crucial filtering logic that determines which options should be available based on current selections.
+              All the functional code—the functions that power our filtering system—is located in `inc/resources/function.php`. This includes functions for URL generation, category management, author retrieval, and the crucial filtering logic that determines which options should be available based on current selections.
 
               <pre><code class='file-hierarchy'>
               wp-content/
@@ -96,7 +96,7 @@ sections:
                         │   └──resources.php
                         └── functions.php
               </code></pre>
-              With this organization in place, let's explore how the main template, resources.php, brings everything together.
+              With this organization in place, let's explore how the main template, `resources.php`, brings everything together.
 
               At the very beginning of our template, we establish some fundamental parameters that will control how our content is displayed. These constants define things like how many resources appear on each page and how our pagination will look:
 
