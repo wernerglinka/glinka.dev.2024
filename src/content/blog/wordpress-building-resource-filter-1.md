@@ -3,19 +3,19 @@ layout: blocks.njk
 draft: false
 pageType: "blog-post"
 disableDefaultFooter: true
-item: "wordpress-building-resource-filter" # used as a key for bloglist filters
+item: "wordpress-building-resource-filter-1" # used as a key for bloglist filters
 
 seo:
-  title: Building an Intuitive Resource Filter for WordPress | Werner Glinka
+  title: Building an Intuitive Resource Filter for WordPress - Part 1 | Werner Glinka
   description: "This filter implementation safely handles user input, efficiently manages database queries through caching, and organizes the display code logically through template parts while avoiding the dreaded 'No Resources Found' message. Instead of letting users select filter combinations that would yield no results, it intelligently turns off invalid filter options."
-  socialImage: "https://res.cloudinary.com/glinkaco/image/upload/v1731284817/tgc2022/blogImages/filters_vmprhk.jpg"
+  socialImage: "https://res.cloudinary.com/glinkaco/image/upload/v1731284817/tgc2022/blogImages/wp-resource-filters/filters_vmprhk.jpg"
   canonicalOverwrite: ""
 
 blogTitle: "Building an Intuitive Resource Filter for WordPress - Part 1"
 date: 2024-11-01
 author: ""
 image:
-  src: "v1731284817/tgc2022/blogImages/filters_vmprhk.jpg"
+  src: "v1731284817/tgc2022/blogImages/wp-resource-filters/filters_vmprhk.jpg"
   alt: ""
   caption:
 excerpt: "This filter implementation avoids the dreaded 'No Resources Found' message. Instead of letting users select filter combinations that would yield no results, it intelligently turns off invalid filter options."
@@ -31,7 +31,7 @@ sections:
       inContainer: false
       background:
         color: ""
-        image: "v1731284817/tgc2022/blogImages/filters_vmprhk.jpg"
+        image: "v1731284817/tgc2022/blogImages/wp-resource-filters/filters_vmprhk.jpg"
         isDark: false
     columns:
       - column:
@@ -64,11 +64,13 @@ sections:
           - name: text
             blockClass: "blogpost-text"
             prose: |-
+              ## Building the Resources Template
+
               I have been working on the website for [reDesignED](https://redesign-education.org/), a nonpartisan research, design, and service organization dedicated to addressing today's educational challenges. reDesignED offers a wealth of information through various types of content - from research papers and case studies to blog posts and whitepapers. All of these resources are accessible through their WordPress-powered website.
 
               While building this resource library, we faced a fundamental challenge: How do we make a diverse collection of educational content easily discoverable without overwhelming users? The solution needed to be robust and intuitive, allowing users to find relevant resources with just a few clicks.
 
-              ![](https://res.cloudinary.com/glinkaco/image/upload/v1731285239/filters-view_vbxfpk.png)
+              ![](https://res.cloudinary.com/glinkaco/image/upload/v1731285239/tgc2022/blogImages/wp-resource-filters/filters-view_vbxfpk.png)
 
               We implemented a filtering system that offers multiple ways to explore the content: users can search by keywords, browse by category, filter by author, or focus on specific resource types. However, one crucial requirement emerged during development: We wanted to prevent user frustration by avoiding the dreaded "No Resources Found" message. Instead of letting users select filter combinations that would yield no results, we built a system that intelligently turns off invalid options.
 
@@ -256,7 +258,7 @@ sections:
 
               This template safely handles user input, efficiently manages database queries through caching, and organizes the display code logically through template parts.
 
-              This template serves as the foundation for our resource filtering system. In the following article, we'll explore how the filtering logic works and how we determine which filter options should be available based on the current selection.
+              This template serves as the foundation for our resource filtering system. In the [following article](/blog/wordpress-building-resource-filter-2/), we'll explore how the filtering logic works and how we determine which filter options should be available based on the current selection.
 
               Complete files may be viewed at [GitHub](https://github.com/wernerglinka/WP-Filter-Files/tree/main).
 
@@ -280,6 +282,8 @@ sections:
             header: "h2"
             horizontal: false
             selections:
-              - item: "building-netlify-cms-content-model"
-              - item: "using-forestry-cms-with-metalsmith"
+              - item: "wordpress-building-resource-filter-5"
+              - item: "wordpress-building-resource-filter-4"
+              - item: "wordpress-building-resource-filter-3"
+              - item: "wordpress-building-resource-filter-2"
 ---
