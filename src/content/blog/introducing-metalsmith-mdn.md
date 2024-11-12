@@ -46,7 +46,7 @@ sections:
               subtitle: "Enhancing Markdown with embedded Nunjucks Components"
               prose: ""
             date: 2024-03-27
-          
+
   - container: section # section || article || aside
     description: "blog post text section"
     containerFields:
@@ -65,7 +65,7 @@ sections:
           - name: text
             blockClass: "blogpost-text"
             prose: |-
-              
+
               Markdown is an important tool for developers and writers, prized for its simplicity and efficiency in writing web content. However, its inherent limitations in handling long-form content, particularly in incorporating reusable Page Sections, have posed challenges. Enter MDN, a brand new Metalsmith plugin inspired by MDX, creating the way of embedding reusable Section Components within Metalsmith markdown content.
 
               <img src="/assets/images/m+n.svg" alt="Metalsmith MDN" class="blog-image mn-logo" />
@@ -147,10 +147,10 @@ sections:
 
               #### `layouts/sections/intro.njk`
 
-              ```nunjucks
+              ```clike
               {% from "../partials/text.njk" import text %}
 
-              <section class="section-intro>
+              <section class="section-intro">
                 <div class="content">
                   {% set info = params %}
                   {{ text(info.text) }}
@@ -160,7 +160,7 @@ sections:
 
               #### `layouts/partials/text.njk`
 
-              ```nunjucks
+              ```clike
               {% macro text(info) %}
 
                 {% if info.title %}
