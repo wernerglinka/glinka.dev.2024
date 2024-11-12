@@ -1,4 +1,5 @@
 @use "../variables" as *;
+@use "sass:string";
 
 .block-full-page-image {
   width: 100vw;
@@ -33,7 +34,7 @@
     align-items: flex-start;
     background-color: rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(5px);
-    padding: unquote("clamp(2rem, calc(2rem + (4 - 2) * (100vw - 40rem) / (76.8 - 40.0)), 4rem)");
+    padding: string.unquote("clamp(2rem, calc(2rem + (4 - 2) * (100vw - 40rem) / (76.8 - 40.0)), 4rem)");
     animation: fadeInAnimation ease 2s;
 
     @keyframes fadeInAnimation {
@@ -58,7 +59,7 @@
   }
   h2 {
     font-family: var(--font-family-header);
-    font-size: clamp(3.790rem, 1.4vw + 3.243rem, 5.211rem);
+    font-size: clamp(3.79rem, 1.4vw + 3.243rem, 5.211rem);
     color: #fff;
   }
   .sub-title {
@@ -97,7 +98,6 @@
         stroke: var(--color-white);
       }
     }
-    
 
     &:hover {
       svg {
@@ -108,5 +108,3 @@
     }
   }
 }
-
-
