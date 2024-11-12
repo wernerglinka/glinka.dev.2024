@@ -106,7 +106,7 @@ sections:
               At the very beginning of our template, we establish some fundamental parameters that will control how our content is displayed. These constants define things like how many resources appear on each page and how our pagination will look:
 
 
-              ```clike
+              ```php
               define('RESOURCES_PER_PAGE', 10);
               define('PAGINATION_END_SIZE', 2);
               define('PAGINATION_MID_SIZE', 2);
@@ -116,7 +116,7 @@ sections:
 
               Before proceeding with content processing, the template performs several important security checks. First, it verifies that [Advanced Custom Fields](https://www.advancedcustomfields.com/) is available, as we rely on its functionality. Then, when a search is submitted, it validates the [security nonce](https://developer.wordpress.org/apis/security/nonces/) to prevent [cross-site request forgery attacks](https://owasp.org/www-community/attacks/csrf):
 
-              ```clike
+              ```php
               if (!function_exists('get_sub_field')) {
                 return;
               }
@@ -130,7 +130,7 @@ sections:
 
               The next section deals with processing user input. All URL parameters are collected and sanitized to ensure they're safe to use. Furthermore, if someone is performing a search, we implement [rate limiting](https://www.imperva.com/learn/application-security/rate-limiting/) to prevent abuse of our search functionality:
 
-              ```clike
+              ```php
               $params = get_sanitized_resource_params();
 
               if (!empty($params['keyword-search'])) {
@@ -143,7 +143,7 @@ sections:
 
               Now, we move into the content preparation phase. The template retrieves the allowed post types from an Advanced Custom Fields field. For better performance, it then uses [WordPress's caching system](https://developer.wordpress.org/advanced-administration/performance/cache/) to fetch categories and their hierarchical structure efficiently. This approach prevents unnecessary database queries on each page load. Similarly, it gathers all authors who have created content of the specified types:
 
-              ```clike
+              ```php
               $selected_types = get_sub_field('resource_types');
               if (empty($selected_types)) {
                   return;
@@ -163,7 +163,7 @@ sections:
 
               The query construction forms the heart of our filtering system. It starts with basic parameters and then layers on any additional filtering criteria the user has selected:
 
-              ```clike
+              ```php
               $query_args = array(
                   'post_type' => $params['type'] ? array($params['type']) : $selected_types,
                   'posts_per_page' => RESOURCES_PER_PAGE,
@@ -179,7 +179,7 @@ sections:
 
               When a user selects a specific category, we add a taxonomy query. This tells WordPress only to return posts from that particular category:
 
-              ```clike
+              ```php
               if (!empty($params['category'])) {
                   $query_args['tax_query'] = array(
                       array(
@@ -193,7 +193,7 @@ sections:
 
               For author filtering, we use a meta query. This is necessary because authors are stored in a custom field rather than using WordPress's default author system:
 
-              ```clike
+              ```php
               if (!empty($params['auth'])) {
                   $query_args['meta_query'] = array(
                       array(
@@ -207,7 +207,7 @@ sections:
 
               If the user has entered a search term, we add it to the query. WordPress will then search through titles and content to find matching resources:
 
-              ```clike
+              ```php
               if (!empty($params['keyword-search'])) {
                   $query_args['s'] = $params['keyword-search'];
               }
@@ -215,7 +215,7 @@ sections:
 
               It's helpful to see exactly what query is being run during development or troubleshooting. We include a debug section that shows the query parameters to administrators when WordPress debug mode is enabled:
                      
-              ```clike
+              ```php
               if (WP_DEBUG && current_user_can('manage_options')) {
                   echo '<pre>';
                   echo 'Query Args: ';
@@ -226,14 +226,14 @@ sections:
 
               With our query fully constructed, we can execute it and check for any errors:
 
-              ```clike
+              ```php
               $query = new WP_Query($query_args);
               $error = handle_resource_query_errors($query);
               ```
 
               The final section of our template handles the display of our filtered resources. We use WordPress template parts to keep our code organized and maintainable. The filters sidebar is loaded first, passing along all the parameters it needs to show the current state and available options:
 
-              ```clike
+              ```php
               get_template_part('inc/resources/filters', null, array(
                   'params' => $params,
                   'selected_types' => $selected_types,
@@ -244,7 +244,7 @@ sections:
 
               If our query encounters any errors, we display an error message. Otherwise, we show the filtered results using another template part:
 
-              ```clike
+              ```php
               if (is_wp_error($error)) {
                   echo '<div class="results" data-loading="false">';
                   echo '<div class="no-results">';

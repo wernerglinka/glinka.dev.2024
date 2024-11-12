@@ -74,7 +74,7 @@ sections:
 
               The results section begins by showing users exactly what they're looking at.
 
-              ```clike
+              ```php
               <div class="results-count">
                 <?php
                 $total_results = $query->found_posts;
@@ -95,7 +95,7 @@ sections:
 
               The resource list itself is straightforward but includes important accessibility considerations
 
-              ```clike
+              ```php
               <ul class="resources-list">
                 <?php if ($query->have_posts()): ?>
                   <?php while ($query->have_posts()):
@@ -113,7 +113,7 @@ sections:
 
               Each resource is displayed using a card template. Let's look at how individual cards present our content.
 
-              ```clike
+              ```php
               <li <?php post_class('resource-card-wrapper'); ?>>
                 <article class="resource-card">
                   <?php if ($card_type): ?>
@@ -170,7 +170,7 @@ sections:
 
               For larger result sets, pagination becomes essential. Our pagination system provides comprehensive navigation options:
 
-              ```clike
+              ```php
               <?php if ($query->max_num_pages > 1): ?>
                 <nav class="pagination" aria-label="<?php esc_attr_e('Resources navigation', 'rde01'); ?>">
                   <div class="pagination-links">

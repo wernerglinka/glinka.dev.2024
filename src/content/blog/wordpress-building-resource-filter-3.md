@@ -74,7 +74,7 @@ sections:
 
               The filters component begins with a search form that allows users to find resources by keyword.
 
-              ```clike
+              ```php
                 <form action="<?php echo esc_url(get_permalink()); ?>" method="get" class="keyword-search">
                   <label for="keyword-search"><?php esc_html_e('Search Keywords', 'rde01'); ?></label>
                   <div class="input-wrapper">
@@ -125,7 +125,7 @@ sections:
 
               When displaying category filters, we need to show both the current selection and available options.
 
-              ```clike
+              ```php
               <div class="categories filter-item">
                 <label><?php esc_html_e('Select a category', 'rde01'); ?></label>
                 <div class="current-filter-item">
@@ -146,7 +146,7 @@ sections:
 
               The `print_categories_list()` function handles the heavy lifting of displaying categories. It uses our availability data to determine which categories should be clickable.
 
-              ```clike
+              ```php
               function print_categories_list($categories, $level = 0)
               {
                 $current_filters = array(
@@ -191,7 +191,7 @@ sections:
 
               For authors, we follow a similar pattern but with some special handling for the author information stored in custom fields.
 
-              ```clike
+              ```php
               <div class="authors filter-item">
                 <label><?php esc_html_e('Select an author', 'rde01'); ?></label>
                 <div class="current-filter-item">
@@ -211,7 +211,7 @@ sections:
 
               The type filter rounds out our filtering interface, showing the different content types available.
 
-              ```clike
+              ```php
               <div class="types filter-item">
                 <label><?php esc_html_e('Filter by type', 'rde01'); ?></label>
                 <div class="current-filter-item">
@@ -232,7 +232,7 @@ sections:
 
               Finally, we provide a way to clear all active filters.
 
-              ```clike
+              ```php
               <?php if (!empty($params['category']) || !empty($params['auth']) || !empty($params['keyword-search']) || !empty($params['type'])): ?>
                 <div class="clear-filters">
                   <a href="<?php echo esc_url(get_permalink()); ?>" class="button">

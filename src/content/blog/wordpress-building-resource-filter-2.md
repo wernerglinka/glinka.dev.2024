@@ -74,7 +74,7 @@ sections:
 
               The core of our filtering system lives in the `check_available_results()` function. It accepts two parameters: the allowed post types and the current filters that have been applied. Here's how it begins:
 
-              ```clike
+              ```php
               function check_available_results($selected_types, $current_filters)
               {
                 $cache_key = 'available_results_' . md5(serialize($selected_types) . serialize($current_filters));
@@ -102,7 +102,7 @@ sections:
 
               Here's how that works:
 
-              ```clike
+              ```php
               if (!empty($current_filters['category']) && 
                 isset($current_filters['checking']) && 
                 $current_filters['checking'] !== 'category') {
@@ -132,7 +132,7 @@ sections:
 
               This approach follows the user's natural selection path. Each valid choice helps narrow down the next set of valid options.
 
-              ```clike
+              ```php
               if (!isset($current_filters['checking']) || 
                 $current_filters['checking'] === 'type') {
                 foreach ($selected_types as $post_type) {
@@ -149,7 +149,7 @@ sections:
 
               For categories, we examine each post that matches our current filters and collect all unique categories they belong to:
 
-              ```clike
+              ```php
               if (!isset($current_filters['checking']) || 
                 $current_filters['checking'] === 'category') {
                 foreach ($filtered_posts as $post_id) {
@@ -167,7 +167,7 @@ sections:
               Finally, we do the same for authors, checking who has authored the content that matches our current filters:
 
 
-              ```clike
+              ```php
               if (!isset($current_filters['checking']) || $current_filters['checking'] === 'author') {
                 foreach ($filtered_posts as $post_id) {
                   $author_objects = get_field('authored_by', $post_id);

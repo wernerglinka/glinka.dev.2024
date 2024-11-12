@@ -76,7 +76,7 @@ sections:
 
               The most complex are our filter URLs. Each time a user applies a filter, we need to maintain both their current selections and our security measures.
 
-              ```clike
+              ```php
               function get_filtered_url($new_params = array())
               {
                 // Get current parameters
@@ -125,7 +125,7 @@ sections:
 
               In our main template, we verify this security token before processing any filter requests.
 
-              ```clike
+              ```php
               // Verify nonce if form submitted for search or filtering
               if (isset($_GET['keyword-search']) || isset($_GET['category']) || isset($_GET['auth']) || isset($_GET['type'])) {
                 if (!isset($_GET['resources_nonce']) || !wp_verify_nonce($_GET['resources_nonce'], 'resources_filter')) {
@@ -140,7 +140,7 @@ sections:
 
               Beyond nonces, we also implement input sanitization.
 
-              ```clike
+              ```php
               function get_sanitized_resource_params() {
                 return array(
                   'category' => isset($_GET['category']) ? sanitize_text_field($_GET['category']) : null,
@@ -158,7 +158,7 @@ sections:
 
               We also implemented rate limiting for searches.
 
-              ```clike
+              ```php
               function handle_search_rate_limit() {
                 $user_ip = $_SERVER['REMOTE_ADDR'];
                 $rate_key = 'search_rate_' . md5($user_ip);
