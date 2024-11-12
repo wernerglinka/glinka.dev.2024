@@ -98,6 +98,9 @@ sections:
                         │   └──resources.php
                         └── functions.php
               </code></pre>
+
+              The above file structure is free to download on [GitHub](https://github.com/wernerglinka/WP-Filter-Files/tree/main). I'd recommend reviewing the code and using this series of blog posts as a guide.
+
               With this organization in place, let's explore how the main template, `resources.php`, brings everything together.
 
               At the very beginning of our template, we establish some fundamental parameters that will control how our content is displayed. These constants define things like how many resources appear on each page and how our pagination will look:
