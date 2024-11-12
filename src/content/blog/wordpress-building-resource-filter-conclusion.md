@@ -7,7 +7,7 @@ item: "wordpress-building-resource-filter-conclusion" # used as a key for blogli
 
 seo:
   title: Building an Intuitive Resource Filter for WordPress - Conclusion | Werner Glinka
-  description: "Key insights from building a secure, intuitive resource filter for WordPress. Learn how we maintain secure state across filter combinations while keeping the user experience smooth and response times quick."
+  description: "Key insights from building a secure, intuitive resource filter for WordPress. Insights include Code organization matters, User experience drives technical decisions, and Security requires consistency."
   socialImage: "https://res.cloudinary.com/glinkaco/image/upload/v1731369992/tgc2022/blogImages/wp-resource-filters/secure-filters-conclusion_cgyrcb.jpg"
   canonicalOverwrite: ""
 
@@ -18,7 +18,7 @@ image:
   src: "v1731369992/tgc2022/blogImages/wp-resource-filters/secure-filters-conclusion_cgyrcb.jpg"
   alt: ""
   caption:
-excerpt: "Key insights from building a secure, intuitive resource filter for WordPress. Learn how we maintain secure state across filter combinations while keeping the user experience smooth and response times quick."
+excerpt: "Key insights from building a secure, intuitive resource filter for WordPress. Insights include Code organization matters, User experience drives technical decisions, and Security requires consistency."
 
 sections:
   - container: section # section || article || aside
