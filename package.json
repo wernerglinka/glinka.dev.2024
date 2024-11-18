@@ -53,7 +53,7 @@
     "metalsmith-if": "^1.0.0",
     "metalsmith-include-files": "^3.0.2",
     "metalsmith-metadata": "^0.0.4",
-    "metalsmith-optimize-html": "github:wernerglinka/metalsmith-optimize-html",
+    "metalsmith-optimize-html": "^0.1.2",
     "metalsmith-prism": "^5.0.0",
     "metalsmith-robots": "^1.1.0",
     "metalsmith-safe-links": "^1.4.2",

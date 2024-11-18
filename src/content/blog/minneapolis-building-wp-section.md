@@ -64,15 +64,15 @@ sections:
           - name: text
             blockClass: "blogpost-text"
             prose: |-
-              The Minneapolis project harnesses a modular approach to web page construction. This innovative paradigm sees web pages as a composition of distinct, purpose-specific sections. Each section contributes unique content or functionality, and when combined, they seamlessly assemble into a comprehensive web page.
+              The Minneapolis project uses a modular approach to web page construction. This approach composes a web page with distinct, purpose-specific sections. Each section contributes unique content or functionality, and when combined, they seamlessly assemble into a comprehensive web page.
 
-              To illuminate this concept, let's delve into the Lake of the Isles section of the project website, available at https://dev-mpls.pantheonsite.io/. This section leverages a design element widely referred to as a "media object". Characterized by its two-column format, the media object combines compelling visuals on one side and relevant textual content on the other. This aesthetic design pattern has been adopted and embraced broadly across the web due to its ability to blend information delivery with visual interest.
+              To understand this concept, let's examine the _Lake of the Isles_ section of the project website, available at https://dev-mpls.pantheonsite.io/. This section leverages a design element widely referred to as a "media object". Characterized by its two-column format, the media object combines compelling visuals on one side and relevant textual content on the other. This design pattern has been adopted broadly across the web due to its ability to blend information delivery with visual interest.
 
               <img id="media-section" src="https://res.cloudinary.com/glinkaco/image/upload/v1685658331/media-section_xzpaoa.png" alt="media section" />
 
-              To formulate the schemas for our various page sections, including the media section we just analyzed, we'll employ a group in Advanced Custom Fields (ACF) named **Page Sections**. Within this group, we will utilize a single Flexible Content field labeled **Sections**. Here, we'll lay out the different configurations for our page sections, encompassing the media section as well.
+              To formulate the schemas for our various page sections, including the media section we just analyzed, we'll employ a group in Advanced Custom Fields (ACF) named **Page Sections**. Within this group, we will utilize a single Flexible Content field labeled **Sections**. Here, we'll lay out the different configurations for our page sections, including the media section.
 
-              For those embarking on this approach for the first time, I highly recommend reviewing the blog post titled [DIY Page Builder with ACF](https://wptips.dev/diy-page-builder-with-acf/). It offers a beginner-friendly guide to implementing this strategy effectively.
+              For those trying out this approach for the first time, I highly recommend reviewing the blog post titled [DIY Page Builder with ACF](https://wptips.dev/diy-page-builder-with-acf/). It offers a beginner-friendly guide to implementing this strategy effectively.
 
               ## Sections
               <img class="acf-ui" src="https://res.cloudinary.com/glinkaco/image/upload/v1685663080/page-sections-ui_mjazmi.png" alt="common section fields ui" />
@@ -107,7 +107,7 @@ sections:
               <img class="acf-ui" src="https://res.cloudinary.com/glinkaco/image/upload/v1685658331/cta_jfcj50.png" alt="cta section ui" />
               
               #### Image
-              The image component plays a pivotal role in the media section, allowing for the integration of visually appealing graphics or photographs. 
+              The image component plays an important role in the media section, allowing for the integration of visually appealing graphics or photographs. 
 
               <img class="acf-ui" src="https://res.cloudinary.com/glinkaco/image/upload/v1685658331/image_pydfwn.png" alt="media section ui" />
               
@@ -117,7 +117,7 @@ sections:
               <img class="acf-ui" src="https://res.cloudinary.com/glinkaco/image/upload/v1685658331/media-position_z6o4tc.png" alt="media position section ui" />
 
               ### Media Section Template
-              Now that we've defined the section, it's time to examine the section template. This template doesn't alter the actual front-end display of the website, instead, it's a tool for editors, providing them with a preview of the content and layout while they are busy constructing the page. We'll delve deeper into the front-end templates in an upcoming blog post.
+              Now that we've defined the section, it's time to examine the section template. This template doesn't alter the actual front-end display of the website, instead, it's a tool for editors, providing them with a preview of the content and layout while they are constructing the page. We'll have a deeper look into the front-end templates in an upcoming blog post.
 
               Initially, let's look at the page template. This template renders all sections in the order they are defined on the editing page.
 

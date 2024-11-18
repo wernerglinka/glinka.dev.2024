@@ -226,7 +226,7 @@ sections:
                       uri
                       sections {
                         sections { 
-                          ${ctaBanner} }
+                          ${ctaBanner}
                           ${defaultFooter}
                           ${featuredLogos}
                           ${featuredResources}

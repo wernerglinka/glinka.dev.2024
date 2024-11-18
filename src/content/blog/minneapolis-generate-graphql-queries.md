@@ -197,7 +197,7 @@ sections:
                 https://dev-mpls.pantheonsite.io/graphql/<query string here>
               ```
 
-              The query string needs to include all known page sections so it will be quite long. In the next blog post, we will review the Metalsmith end and how the queries are assembled, and the content is fetched.
+              The query string needs to include all known page sections so it will be quite long. In the [next blog post](/blog/minneapolis-building-wp-source-plugin/), we will review the Metalsmith end and how the queries are assembled, and the content is fetched.
 
   - container: aside # section || article || aside
     description: "section with related blogposts"
