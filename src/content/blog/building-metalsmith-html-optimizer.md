@@ -64,11 +64,11 @@ sections:
           - name: text
             blockClass: "blogpost-text"
             prose: |-
-              The Metalsmith ecosystem needed a fresh approach to HTML optimization. [Metalsmith HTML Minifier](https://github.com/whymarrh/metalsmith-html-minifier) was once the go-to plugin. However, it has grown stale due to unaddressed security issues. It is built as a wrapper for [HTML Minifier](https://github.com/kangax/html-minifier), which has a security fix, but sadly, the wrapper has not been updated. This gap prompted me to build a new solution with modern development practices while maintaining simplicity and security.
+              The Metalsmith ecosystem needed a fresh approach to HTML optimization.  [Metalsmith HTML Minifier](https://github.com/whymarrh/metalsmith-html-minifier) was once the go-to plugin. However, it has grown stale due to unaddressed security issues. It is built as a wrapper for  [HTML Minifier](https://github.com/kangax/html-minifier), which has a security fix, but sadly, the wrapper has not been updated. This gap prompted me to build a new solution with modern development practices while maintaining simplicity and security.
 
               ## Learning from the Past, Building for Today
 
-              I began by studying [HTMLCompressor](https://code.google.com/archive/p/htmlcompressor/), a tool that set the standard for HTML optimization. Its feature set provided valuable insights into what developers need. But HTML Compressor was released 12 years ago and browsers are very different now. This perspective made me realize that not all optimizations are equally useful, and some might even be harmful if applied indiscriminately.
+              I began by studying  [HTMLCompressor](https://code.google.com/archive/p/htmlcompressor/), a tool that set the standard for HTML optimization. Its feature set provided valuable insights into what developers need. But HTML Compressor was released 12 years ago and browsers are very different now. This perspective made me realize that not all optimizations are equally useful, and some might even be harmful if applied indiscriminately.
 
               ## Architecture: Options-Driven Optimizer Loading
 
@@ -249,7 +249,7 @@ sections:
 
               The journey from studying HTMLCompressor to creating a modern, secure optimizer has been interesting. I hope this approach to plugin development—emphasizing modularity, security, and real-world testing—inspires others in the Metalsmith community and beyond.
 
-              The plugin is available on [GitHub](https://github.com/wernerglinka/metalsmith-optimize-html) and [NPM](https://www.npmjs.com/package/metalsmith-optimize-html). I welcome feedback and contributions to make it even better.
+              The plugin is available on [GitHub](https://github.com/wernerglinka/metalsmith-optimize-html)  and  [NPM](https://www.npmjs.com/package/metalsmith-optimize-html). I welcome feedback and contributions to make it even better.
 
   - container: aside # section || article || aside
     description: "section with related blogposts"
