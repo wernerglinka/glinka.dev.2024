@@ -60,7 +60,7 @@ sections:
             apstyle: true
             subtitle: ""
             prose: >-
-              Here is a selection of my completed projects. The work I've undertaken spans across a variety of sectors, but primarily caters to small and medium-sized enterprises. Each of these bespoke websites has been crafted with meticulous attention to detail, ensuring a unique digital representation that echoes the company's vision, ethos, and market positioning.
+              Here is a selection of my completed projects. The work I've undertaken spans across a variety of sectors, but primarily caters to small and medium-sized enterprises. All websites have been build to reflect a company's vision, ethos, and market positioning.
 
 
               Notably, my portfolio isn't confined to commercial endeavors. I firmly believe in using my skills and resources to give back to the community. In line with this belief, I have undertaken several pro bono assignments for non-profit organizations. Each one has offered a different, yet equally rewarding, experience. 
@@ -72,10 +72,54 @@ sections:
               Another key pro bono project was for [Technovation[MN]](https://technovationmn.org/). The organization champions technology education for young women, a cause I wholeheartedly support. Developing their website was not just a project, but a contribution to a mission that strives to close the gender gap in the technology sector.
 
 
+              My latest pro bono project was for the [Mental Health America of California](https://www.mhanc.org/). This organization is dedicated to promoting mental health and wellness. I was honored to be able to contribute to their cause by creating a website that would help them reach a wider audience and provide support to those in need.
+
+
               These experiences have been incredibly enriching and have expanded the scope of my expertise while providing me the satisfaction of contributing positively to society.
             
     columnsDirection: ''
             
+  - container: section
+    description: media section
+    containerFields:
+      disabled: false
+      containerId: ''
+      containerClass: portfolio-example
+      inContainer: true
+      background:
+        color: ''
+        image: ''
+        isDark: false
+    columns:
+      - column:
+        blocks:
+          - name: image
+            blockClass: ''
+            src: v1732140366/tgc2022/mhac-site_bdnohp.png
+            alt: mhac homepage
+            caption: ''
+      - column:
+        blocks:
+          - name: text
+            blockClass: "with-highlight more-space"
+            title: Mental Health America of California
+            header: h2
+            textlength: '60'
+            apstyle: false
+            subtitle: Empowering wellness, healing, and recovery through self-determination.
+            prose: >-
+              [MHAC](https://mhac.org/) assists and encourages communities, families and individuals in California  to experience hope, wellness and recovery from mental health and substance use disorder issues. 
+
+
+              The website was build in 2024 with the Wordpress CMS.
+
+
+              All images are managed by [cloudinary.io](https://cloudinary.com/)
+              a digital asset management service.  
+
+              <p class="tech-tags">Wordpress | PHP | jQuery | HTML | CSS</p>
+    columnsDirection: 'reverse'
+
   - container: section
     description: media section
     containerFields:
