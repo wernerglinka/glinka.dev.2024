@@ -141,6 +141,7 @@ sections:
 
               My understanding of what makes an effective HTML optimizer evolved through real-world testing. One site I worked with had a mix of regular content and code examples:
 
+              **Test Example**
               ```html
               <article>
                 <h1>   Coding   Tutorial    </h1>
@@ -219,7 +220,7 @@ sections:
                 }));
               ```
 
-              **Input HTML**
+              **Test Input HTML**
               ```html
               <!--[if IE]>
               <div   class="legacy"    id="old-ie">
@@ -227,7 +228,7 @@ sections:
               </div>
               <![endif]-->
               ```
-              **Output HTML**
+              **Test Output HTML**
               ```html
               <div class="legacy" id="old-ie">
                 <img src="//example.com/image.jpg" alt="test">
