@@ -17,8 +17,8 @@ import metadata from "@metalsmith/metadata";
 import include from 'metalsmith-include-files';
 import externalLinks from "metalsmith-safe-links";
 import robots from "metalsmith-robots";
+import blogPages from "metalsmith-sectioned-blog-pagination";
 
-import blogPages from "./local_modules/blog-pages/index.js";
 
 
 // ESM does not currently import JSON modules by default.;
@@ -166,15 +166,15 @@ export function msBuild() {
         overwrite: true,
       } ) )
 
-      /*
+
       .use( ( files, metalsmith, done ) => {
-        console.log(files);
-        console.log(metalsmith.metadata().blog);
-        console.log(JSON.stringify(metalsmith.metadata(),null, 4));
+        //console.log( files );
+        //console.log( metalsmith.metadata().blog );
+        //console.log( JSON.stringify( metalsmith.metadata(), null, 4 ) );
         done();
       }
       )
-      */
+
 
       .use( sitemap( {
         hostname: 'https://www.glinka.co',
