@@ -59,7 +59,7 @@ sections:
               name: "Werner Glinka"
               url: "https://glinka.co"
               tel: "650.867.0778"
-              notice: "© 2023 Werner Glinka"
+              notice: "© 2024 Werner Glinka"
             socialLinks:
             - label: "LinkedIn"
               icon: linkedin

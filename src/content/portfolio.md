@@ -35,7 +35,7 @@ sections:
               header: h1
               textlength: ''
               apstyle: true
-              subtitle: A sample of websites I have built
+              subtitle: A sample of my work
               prose: ''
   
   - container: section

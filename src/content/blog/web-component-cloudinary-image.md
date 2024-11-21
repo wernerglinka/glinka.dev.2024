@@ -11,8 +11,7 @@ seo:
   socialImage: "https://res.cloudinary.com/glinkaco/image/upload/v1691099161/images_hlthlx.jpg"
   canonicalOverwrite: ""
 
-blogTitle: "Creating a Cloudinary Image Web Component
-"
+blogTitle: "Creating a Cloudinary Image Web Component"
 date: 2023-08-05
 author: ""
 image:
@@ -154,11 +153,13 @@ sections:
                   super();
                   // Create an Intersection Observer to load the high-resolution image when it becomes visible
                   this.observer = new IntersectionObserver(this.loadImage.bind(this)); 
-                  ...
+                  .
+                  .
+                  .
                 }
-
-                ...
-
+                .
+                .
+                .
                 connectedCallback() {
                   this.props.base = this.getAttribute("base");
                   this.props.imageid = this.getAttribute("imageid");
@@ -166,9 +167,9 @@ sections:
 
                   this.updateImage();
                 }
-
-                ...
-
+                .
+                .
+                .
                 loadImage(entries, observer) {
                   // Load the high-resolution image when it becomes visible
                   if (!entries[0].isIntersecting) return;
@@ -179,11 +180,13 @@ sections:
                   // Set the source for the high-resolution image
                   this.highResImage.src = `${this.base}${this.getImageTransformations()}/${this.imageid}`;
                   this.highResImage.alt = this.alt;
-
-                  ...
+                  .
+                  .
+                  .
                 }
-
-                ...
+                .
+                .
+                .
               }
               ```
 

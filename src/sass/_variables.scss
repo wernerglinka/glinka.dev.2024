@@ -43,12 +43,12 @@ $very-small-screen-width: 360px;
 
   // calculations with: https://codesandbox.io/s/clamp-linear-intepolation-based-on-viewport-width-builder-xgkft
   
-  --font-size-h1: clamp(3.790rem, 1.4vw + 3.243rem, 5.211rem);
-  --font-size-h2: clamp(2.843rem, 1.0vw + 2.433rem, 3.909rem);
-  --font-size-h3: clamp(2.133rem, 0.8vw + 1.825rem, 2.933rem);
-  --font-size-h4: clamp(1.6rem, 0.6vw + 1.369rem, 2.2rem);
-  --font-size-h5: clamp(1.2rem, 0.4vw + 1.025rem, 1.6rem);
-  --font-size-h6: clamp(1.0rem, 0.4vw + 0.685rem, 1.2rem);
+  //--font-size-h1: clamp(3.790rem, 1.4vw + 3.243rem, 5.211rem);
+  --font-size-h1: clamp(2.843rem, 1.0vw + 2.433rem, 3.909rem);
+  --font-size-h2: clamp(2.133rem, 0.8vw + 1.825rem, 2.933rem);
+  --font-size-h3: clamp(1.6rem, 0.6vw + 1.369rem, 2.2rem);
+  --font-size-h4: clamp(1.2rem, 0.4vw + 1.025rem, 1.6rem);
+  --font-size-h5: clamp(1.0rem, 0.4vw + 0.685rem, 1.2rem);
   --font-size-body: clamp(1.6rem, 1.4000rem + 0.5000vw, 2rem);
 
   --font-size-nav: 1.6rem;

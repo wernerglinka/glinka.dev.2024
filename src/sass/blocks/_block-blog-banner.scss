@@ -10,6 +10,7 @@
   // viewport widths below 400px
   // this offsets the header height
   margin-top: calc(-1 * clamp(5rem, 0.0000rem + 12.5000vw, 10rem));
+  margin-bottom: var(--default-padding);
   // min-height is adjusted between 20rem and 40rem based on viewport width 
   // and fixed at 40rem for viewport widths above 1200px and 20rem for 
   // viewport widths below 400px
@@ -21,10 +22,24 @@
     --image-height: 100%;
   }
 
+  .content {
+    padding: var(--default-padding);
+    background-color: var(--dark-glass-background);
+    backdrop-filter: var(--default-glass-blur);
+    margin-top: clamp(5rem, 0.0000rem + 12.5000vw, 10rem);
+    margin-bottom: calc(-1 * var(--default-padding));
+    width: 60%;
+
+    @media screen and (max-width: 600px) {
+      width: 100%;
+    }
+  }
+
   h1 {
     font-size: var(--font-size-h1);
     color: var(--color-white);
     text-shadow: var(--default-text-shadow);
+    margin: 0;
   }
   .sub-title {
     color: var(--color-white);

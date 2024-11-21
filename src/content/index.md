@@ -211,7 +211,7 @@ sections:
             title: ""
             header: ""
             subtitle: ""
-            prose: "<span>[24]7</span> . <span>AI&You</span> . <span class='highlight'>Busse Design</span> . <span>Code Savvy</span> . <span>Conducive</span> . <span>Coraid</span> . <span>FDAP</span> . <span>German American Artist</span> . <span class='highlight'>Goetz&Eckland</span> . <span>Instart Logic</span> . <span>Jasper</span> . <span>Kings Mountain Online</span> . <span class='highlight'>Loma Communications</span> . <span>LTSE</span> . <span>MarketTools</span> . <span>Monotyp</span>e . <span class='highlight'>Netomi</span> . <span>Paula Schaefer Law</span> . <span class='highlight'>PerimeterX</span> . <span>Peninsula Museum of Art</span> . <span>Power Reviews</span> . <span>Safebreach</span> . <span>Schuhmacher Electric</span> . <span>SkylineGroup</span> . <span>Tableau</span> . <span class='highlight'>Technovation[MN]</span> . <span>Witness</span>"
+            prose: "<span>[24]7</span> . <span>AI&You</span> . <span class='highlight'>Busse Design</span> . <span>Code Savvy</span> . <span>FDAP</span> . <span>German American Artist</span> . <span class='highlight'>Goetz&Eckland</span> . <span>Jasper</span> . <span class='highlight'>Loma Communications</span> . <span>LTSE</span> . <span>MarketTools</span> . <span class='highlight'>MHAC</span> . <span>Monotyp</span>e . <span class='highlight'>Netomi</span> . <span>Paula Schaefer Law</span> . <span class='highlight'>PerimeterX</span> . <span>Peninsula Museum of Art</span> . <span>reDesignEd</span> . <span>Safebreach</span> . <span>Schuhmacher Electric</span> . <span>Tableau</span> . <span class='highlight'>Technovation[MN]</span> . <span>Witness</span>"
       - column:
         blocks:
           - name: text
