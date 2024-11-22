@@ -13,15 +13,7 @@ ms.use( drafts() );
 // optimize HTML in production
 // home page with htmlOptimizer is 28% smaller (11/17/2024)
 ms.use( htmlOptimize( {
-  "removeComments": true,
-  "removeTagSpaces": true,
-  "removeDefaultAttributes": true,
-  "normalizeBooleanAttributes": true,
-  "cleanUrlAttributes": true,
-  "cleanDataAttributes": true,
-  "removeEmptyAttributes": true,
-  "removeProtocols": true,
-  "simplifyDoctype": true
+  "aggressive": true
 } ) );
 
 
