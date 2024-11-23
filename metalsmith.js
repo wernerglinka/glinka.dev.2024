@@ -49,7 +49,6 @@ export function msBuild() {
       .clean( true )
       .ignore( [ '**/.DS_Store' ] )
       .watch( isProduction ? false : [ 'src', [ 'templates' ] ] )
-      .env( 'DEBUG', 'metalsmith-optimize-html' )
       .env( 'NODE_ENV', process.env.NODE_ENV )
       .source( "./src/content" )
       .destination( "./build" )
