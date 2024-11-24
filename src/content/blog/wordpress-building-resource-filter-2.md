@@ -191,6 +191,32 @@ sections:
               In our [next article](/blog/wordpress-building-resource-filter-3/), we'll explore how these options are displayed in the user interface and how we handle the interaction between different types of filters.
 
   - container: aside # section || article || aside
+    description: "social share links"
+    containerFields:
+      disabled: false
+      containerId: ""
+      containerClass: "share-links"
+      inContainer: false
+      background:
+        color: ""
+        image: ""
+        isDark: false
+    columns:
+      - column:
+        blocks:
+          - name: social-shares
+            blockClass: ""
+            text:
+              prefix: ""
+              title: "Share this post"
+              header: "h3"
+              subtitle: ""
+              prose: ""
+            url: "/blog/wordpress-building-resource-filter-2"
+            socialTitle: "Building an Intuitive Resource Filter for WordPress - Part 2"
+            socialComment: "Discover how to organize a complex WordPress filtering system. We'll explore the template structure, caching for performance, and how the code organization reflects user interactions while maintaining developer-friendly architecture."
+            
+  - container: aside # section || article || aside
     description: "section with related blogposts"
     containerFields:
       disabled: false

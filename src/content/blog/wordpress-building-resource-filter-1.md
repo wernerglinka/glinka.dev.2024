@@ -266,6 +266,32 @@ sections:
               Complete files may be viewed at [GitHub](https://github.com/wernerglinka/WP-Filter-Files/tree/main).
 
   - container: aside # section || article || aside
+    description: "social share links"
+    containerFields:
+      disabled: false
+      containerId: ""
+      containerClass: "share-links"
+      inContainer: false
+      background:
+        color: ""
+        image: ""
+        isDark: false
+    columns:
+      - column:
+        blocks:
+          - name: social-shares
+            blockClass: ""
+            text:
+              prefix: ""
+              title: "Share this post"
+              header: "h3"
+              subtitle: ""
+              prose: ""
+            url: "/blog/wordpress-building-resource-filter-1"
+            socialTitle: "Building an Intuitive Resource Filter for WordPress - Part 1"
+            socialComment: "This filter implementation avoids the dreaded 'No Resources Found' message. Instead of letting users select filter combinations that would yield no results, it intelligently turns off invalid filter options."
+            
+  - container: aside # section || article || aside
     description: "section with related blogposts"
     containerFields:
       disabled: false

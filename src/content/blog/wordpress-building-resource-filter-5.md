@@ -184,6 +184,32 @@ sections:
               The key takeaway is that security in an interactive system isn't just about adding individual security measures - it's about designing the system to maintain security across all possible user interactions. By centralizing our security handling and carefully considering the user flow, we've created a system that's both secure and user-friendly.
 
   - container: aside # section || article || aside
+    description: "social share links"
+    containerFields:
+      disabled: false
+      containerId: ""
+      containerClass: "share-links"
+      inContainer: false
+      background:
+        color: ""
+        image: ""
+        isDark: false
+    columns:
+      - column:
+        blocks:
+          - name: social-shares
+            blockClass: ""
+            text:
+              prefix: ""
+              title: "Share this post"
+              header: "h3"
+              subtitle: ""
+              prose: ""
+            url: "/blog/wordpress-building-resource-filter-5"
+            socialTitle: "Building an Intuitive Resource Filter for WordPress - Part 5"
+            socialComment: "Security meets usability in this deep dive into protecting filter interactions. Learn how we maintain secure state across filter combinations while keeping the user experience smooth and response times quick."
+
+  - container: aside # section || article || aside
     description: "section with related blogposts"
     containerFields:
       disabled: false
@@ -206,5 +232,5 @@ sections:
               - item: "wordpress-building-resource-filter-1"
               - item: "wordpress-building-resource-filter-2"
               - item: "wordpress-building-resource-filter-3"
-              - item: "wordpress-building-resource-filter-5"
+              - item: "wordpress-building-resource-filter-4"
 ---

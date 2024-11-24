@@ -237,6 +237,33 @@ sections:
               Most importantly, all links in the pagination maintain the current filter state using our `get_filtered_url()` function. This ensures users keep their filter state when moving between pages.
 
   - container: aside # section || article || aside
+    description: "social share links"
+    containerFields:
+      disabled: false
+      containerId: ""
+      containerClass: "share-links"
+      inContainer: false
+      background:
+        color: ""
+        image: ""
+        isDark: false
+    columns:
+      - column:
+        blocks:
+          - name: social-shares
+            blockClass: ""
+            text:
+              prefix: ""
+              title: "Share this post"
+              header: "h3"
+              subtitle: ""
+              prose: ""
+            url: "/blog/wordpress-building-resource-filter-4"
+            socialTitle: "Building an Intuitive Resource Filter for WordPress - Part 4"
+            socialComment: "Explore how we present filtered resources with proper pagination. From accessible card layouts to smooth navigation between pages, see how the display system handles both small and large result sets effectively."
+
+
+  - container: aside # section || article || aside
     description: "section with related blogposts"
     containerFields:
       disabled: false

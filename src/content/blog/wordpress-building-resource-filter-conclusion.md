@@ -79,6 +79,33 @@ sections:
               Perhaps the most valuable lesson is that seemingly simple features often reveal layers of complexity when built thoughtfully. By embracing this complexity while maintaining clean, organized code, we create systems that serve both users and developers effectively.
 
   - container: aside # section || article || aside
+    description: "social share links"
+    containerFields:
+      disabled: false
+      containerId: ""
+      containerClass: "share-links"
+      inContainer: false
+      background:
+        color: ""
+        image: ""
+        isDark: false
+    columns:
+      - column:
+        blocks:
+          - name: social-shares
+            blockClass: ""
+            text:
+              prefix: ""
+              title: "Share this post"
+              header: "h3"
+              subtitle: ""
+              prose: ""
+            url: "/blog/wordpress-building-resource-filter-conclusion"
+            socialTitle: "Building an Intuitive Resource Filter for WordPress - Conclusion"
+            socialComment: "Key insights from building a secure, intuitive resource filter for WordPress. Insights include Code organization matters, User experience drives technical decisions, and Security requires consistency."
+
+
+  - container: aside # section || article || aside
     description: "section with related blogposts"
     containerFields:
       disabled: false

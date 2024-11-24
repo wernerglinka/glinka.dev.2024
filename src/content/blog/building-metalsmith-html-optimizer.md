@@ -253,11 +253,11 @@ sections:
               The plugin is available on [GitHub](https://github.com/wernerglinka/metalsmith-optimize-html)  and  [NPM](https://www.npmjs.com/package/metalsmith-optimize-html). I welcome feedback and contributions to make it even better.
 
   - container: aside # section || article || aside
-    description: "section with related blogposts"
+    description: "social share links"
     containerFields:
       disabled: false
       containerId: ""
-      containerClass: "related-blogs"
+      containerClass: "share-links"
       inContainer: false
       background:
         color: ""
@@ -266,15 +266,16 @@ sections:
     columns:
       - column:
         blocks:
-          - name: related-blogs
+          - name: social-shares
             blockClass: ""
-            title: "Related Posts"
-            header: "h2"
-            horizontal: false
-            selections:
-              - item: "wordpress-building-resource-filter-1"
-              - item: "wordpress-building-resource-filter-2"
-              - item: "wordpress-building-resource-filter-3"
-              - item: "wordpress-building-resource-filter-4"
-              - item: "wordpress-building-resource-filter-5"
+            text:
+              prefix: ""
+              title: "Share this post"
+              header: "h3"
+              subtitle: ""
+              prose: ""
+            url: "/blog/building-metalsmith-html-optimizer"
+            socialTitle: "Building a Modern HTML Optimizer for Metalsmith"
+            socialComment: "Building a modern HTML optimizer for Metalsmith: From being inspired by HTMLCompressor's features to creating a modular plugin with effective HTML optimization without compromising security."
+
 ---
