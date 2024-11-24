@@ -190,6 +190,8 @@ sections:
 
               In our [next article](/blog/wordpress-building-resource-filter-3/), we'll explore how these options are displayed in the user interface and how we handle the interaction between different types of filters.
 
+              Any comments? Find me on [Bluesky](https://bsky.app/profile/wernerglinka.bsky.social).
+
   - container: aside # section || article || aside
     description: "social share links"
     containerFields:

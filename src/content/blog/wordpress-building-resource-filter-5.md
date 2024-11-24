@@ -183,6 +183,8 @@ sections:
 
               The key takeaway is that security in an interactive system isn't just about adding individual security measures - it's about designing the system to maintain security across all possible user interactions. By centralizing our security handling and carefully considering the user flow, we've created a system that's both secure and user-friendly.
 
+              Any comments? Find me on [Bluesky](https://bsky.app/profile/wernerglinka.bsky.social).
+
   - container: aside # section || article || aside
     description: "social share links"
     containerFields:

@@ -102,6 +102,8 @@ sections:
 
               The future of development isn't about AI replacing developers - it's about developers who understand how to work with AI tools becoming dramatically more productive than those who don't. 
 
+              Any comments? Find me on [Bluesky](https://bsky.app/profile/wernerglinka.bsky.social).
+
   - container: aside # section || article || aside
     description: "social share links"
     containerFields:

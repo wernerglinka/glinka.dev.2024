@@ -236,6 +236,8 @@ sections:
 
               Most importantly, all links in the pagination maintain the current filter state using our `get_filtered_url()` function. This ensures users keep their filter state when moving between pages.
 
+              Any comments? Find me on [Bluesky](https://bsky.app/profile/wernerglinka.bsky.social).
+
   - container: aside # section || article || aside
     description: "social share links"
     containerFields:

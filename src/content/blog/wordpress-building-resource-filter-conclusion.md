@@ -78,6 +78,8 @@ sections:
 
               Perhaps the most valuable lesson is that seemingly simple features often reveal layers of complexity when built thoughtfully. By embracing this complexity while maintaining clean, organized code, we create systems that serve both users and developers effectively.
 
+              Any comments? Find me on [Bluesky](https://bsky.app/profile/wernerglinka.bsky.social).
+
   - container: aside # section || article || aside
     description: "social share links"
     containerFields:

@@ -265,6 +265,8 @@ sections:
 
               Complete files may be viewed at [GitHub](https://github.com/wernerglinka/WP-Filter-Files/tree/main).
 
+              Any comments? Find me on [Bluesky](https://bsky.app/profile/wernerglinka.bsky.social).
+
   - container: aside # section || article || aside
     description: "social share links"
     containerFields:
