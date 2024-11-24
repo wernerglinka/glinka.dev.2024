@@ -1,0 +1,61 @@
+.social-shares-list {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  margin: 4rem 0;
+  padding: 0;
+  list-style: none;
+  font-size: 0;
+  li {
+    display: inline-block;
+    font-size: 1rem;
+    a {
+      svg {
+        width: auto;
+        height: 3rem;
+        stroke: black;
+        fill: black;
+        transition: all 0.3s ease-in-out;
+
+        g {
+          fill: black;
+          transition: all 0.3s ease-in-out;
+        }
+      }
+
+      &:after {
+        display: none;
+      }
+    }
+
+    &.bluesky a:hover {
+      svg {
+        g {
+          fill: #1185FE;
+        }
+      } 
+    }
+    &.linkedin a:hover {
+      svg {
+        stroke: #0077B5;
+        fill: #0077B5;
+      } 
+    }
+    &.facebook a:hover {
+      svg {
+        stroke: #316FF6;
+        fill: #316FF6;
+      } 
+    }
+    &.twitter a:hover {
+      svg {
+        stroke: #1DA1F2;
+        fill: #1DA1F2;
+      } 
+    }
+  }
+}
+
+
+
+

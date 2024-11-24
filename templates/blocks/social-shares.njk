@@ -1,0 +1,44 @@
+{#
+  Social share buttons
+  Renders a set of social share buttons
+  
+  metadata: {
+    site: {
+      imagePrefix: string - path to images
+    }
+  } 
+#}
+
+{% from "../partials/social-links.njk" import socialLinks %}
+{% from "../partials/text.njk" import text %}
+
+{% set domain = "https://glinka.co" %}
+
+<div class="block block-social-shares">
+  <div class="container">
+    {{ text( params.text )}}
+
+    <ul class="social-shares-list">
+      <li class="bluesky">
+        <a href="https://bsky.app/intent/compose?text=I%20reccommend20%~{{ domain }}{{ params.url }}" aria-label="Share on Bluesky">
+          {% include "../icons/bluesky.njk" %}
+        </a>
+      </li>
+      <li class="linkedin">
+        <a href="http://www.linkedin.com/shareArticle?url=~{{ domain }}{{ params.url }}&title={{ params.socialTitle}}" aria-label="Share on LinkedIn">
+          {% include "../icons/linkedin.njk" %}
+        </a>
+      </li>
+      <li class="facebook">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=~{{ domain }}{{ params.url }}&quote={{ params.socialComment }}" aria-label="Share on Facebook">
+          {% include "../icons/facebook.njk" %}
+        </a>
+      </li>
+      <li class="twitter">
+        <a href="https://twitter.com/intent/tweet?url=~{{ domain }}{{ params.url }}&text={{ params.socialComment }}" aria-label="Share on Twitter">
+          {% include "../icons/twitter.njk" %}
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
