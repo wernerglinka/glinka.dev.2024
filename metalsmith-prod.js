@@ -12,9 +12,7 @@ const ms = msBuild();
 ms.use( drafts() );
 // optimize HTML in production
 // home page with htmlOptimizer is 31% smaller (11/17/2024)
-ms.use( htmlOptimize( {
-  "aggressive": true
-} ) );
+ms.use( htmlOptimize() );
 
 
 ms.build( err => {
