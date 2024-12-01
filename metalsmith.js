@@ -148,7 +148,7 @@ export function msBuild() {
 
       .use( robots( {
         "useragent": "*",
-        "sitemap": "https://www.glinka.co/sitemap.xml"
+        "sitemap": "https://glinka.co/sitemap.xml"
       } ) )
 
       /**
@@ -177,7 +177,7 @@ export function msBuild() {
 
 
       .use( sitemap( {
-        hostname: 'https://www.glinka.co',
+        hostname: 'https://glinka.co',
         omitIndex: true,
         omitExtension: true,
         changefreq: 'weekly',
