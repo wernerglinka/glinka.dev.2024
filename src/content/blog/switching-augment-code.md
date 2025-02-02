@@ -64,7 +64,7 @@ sections:
           - name: text
             blockClass: "blogpost-text"
             prose: |-
-              I always look for tools to enhance my productivity, and I've spent considerable time with GitHub Copilot. While it's been a reliable companion, I recently discovered Augment Code, which completely transformed my development workflow.
+              I always look for tools to enhance my productivity, and I've spent considerable time with [GitHub Copilot](https://github.com/features/copilot). While it's been a reliable companion, I recently discovered [Augment Code](https://www.augmentcode.com/), which completely transformed my development workflow.
 
               ## The Limitations I Found with Copilot
               Don't get me wrong – Copilot is impressive. Its real-time code suggestions and ability to complete lines of code made my life easier, but it has some drawbacks:
