@@ -119,8 +119,30 @@ sections:
               header: "h3"
               subtitle: ""
               prose: ""
-            url: "/blog/experience-with-claude-github-copilot"
-            socialTitle: "AI as a Development Partner: My Experience with Claude and GitHub Copilot"
-            socialComment: "I've been integrating AI tools into my daily workflow, and I want to share my perspective on how they're transforming software development - not by replacing developers, but by enhancing our capabilities and productivity."
+            url: "/blog/switching-augment-code"
+            socialTitle: "Making the Switch: Why I Replaced GitHub Copilot with Augment Code"
+            socialComment: "While Copilot excels at line-by-line suggestions, Augment Code understands your entire codebase as context. This isn't just a marketing pitch – it's a game-changer in practice."
+
+  - container: aside # section || article || aside
+    description: "section with related blogposts"
+    containerFields:
+      disabled: false
+      containerId: ""
+      containerClass: "related-blogs"
+      inContainer: false
+      background:
+        color: ""
+        image: ""
+        isDark: false
+    columns:
+      - column:
+        blocks:
+          - name: related-blogs
+            blockClass: ""
+            title: "Related Posts"
+            header: "h2"
+            horizontal: false
+            selections:
+              - item: "experience-with-claude-github-copilot"
                           
 ---

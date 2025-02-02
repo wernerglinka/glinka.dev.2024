@@ -129,5 +129,26 @@ sections:
             url: "/blog/experience-with-claude-github-copilot"
             socialTitle: "AI as a Development Partner: My Experience with Claude and GitHub Copilot"
             socialComment: "I've been integrating AI tools into my daily workflow, and I want to share my perspective on how they're transforming software development - not by replacing developers, but by enhancing our capabilities and productivity."
-                          
+        
+  - container: aside # section || article || aside
+    description: "section with related blogposts"
+    containerFields:
+      disabled: false
+      containerId: ""
+      containerClass: "related-blogs"
+      inContainer: false
+      background:
+        color: ""
+        image: ""
+        isDark: false
+    columns:
+      - column:
+        blocks:
+          - name: related-blogs
+            blockClass: ""
+            title: "Related Posts"
+            header: "h2"
+            horizontal: false
+            selections:
+              - item: "switching-augment-code"
 ---
