@@ -99,6 +99,20 @@ export function msBuild() {
         engineOptions
       } ) )
 
+      .use( ( files, metalsmith, done ) => {
+        if ( files[ 'index.html' ] ) {
+          // print the contents of the index.html file
+          const myContent = files[ 'index.html' ].contents.toString();
+          // reduce multiple line breaks to one
+          const betterContent = myContent.replace( /\n\s*\n/g, '\n' );
+          console.log( betterContent );
+        }
+        //console.log( files );
+        //console.log( metalsmith.metadata().blog );
+        //console.log( JSON.stringify( metalsmith.metadata(), null, 4 ) );
+        done();
+      } )
+
       /**
        * Process all links so external links have 
        * target="_blank" and rel="noopener noreferrer" 
@@ -172,8 +186,7 @@ export function msBuild() {
         //console.log( metalsmith.metadata().blog );
         //console.log( JSON.stringify( metalsmith.metadata(), null, 4 ) );
         done();
-      }
-      )
+      } )
 
 
       .use( sitemap( {

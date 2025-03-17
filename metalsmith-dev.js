@@ -12,6 +12,7 @@ ms.build( err => {
   if ( err ) {
     throw err;
   }
+
   /* eslint-disable no-console */
   console.log( `Build success in ${ ( ( performance.now() - t1 ) / 1000 ).toFixed( 1 ) }s` );
   if ( ms.watch() ) {
