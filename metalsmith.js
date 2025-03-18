@@ -44,12 +44,14 @@ const engineOptions = {
 
 export function msBuild() {
   const isProduction = process.env.NODE_ENV === 'production';
+
   return (
     Metalsmith( __dirname )
       .clean( true )
       .ignore( [ '**/.DS_Store' ] )
       .watch( isProduction ? false : [ 'src', [ 'templates' ] ] )
       .env( 'NODE_ENV', process.env.NODE_ENV )
+      //.env( 'DEBUG', '@metalsmith/layouts*' )
       .source( "./src/content" )
       .destination( "./build" )
       .metadata( {
@@ -96,22 +98,10 @@ export function msBuild() {
 
       .use( layouts( {
         directory: "templates",
+        transform: 'nunjucks',
+        pattern: '**/*.{html,njk}*',
         engineOptions
       } ) )
-
-      .use( ( files, metalsmith, done ) => {
-        if ( files[ 'index.html' ] ) {
-          // print the contents of the index.html file
-          const myContent = files[ 'index.html' ].contents.toString();
-          // reduce multiple line breaks to one
-          const betterContent = myContent.replace( /\n\s*\n/g, '\n' );
-          console.log( betterContent );
-        }
-        //console.log( files );
-        //console.log( metalsmith.metadata().blog );
-        //console.log( JSON.stringify( metalsmith.metadata(), null, 4 ) );
-        done();
-      } )
 
       /**
        * Process all links so external links have 
