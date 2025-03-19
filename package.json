@@ -48,7 +48,7 @@
     "metalsmith-prism": "^5.0.2",
     "metalsmith-robots": "^1.1.0",
     "metalsmith-safe-links": "^1.4.3",
-    "metalsmith-sectioned-blog-pagination": "^0.0.2",
+    "metalsmith-sectioned-blog-pagination": "^1.0.0",
     "metalsmith-sitemap": "^1.2.2",
     "metalsmith-static-files": "^1.0.0",
     "postcss": "^8.5.3",
