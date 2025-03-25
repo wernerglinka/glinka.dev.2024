@@ -41,7 +41,6 @@ const engineOptions = {
   filters: nunjucksFilters
 };
 
-
 export function msBuild() {
   const isProduction = process.env.NODE_ENV === 'production';
 
@@ -92,9 +91,14 @@ export function msBuild() {
         "blogDirectory": "blog/",
       } ) )
 
-      .use( markdown() )
-
-      .use( permalinks() )
+      /**
+       * We are not using any markdown contents, only frontmatter
+       * to define structured pages. Markdown content of section
+       * properties will be done with a Nunjucks filter
+       */
+      .use( permalinks( {
+        match: "**/*.md"
+      } ) )
 
       .use( layouts( {
         directory: "templates",
