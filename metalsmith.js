@@ -122,7 +122,7 @@ export function msBuild() {
 
       .use(
         prism( {
-          lineNumbers: true,
+          //lineNumbers: true,
           decode: true,
         } )
       )
