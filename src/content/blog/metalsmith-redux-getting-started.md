@@ -15,7 +15,7 @@ blogTitle: "Metalsmith Redux - Getting Started"
 date: 2025-04-17
 author: ""
 image:
-  src: "v1744735403/metalsmith-redux_lgj9qh.jpg"
+  src: "v1695321312/start_afwygu.jpg"
   alt: ""
   caption:
 excerpt: "Now it's time to set up our first Metalsmith project. Don't worry if you're new to static site generators or even to web development in general. This guide is writtento be straightforward and approachable."
@@ -31,7 +31,7 @@ sections:
       inContainer: false
       background:
         color: ""
-        image: "v1744735403/metalsmith-redux_lgj9qh.jpg"
+        image: "v1695321312/start_afwygu.jpg"
         isDark: false
     columns:
       - column:

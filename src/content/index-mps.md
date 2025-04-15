@@ -1,6 +1,7 @@
 ---
 layout: blocks.njk
 bodyClasses: "blocks-page has-full-height-image home"
+draft: true
 
 seo:
   title: Werner Glinka - Portfolio
@@ -49,17 +50,17 @@ sections:
           - name: full-page-image
             blockClass: ""
             image: 
-              src: "v1744754995/metalsmith-in-action_lbtfuc.jpg"
-              alt: "Metalsmith in action"
-              caption: "Photo by Robert Schwarz on unsplash.com"
+              src: "v1688513430/bob-dylan-mural_anzmom.jpg"
+              alt: "Minneapolis Uptown"
+              caption: "Photo by @tjbednar on freeImages.com"
             text:
               prefix: "My Latest Project"
-              title: Metalsmith Redux
+              title: Minneapolis
               header: "h2"
-              subtitle: "Metalsmith Redux is a series of blogpost re-introducing the Metalsmith static site generator as a valid choice for building websites in 2025."
+              subtitle: "Minneapolis is a proof-of-concept project to use a WordPress backend as a Content Management System for a Metalsmith static site generator."
               prose: ""
             ctas:
-              - url: "/blog/metalsmith-redux-intro/"
+              - url: "/blog/minneapolis-using-wordpress-headless-cms-metalsmith/"
                 label: "Read about it here"
                 isExternal: false
                 isButton: false
