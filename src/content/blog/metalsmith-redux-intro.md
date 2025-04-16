@@ -70,9 +70,11 @@ sections:
               ## What is Metalsmith?
               At its core, Metalsmith is a static site generator built on [Node.js](https://nodejs.org/). But unlike many of its competitors, Metalsmith doesn't force you into rigid templates, prescribed workflows, or complex DevOps configurations. Instead, it follows a simple philosophy:
 
-              1. Read files from a source directory
-              2. Apply transformations through plugins
-              3. Write the results to a destination directory
+              - Read files from a source directory
+              - Apply transformations through plugins
+              - Write the results to a destination directory
+
+              ![](https://res.cloudinary.com/glinkaco/image/upload/v1645224179/tgc2022/blogImages/orca1/what-is-metalsmith_co5vzn.jpg)
               
               That's it. This straightforward approach gives you complete control over how your content is processed and transformed. Metalsmith treats your source files as data that can be manipulated with JavaScript, making it versatile without being overwhelming.
 
