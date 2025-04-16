@@ -222,7 +222,7 @@ sections:
 
               ## What's Next?
 
-              Congratulations! You've successfully set up and run your first Metalsmith project. In the next post, we'll explore the site structure in more detail and learn how content is organized in a Metalsmith project.
+              Congratulations! You've successfully set up and run your first Metalsmith project. In [the next post](/blog/metalsmith-redux-files-structure), we'll explore the site structure in more detail and learn how content is organized in a Metalsmith project.
 
               For now, feel free to explore the starter site. Try creating a new blog post or modifying the About page. The more you play with it, the more comfortable you'll become with how Metalsmith works.
               Remember, the development server we set up will automatically rebuild your site whenever you make changes, so you can immediately see the results in your browser. This makes the development process smooth and intuitive.
@@ -231,7 +231,32 @@ sections:
               In the next post, we'll take a closer look at the site structure and organization. See you then!
 
               Any comments? Find me on [Bluesky](https://bsky.app/profile/wernerglinka.bsky.social).
-
+  
+  - container: aside # section || article || aside
+    description: "social share links"
+    containerFields:
+      disabled: false
+      containerId: ""
+      containerClass: "share-links"
+      inContainer: false
+      background:
+        color: ""
+        image: ""
+        isDark: false
+    columns:
+      - column:
+        blocks:
+          - name: social-shares
+            blockClass: ""
+            text:
+              prefix: ""
+              title: "Share this post"
+              header: "h3"
+              subtitle: ""
+              prose: ""
+            url: "/blog/metalsmith-getting-started"
+            socialTitle: "Metalsmith Redux - Getting Started"
+            socialComment: "Now it's time to set up our first Metalsmith project. Don't worry if you're new to static site generators or even to web development in general. This guide is writtento be straightforward and approachable."
               
   - container: aside # section || article || aside
     description: "section with related blogposts"
@@ -254,5 +279,6 @@ sections:
             horizontal: false
             selections:
               - item: "metalsmith-redux-intro"
+              - item: "metalsmith-redux-files-structure"
 
 ---

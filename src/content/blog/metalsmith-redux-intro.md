@@ -6,12 +6,12 @@ disableDefaultFooter: true
 item: "metalsmith-redux-intro" # used as a key for blogpost filters
 
 seo:
-  title: "Metalsmith Redux - Static Site Generator in 2025 | Werner Glinka"
+  title: "Metalsmith Redux - Static Site Generation in 2025 | Werner Glinka"
   description: "Let's talk about Metalsmith. It's a static site generator that's been around for a while, and for good reason. Metalsmith keeps things simple and stable. It's particularly good for blogs, portfolio sites, and marketing pages - the kinds of sites most of us actually build day-to-day"
   socialImage: "https://res.cloudinary.com/glinkaco/image/upload/v1744735403/metalsmith-redux_lgj9qh.jpg"
   canonicalOverwrite: ""
 
-blogTitle: "Metalsmith Redux - Static Site Generator in 2025"
+blogTitle: "Metalsmith Redux - Static Site Generation in 2025"
 date: 2025-04-15
 author: ""
 image:
@@ -40,7 +40,7 @@ sections:
             blockClass: ""
             text:
               prefix: ""
-              title: "Metalsmith Redux: Static Site Generator in 2025"
+              title: "Metalsmith Redux: Static Site Generation in 2025"
               header: "h1"
               subtitle: ""
               prose: ""
@@ -158,12 +158,38 @@ sections:
 
               Metalsmith reminds us that sometimes the most powerful solutions are also the simplest. By focusing on doing one thing well—transforming files—Metalsmith provides a foundation that can support everything from simple blogs to complex documentation sites and beyond.
 
-              The following article will dive into practical territory, setting up a basic Metalsmith project using a starter and building our first pages. Until then, happy building!
+              [The following article](/blog/metalsmith-redux-getting-started) will dive into practical territory, setting up a basic Metalsmith project using a starter and building our first pages. Until then, happy building!
 
               Ready to get started with Metalsmith? Check out my [simple starter ](https://github.com/wernerglinka/metalsmith2025-simple-starter) and follow along with this series!
 
               Any comments? Find me on [Bluesky](https://bsky.app/profile/wernerglinka.bsky.social).
               
+  - container: aside # section || article || aside
+    description: "social share links"
+    containerFields:
+      disabled: false
+      containerId: ""
+      containerClass: "share-links"
+      inContainer: false
+      background:
+        color: ""
+        image: ""
+        isDark: false
+    columns:
+      - column:
+        blocks:
+          - name: social-shares
+            blockClass: ""
+            text:
+              prefix: ""
+              title: "Share this post"
+              header: "h3"
+              subtitle: ""
+              prose: ""
+            url: "/blog/metalsmith-redux-intro"
+            socialTitle: "Metalsmith Redux - Static Site Generation in 2025"
+            socialComment: "Let's talk about Metalsmith. It's a static site generator that's been around for a while, and for good reason. Metalsmith keeps things simple and stable. It's particularly good for blogs, portfolio sites, and marketing pages - the kinds of sites most of us actually build day-to-day"
+  
   - container: aside # section || article || aside
     description: "section with related blogposts"
     containerFields:

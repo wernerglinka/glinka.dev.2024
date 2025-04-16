@@ -308,6 +308,33 @@ sections:
               Any comments? Find me on [Bluesky](https://bsky.app/profile/wernerglinka.bsky.social).
               
   - container: aside # section || article || aside
+    description: "social share links"
+    containerFields:
+      disabled: false
+      containerId: ""
+      containerClass: "share-links"
+      inContainer: false
+      background:
+        color: ""
+        image: ""
+        isDark: false
+    columns:
+      - column:
+        blocks:
+          - name: social-shares
+            blockClass: ""
+            text:
+              prefix: ""
+              title: "Share this post"
+              header: "h3"
+              subtitle: ""
+              prose: ""
+            url: "/blog/metalsmith-files-structure"
+            socialTitle: "Metalsmith Redux - Starter Files Structure"
+            socialComment: "Understanding the file structure of a Metalsmith project is key to working with it effectively. Don't worry if it seems a bit overwhelming at first—we'll walk through each part step by step, explaining what it does and why it matters."
+
+  
+  - container: aside # section || article || aside
     description: "section with related blogposts"
     containerFields:
       disabled: false
@@ -327,7 +354,7 @@ sections:
             header: "h2"
             horizontal: false
             selections:
-              - item: "use-the-platform"
-              - item: "metalsmith-starters"
+              - item: "metalsmith-redux-intro"
+              - item: "metalsmith-redux-getting-started"
 
 ---
