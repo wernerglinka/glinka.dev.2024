@@ -131,7 +131,7 @@ sections:
               Metalsmith provides everything you need for these projects without the cognitive burden of more complex frameworks.
               
               ### Who Should Use Metalsmith?
-              - Metalsmith is particularly well-suited for:
+              Metalsmith is particularly well-suited for:
               - Developers tired of framework churn who want a stable foundation for their projects
               - Content-focused sites like blogs, documentation, or marketing pages
               - Projects with unique or specialized requirements that don't fit neatly into other frameworks
