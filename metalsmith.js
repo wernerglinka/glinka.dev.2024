@@ -181,8 +181,7 @@ export function msBuild() {
 
       .use( ( files, metalsmith, done ) => {
         //console.log( files );
-        //console.log( metalsmith.metadata().blog );
-        //console.log( JSON.stringify( metalsmith.metadata(), null, 4 ) );
+        console.log( metalsmith.metadata() );
         done();
       } )
 
