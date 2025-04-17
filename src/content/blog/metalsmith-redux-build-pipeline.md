@@ -6,8 +6,8 @@ disableDefaultFooter: true
 item: "metalsmith-redux-build-pipeline" # used as a key for blogpost filters
 
 seo:
-  title: "Metalsmith Redux - Static Site Generation in 2025 | Werner Glinka"
-  description: "We examine package.json, one of the most important files in any Node.js project. While it might not be the most exciting file in our project, package.json is crucial. It defines our project, what it depends on, and the commands we can run to build, develop, and maintain it"
+  title: "Metalsmith Redux - The Build Pipeline | Werner Glinka"
+  description: "We look at where all dependencies come together: the metalsmith.js. This file defines how your content gets transformed from Markdown files into a complete website."
   socialImage: "https://res.cloudinary.com/glinkaco/image/upload/v1744827639/project-pipeline_yhqg15.jpg"
   canonicalOverwrite: ""
 
@@ -510,13 +510,35 @@ sections:
               export default metalsmith;
               ```
 
-              This code:
-              - Checks if the file is being run directly
-              - Measures build performance
-              - Runs the build process
-              - Handles errors
-              - Sets up a development server if needed
-              - Exports the Metalsmith instance for use by the CLI
+              This code is handling an important aspect of Metalsmith's flexibility - the ability to run the build process in different ways. Let's understand what "Checks if the file is being run directly" actually means.
+
+              Looking at the scripts in `package.json`, we have two different ways to run Metalsmith:
+              ```json
+              "scripts": {
+                "dev": "metalsmith -c metalsmith.js --env NODE_ENV=development --env DEBUG=@metalsmith*",
+                "build": "metalsmith -c metalsmith.js --env NODE_ENV=production",
+                "start": "NODE_ENV=development DEBUG=@metalsmith* node metalsmith.js --watch",
+                // Other scripts...
+              }
+              ```
+              These scripts demonstrate the two ways to run Metalsmith:
+
+              ### 1 Using the Metalsmith CLI (`dev` and `build` scripts):
+
+              - Runs the command `metalsmith -c metalsmith.js`
+              - The Metalsmith CLI imports the `metalsmith.js` file as a module
+              - In this case, mainFile !== thisFile, so the build logic in the if-block is skipped
+              - The CLI itself handles the build process
+
+              ### 2 Running the file directly with Node.js (`start` script):
+
+              - Runs the command `node metalsmith.js --watch`
+              - Here, `metalsmith.js` is executed as a standalone node script
+              - In this case, mainFile === thisFile, so the build logic in the if-block runs
+              - The file handles the build process itself
+
+              This conditional check prevents the build from running twice when using the CLI. It also allows the same file to be used both as a configuration module (imported by the CLI) and as a standalone script. This dual-use approach gives you flexibility in how you run your builds.
+              When the file runs directly via `node metalsmith.js`, it also sets up a development server using `BrowserSync`, which serves the files and reloads your browser when changes are detected.
 
               ## Understanding Key Concepts
 
@@ -647,13 +669,7 @@ sections:
 
               Now that you understand the heart of your Metalsmith project, you're ready to start customizing it to your needs. In our next post, we'll look at how to enhance your site with additional features and techniques.
 
-              Try making some small changes to `metalsmith.js` and see how they affect your site. The more you experiment, the better you'll understand how Metalsmith works and how you can use it to build exactly the site you want.
-
-              Happy building!
-
-              ---
-
-              *Insight: The plugin-based architecture of Metalsmith is similar to how modern audio production software works. Each plugin is like an audio effect, and the order of plugins matters—just as the order of effects pedals matters to a guitarist. You can completely change the output by reordering, adding, or removing plugins.*
+              Try making some small changes to `metalsmith.js` and see how they affect your site. The more you experiment, the better you'll understand how Metalsmith works and how you can use it to build exactly the site you want. Happy building!
 
               Any comments? Find me on [Bluesky](https://bsky.app/profile/wernerglinka.bsky.social).
               
@@ -680,8 +696,8 @@ sections:
               subtitle: ""
               prose: ""
             url: "/blog/metalsmith-redux-intro"
-            socialTitle: "Metalsmith Redux - Static Site Generation in 2025"
-            socialComment: "Let's talk about Metalsmith. It's a static site generator that's been around for a while, and for good reason. Metalsmith keeps things simple and stable. It's particularly good for blogs, portfolio sites, and marketing pages - the kinds of sites most of us actually build day-to-day"
+            socialTitle: "Metalsmith Redux - The Build Pipeline"
+            socialComment: "We look at where all dependencies come together: the metalsmith.js. This file defines how your content gets transformed from Markdown files into a complete website."
   
   - container: aside # section || article || aside
     description: "section with related blogposts"
@@ -703,7 +719,9 @@ sections:
             header: "h2"
             horizontal: false
             selections:
-              - item: "use-the-platform"
-              - item: "metalsmith-starters"
+              - item: "metalsmith-redux-intro"
+              - item: "metalsmith-redux-getting-started"
+              - item: "metalsmith-redux-dependencies-scripts"
+              - item: "metalsmith-redux-files-structure"
 
 ---

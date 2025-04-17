@@ -415,7 +415,9 @@ sections:
             header: "h2"
             horizontal: false
             selections:
-              - item: "use-the-platform"
-              - item: "metalsmith-starters"
+              - item: "metalsmith-redux-intro"
+              - item: "metalsmith-redux-getting-started"
+              - item: "metalsmith-redux-build-pipeline"
+              - item: "metalsmith-redux-files-structure"
 
 ---
