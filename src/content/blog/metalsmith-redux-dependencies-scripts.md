@@ -71,9 +71,9 @@ sections:
 
               ## What is package.json?
               
-              Think of `package.json` as your project's ID card and instruction manual combined. It tells `node.js` and `npm` (Node Package Manager) everything they need to know about your project: its name, version, dependencies, scripts, and more.
+              Think of `package.json` as your project's ID card and instruction manual combined. It tells `Node.js` and `npm` (Node Package Manager) everything they need to know about your project: its name, version, dependencies, scripts, and more.
 
-              Every Node.js project, including our Metalsmith site, needs a `package.json` file. Without it, none of the tools we're using would work.
+              Every `Node.js` project, including our Metalsmith site, needs a `package.json` file. Without it, none of the tools we're using would work.
               
               ### The Basic Metadata
               
@@ -116,11 +116,11 @@ sections:
               }
               ```
 
-              This tells us that our project requires Node.js version 18.0.0 or higher. This is important because some features we're using might not be available in older versions of Node.js.
+              This tells us that our project requires `Node.js` version 18.0.0 or higher. This is important because some features we're using might not be available in older versions of `Node.js`.
 
               ### The Scripts: Commands to Run
 
-              The scripts section defines commands that we can run with `npm run [script-name]`:
+              The scripts section defines commands that we can run in the terminal with `npm run [script-name]`:
 
               ```javascript 
               "scripts": {
@@ -139,7 +139,7 @@ sections:
 
               #### Building and Development Scripts
 
-              **dev**: Builds the site in development mode with debug information enabled. This is what you'll use most often during development.
+              **dev**: Builds the site in development mode with debug information enabled. This is what you'll use most often during development. Each plugin used in the build process will log debug information and show you what's happening under the hood.
               
               ```javascript
               metalsmith -c metalsmith.js --env NODE_ENV=development --env DEBUG=@metalsmith*
@@ -151,31 +151,29 @@ sections:
               - Enable debug logging for Metalsmith plugins (`--env DEBUG=@metalsmith*`)
 
 
-              **build**: Builds the site in production mode, which might include additional optimizations and exclude development-only features.
+              **build**: Builds the site in production mode, which might include additional optimizations and exclude development features.
               
               ```javascript
               metalsmith -c metalsmith.js --env NODE_ENV=production
               ```
 
-              **start**: An alternative development mode that directly runs `metalsmith.js` as a Node.js script with file watching enabled.
+              **start**: An alternative development mode that directly runs `metalsmith.js` as a `Node.js` script with file watching enabled. So when you make changes to your source files, they will be automatically shown in your browser.
               
               ```javascript
               NODE_ENV=development DEBUG=@metalsmith* node metalsmith.js --watch
               ```
               
-              This approach gives you more direct control over how Metalsmith runs.
+              This is my preferred way to work with Metalsmith when I build a site. The terminal output is not overwhelmed with plugin debug information so I can focus on relavent content or metadata logging. We'll explore this in more detail in the next post.
 
-              **serve**: Starts a local development server that serves the files from the build directory.
+              **serve**: Starts a local development server that serves the files from the `build` directory.
               
               ```javascript
               browser-sync start --server 'build'
               ```
 
-              This uses `Browser-Sync` to create a local server and automatically refresh your browser when files change.
-
               ### Code Quality and Maintenance Scripts
 
-              **format**: Uses Prettier to automatically format your JavaScript, JSON, Nunjucks, and CSS files.
+              **format**: Uses `Prettier` to automatically format your JavaScript, JSON, Nunjucks, and CSS files.
               
               ```javascript
               prettier --write "**/*.{js,json,njk,css}"
@@ -183,13 +181,13 @@ sections:
 
               This ensures consistent code style across the project.
 
-              **lint**: Uses ESLint to check your JavaScript files for potential errors and automatically fix them when possible.
+              **lint**: Uses `ESLint` to check your JavaScript files for potential errors and automatically fixes them when possible.
               
               ```javascript
               eslint --fix .
               ```
 
-              *fix*: Runs both format and lint commands in sequence.
+              **fix**: Runs both `format` and `lint` commands in sequence.
               
               ```javascript
               npm run format && npm run lint
@@ -197,19 +195,15 @@ sections:
 
               This is a convenient way to clean up your code in one go.
 
-              **depcheck**: Checks for unused dependencies or dependencies missing from package.json.
+              **depcheck**: Checks for unused dependencies or dependencies missing from `package.json`. This is really helpful when you're managing a project with many dependencies. Dependencies have a tendency to accumulate over time... at least in my case.
               
               ```javascript
               depcheck
               ```
 
-              This helps keep your project's dependencies clean and up to date.
-
               ## Development vs. Production Mode
 
-              You might have noticed that several scripts specify either development or production mode. This typical pattern in Node.js applications allows different behavior in different environments.
-
-              ### In our Metalsmith project:
+              You might have noticed that several scripts specify either `development` or `production` mode. This typical pattern in `Node.js` applications enables different behavior in different environments.
 
               - Development mode includes drafts, detailed debug information, and watches for file changes
               - Production mode excludes drafts, minifies HTML, generates a sitemap, and performs other optimizations
@@ -218,7 +212,7 @@ sections:
               
               ## The Dependencies: What Our Project Needs
 
-              The dependencies and devDependencies sections list all the packages our project relies on:
+              The `dependencies` and `devDependencies` sections list all the packages our project relies on:
 
               ```javascript
               "devDependencies": {
@@ -265,19 +259,19 @@ sections:
               ##### Metalsmith Core Plugins (Official)
               **@metalsmith/drafts**: Excludes draft content in production builds
               **@metalsmith/layouts**: Applies templates to content files
-              **@metalsmith/permalinks**: Creates clean URLs by generating index.html files in directories
+              **@metalsmith/permalinks**: Creates clean URLs without file extensions
 
               ##### Community Metalsmith Plugins
-              - **metalsmith-blog-lists**: Generates lists of blog posts (latest, featured, etc.)  and places them in the Metalsmith metadata. These lists can be used in sidebars or footers.
+              - **metalsmith-blog-lists**: Generates lists of blog posts (latest, featured, etc.)  and places them in the Metalsmith metadata. These lists can then be used in sidebars or footers.
               - **metalsmith-menu-plus**: Creates navigation menus and breadcrumbs from your content
               - **metalsmith-optimize-html**: Minifies HTML in production builds
               - **metalsmith-simple-pagination**: A simple pagination plugin for folder content
-              - **metalsmith-sitemap**: Generates a sitemap.xml file for search engines
+              - **metalsmith-sitemap**: Generates a `sitemap.xml` file for search engines
               - **metalsmith-static-files**: Copies static files (CSS, images, etc.) to the build directory
               - **metalsmith-unified-markdown**: Processes Markdown content with unified/remark/rehype. Uses retype plugins for code syntax highlighting
 
               ##### Supporting Packages
-              - **marked**: A Markdown parser used by some Metalsmith plugins
+              - **marked**: A Markdown parser used by some Nunjucks filters
               - **rehype-highlight**: A syntax highlighting plugin for rehype (used with unified-markdown)
               - **depcheck**: Helps manage dependencies
 
@@ -289,7 +283,7 @@ sections:
               "metalsmith": "^2.6.3"
               ``` 
 
-              The caret means "compatible with version 2.6.3, but allow minor and patch updates." When you run `npm install`, npm will install the latest version that matches this pattern.
+              The caret means "compatible with version 2.6.3, but allow minor and patch updates." When you run `npm install`, 'npm' will install the latest version that matches this pattern.
 
               This follows semantic versioning:
 
@@ -301,14 +295,14 @@ sections:
 
               ## Understanding the Plugin Ecosystem
 
-              Looking at the dependencies, you might notice a pattern: many packages are named `metalsmith-*` or `@metalsmith/*`. These are Metalsmith plugins, each adding specific functionality to the core Metalsmith engine.
+              Looking at the dependencies, you might notice a pattern: many packages are named `metalsmith-[plugin name]` or `@metalsmith/[plugin name]`. These are Metalsmith plugins, each adding specific functionality to the core Metalsmith engine.
 
               The beauty of Metalsmith's plugin-based architecture is that you can add, remove, or replace plugins to customize your build process. Each plugin does one thing well: _following the Unix philosophy_.
 
               Some common patterns in the plugin names:
 
-              - **@metalsmith/**: Official plugins maintained by the Metalsmith team
-              - **metalsmith- **: Community plugins created by Metalsmith users
+              - **@metalsmith/[plugin name]**: Official plugins maintained by the Metalsmith team
+              - **metalsmith-[plugin name]**: Community plugins created by Metalsmith users
 
               This modular approach means you can start with a simple setup and gradually add more features as needed.
               
@@ -337,7 +331,7 @@ sections:
 
               ```
 
-              This flexibility is one of Metalsmith's greatest strengths—you can customize it to suit your exact needs.
+              We'll do this in a future post when we add new capabilities to our site. This flexibility is one of Metalsmith's greatest strengths—you can customize it to suit your exact needs.
               
               #### Exploring Further: Available Plugins
 
@@ -356,16 +350,16 @@ sections:
               For major version updates (which might include breaking changes), you'll need to:
 
               ```bash
-              npm install --save metalsmith@latest
+              npm install --save [plugin-name]@latest
               ``` 
 
-              Replacing "metalsmith" with the package you want to update. Before you update, it's a good idea to check the plugin's documentation or release notes to see if there are any breaking changes you need to address.
+              Replacing `[plugin-name]` with the package you want to update. Before you update, it's a good idea to check the plugin's documentation or release notes to see if there are any breaking changes you need to address.
 
-              It's a good practice to periodically check for updates and keep your dependencies current for security and performance reasons.
+              > It's a good practice to periodically check for updates and keep your dependencies current for security and performance reasons.
               
               ## Next Steps
 
-              Now that we understand what's in our package.json and the role each dependency plays, we're ready to dive into `metalsmith.js` in the [next post](/blog/metalsmith-redux-build-pipeline). We'll explore how all these packages come together to build our site, and how the Metalsmith pipeline transforms our content into a complete website.
+              Now that we understand what's in our `package.json` and the role each dependency plays, we're ready to dive into `metalsmith.js` in the [next post](/blog/metalsmith-redux-build-pipeline). We'll explore how all these packages come together to build our site, and how the Metalsmith pipeline transforms our content into a complete website.
 
               In the meantime, try modifying one of the scripts or adding a new dependency to see how it affects your project. This hands-on experimentation is the best way to deepen your understanding of how everything works together.
               Happy building!
