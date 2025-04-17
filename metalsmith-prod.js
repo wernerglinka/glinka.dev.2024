@@ -9,7 +9,7 @@ const ms = msBuild();
 //ms.env( 'DEBUG', 'metalsmith-optimize-html' );
 
 // filter out draft for production
-ms.use( drafts() );
+//ms.use( drafts() );
 // optimize HTML in production
 // home page with htmlOptimizer is 31% smaller (11/17/2024)
 ms.use( htmlOptimize( {

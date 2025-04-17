@@ -3,6 +3,7 @@
 import { fileURLToPath } from 'node:url';
 import { dirname } from 'node:path';
 import Metalsmith from "metalsmith";
+import drafts from "@metalsmith/drafts";
 import markdown from "@metalsmith/markdown";
 import layouts from "@metalsmith/layouts";
 import esbuild from "@metalsmith/js-bundle";
@@ -66,6 +67,9 @@ export function msBuild() {
           'metadata.projects': "src/content/data/projects",
         } )
       )
+
+      // Exclude draft content in production mode
+      .use( drafts( !isProduction ) )
 
       /**
        * Create a collection of blog posts
