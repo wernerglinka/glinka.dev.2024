@@ -8,7 +8,7 @@ item: "metalsmith-redux-getting-started" # used as a key for blogpost filters
 seo:
   title: "Metalsmith Redux - Getting Started | Werner Glinka"
   description: "Now it's time to set up our first Metalsmith project. Don't worry if you're new to static site generators or even to web development in general. This guide is writtento be straightforward and approachable."
-  socialImage: "https://res.cloudinary.com/glinkaco/image/upload/v1744735403/metalsmith-redux_lgj9qh.jpg"
+  socialImage: "https://res.cloudinary.com/glinkaco/image/upload/v1695321312/start_afwygu.jpg"
   canonicalOverwrite: ""
 
 blogTitle: "Metalsmith Redux - Getting Started"

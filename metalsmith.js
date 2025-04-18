@@ -61,7 +61,7 @@ export function msBuild() {
 
       .use(
         metadata( {
-          metadata: "src/content/data/site.json",
+          'metadata': "src/content/data/site.json",
           'metadata.testimonials': "src/content/data/testimonials",
           'metadata.work': "src/content/data/work",
           'metadata.projects': "src/content/data/projects",

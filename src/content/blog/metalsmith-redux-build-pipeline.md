@@ -122,7 +122,7 @@ sections:
 
               ## Configuration Helpers: Setting Up the Environment
 
-              This section contains code that initializes the environment. A helper to noteis the `getGlobalMetadata()` function:
+              This section contains code that initializes the environment. A helper to note is the `getGlobalMetadata()` function. It reads JSON files from the `lib/data` directory and makes their contents available to your templates via metadata. Please note that this is normally done with the @metalsmith/metadata plugin. In our case I chose to use a custom function to keep the number of plugins to a minimum.
 
               ```javascript
               /**
