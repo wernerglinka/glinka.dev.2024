@@ -329,7 +329,7 @@ sections:
               header: "h3"
               subtitle: ""
               prose: ""
-            url: "/blog/metalsmith-reduxfiles-structure"
+            url: "/blog/metalsmith-redux-files-structure"
             socialTitle: "Metalsmith Redux - Starter Files Structure"
             socialComment: "Understanding the file structure of a Metalsmith project is key to working with it effectively. Don't worry if it seems a bit overwhelming at first—we'll walk through each part step by step, explaining what it does and why it matters."
 
