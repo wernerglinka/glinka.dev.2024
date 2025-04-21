@@ -8,7 +8,7 @@ item: "metalsmith-redux-files-structure" # used as a key for blogpost filters
 seo:
   title: "Metalsmith Redux - Starter Files Structure | Werner Glinka"
   description: "Understanding the file structure of a Metalsmith project is key to working with it effectively. Don't worry if it seems a bit overwhelming at first—we'll walk through each part step by step, explaining what it does and why it matters."
-  socialImage: "https://res.cloudinary.com/glinkaco/image/upload/v1744735403/metalsmith-redux_lgj9qh.jpg"
+  socialImage: "https://res.cloudinary.com/glinkaco/image/upload/v1744770553/project-structure_mur1u4.jpg"
   canonicalOverwrite: ""
 
 blogTitle: "Metalsmith Redux - Starter Files Structure"
