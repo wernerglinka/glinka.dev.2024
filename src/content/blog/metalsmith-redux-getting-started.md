@@ -254,7 +254,7 @@ sections:
               header: "h3"
               subtitle: ""
               prose: ""
-            url: "/blog/metalsmith-getting-started"
+            url: "/blog/metalsmith-redux-getting-started"
             socialTitle: "Metalsmith Redux - Getting Started"
             socialComment: "Now it's time to set up our first Metalsmith project. Don't worry if you're new to static site generators or even to web development in general. This guide is writtento be straightforward and approachable."
               

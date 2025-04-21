@@ -297,7 +297,7 @@ sections:
               
               ## Next Steps
               
-              In the next post, we'll take a closer look at the `package.json` file, exploring the dependencies and scripts that power your Metalsmith project. We'll learn what each package does and how they work together to build your site.
+              In the [next post](/blog/metalsmith-redux-dependencies-scripts), we'll take a closer look at the `package.json` file, exploring the dependencies and scripts that power your Metalsmith project. We'll learn what each package does and how they work together to build your site.
               
               After that, we'll review the `metalsmith.js` file to understand the build pipeline in detail, seeing exactly how your content is transformed from Markdown to a complete website.
 
@@ -329,7 +329,7 @@ sections:
               header: "h3"
               subtitle: ""
               prose: ""
-            url: "/blog/metalsmith-files-structure"
+            url: "/blog/metalsmith-reduxfiles-structure"
             socialTitle: "Metalsmith Redux - Starter Files Structure"
             socialComment: "Understanding the file structure of a Metalsmith project is key to working with it effectively. Don't worry if it seems a bit overwhelming at first—we'll walk through each part step by step, explaining what it does and why it matters."
 

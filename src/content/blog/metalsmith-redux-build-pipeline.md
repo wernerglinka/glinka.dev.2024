@@ -695,7 +695,7 @@ sections:
               header: "h3"
               subtitle: ""
               prose: ""
-            url: "/blog/metalsmith-redux-intro"
+            url: "/blog/metalsmith-redux-build-pipeline"
             socialTitle: "Metalsmith Redux - The Build Pipeline"
             socialComment: "We look at where all dependencies come together: the metalsmith.js. This file defines how your content gets transformed from Markdown files into a complete website."
   
@@ -721,7 +721,7 @@ sections:
             selections:
               - item: "metalsmith-redux-intro"
               - item: "metalsmith-redux-getting-started"
-              - item: "metalsmith-redux-dependencies-scripts"
               - item: "metalsmith-redux-files-structure"
+              - item: "metalsmith-redux-dependencies-scripts"
 
 ---

@@ -91,7 +91,6 @@ sections:
                 ],
                 "author": "werner@glinka.co",
                 "license": "MIT",
-                ...
               }
               ```
               Let's break down what each of these fields means:
@@ -123,16 +122,16 @@ sections:
               The scripts section defines commands that we can run in the terminal with `npm run [script-name]`:
 
               ```javascript 
-              "scripts": {
-                "dev": "metalsmith -c metalsmith.js --env NODE_ENV=development --env DEBUG=@metalsmith*",
-                "build": "metalsmith -c metalsmith.js --env NODE_ENV=production",
-                "start": "NODE_ENV=development DEBUG=@metalsmith* node metalsmith.js --watch",
-                "serve": "browser-sync start --server 'build'",
-                "format": "prettier --write \"**/*.{js,json,njk,css}\"",
-                "lint": "eslint --fix .",
-                "fix": "npm run format && npm run lint",
-                "depcheck": "depcheck"
-              },
+                "scripts": {
+                  "dev": "metalsmith -c metalsmith.js --env NODE_ENV=development --env DEBUG=@metalsmith*",
+                  "build": "metalsmith -c metalsmith.js --env NODE_ENV=production",
+                  "start": "NODE_ENV=development DEBUG=@metalsmith* node metalsmith.js --watch",
+                  "serve": "browser-sync start --server 'build'",
+                  "format": "prettier --write \"**/*.{js,json,njk,css}\"",
+                  "lint": "eslint --fix .",
+                  "fix": "npm run format && npm run lint",
+                  "depcheck": "depcheck"
+                }
               ```
 
               These scripts are the commands you'll use most often when working with the project. Let's go through each one:
@@ -391,7 +390,7 @@ sections:
               header: "h3"
               subtitle: ""
               prose: ""
-            url: "/blog/metalsmith-redux-intro"
+            url: "/blog/metalsmith-redux-depenendencies-scripts"
             socialTitle: "Metalsmith Redux - Depednencies and Scripts"
             socialComment: "We examine package.json, one of the most important files in any Node.js project. While it might not be the most exciting file in our project, package.json is crucial. It defines our project, what it depends on, and the commands we can run to build, develop, and maintain it"
   
@@ -417,7 +416,6 @@ sections:
             selections:
               - item: "metalsmith-redux-intro"
               - item: "metalsmith-redux-getting-started"
-              - item: "metalsmith-redux-build-pipeline"
               - item: "metalsmith-redux-files-structure"
 
 ---

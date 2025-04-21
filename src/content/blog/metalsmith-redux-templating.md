@@ -277,9 +277,9 @@ sections:
               header: "h3"
               subtitle: ""
               prose: ""
-            url: "/blog/metalsmith-redux-intro"
-            socialTitle: "Metalsmith Redux - The Build Pipeline"
-            socialComment: "We look at where all dependencies come together: the metalsmith.js. This file defines how your content gets transformed from Markdown files into a complete website."
+            url: "/blog/metalsmith-redux-templating"
+            socialTitle: "Metalsmith Redux - Templating with Nunjucks"
+            socialComment: "Templating with Nunjucks is central to how Metalsmith transforms content into a polished website. It provides the structure and logic needed to create consistent, maintainable sites while keeping content separate from presentation."
   
   - container: aside # section || article || aside
     description: "section with related blogposts"
