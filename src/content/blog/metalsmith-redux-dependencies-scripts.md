@@ -390,7 +390,7 @@ sections:
               header: "h3"
               subtitle: ""
               prose: ""
-            url: "/blog/metalsmith-redux-depenendencies-scripts"
+            url: "/blog/metalsmith-redux-dependencies-scripts"
             socialTitle: "Metalsmith Redux - Dependencies and Scripts"
             socialComment: "We examine package.json, one of the most important files in any Node.js project. While it might not be the most exciting file in our project, package.json is crucial. It defines our project, what it depends on, and the commands we can run to build, develop, and maintain it"
   
