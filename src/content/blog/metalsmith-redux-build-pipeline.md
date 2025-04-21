@@ -1,6 +1,6 @@
 ---
 layout: blocks.njk
-draft: true
+draft: false
 pageType: "blog-post"
 disableDefaultFooter: true
 item: "metalsmith-redux-build-pipeline" # used as a key for blogpost filters
