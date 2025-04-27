@@ -190,7 +190,8 @@ sections:
             selections:
               - item: "ruhrpott"
               - item: "mpls"
-              - item: "components"   
+              - item: "components"
+              - item: "redux" 
 
   - container: section # section || article || aside
     description: "section with portfolio header"

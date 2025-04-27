@@ -42,7 +42,6 @@
   {% if params.scope === "selections" %}
     {% set cardsList = metadata[params.source] | filterList(params.selections) %}
   {% endif %}
-
  
   <ul class="cards">
   {% for thisCard in cardsList %}
