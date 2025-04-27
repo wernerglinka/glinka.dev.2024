@@ -1,6 +1,6 @@
 ---
 layout: blocks.njk
-draft: true
+draft: false
 pageType: "blog-post"
 disableDefaultFooter: true
 item: "metalsmith-redux-templating" # used as a key for blogpost filters
@@ -63,6 +63,8 @@ sections:
           - name: text
             blockClass: "blogpost-text"
             prose: |-
+              In our previous post we discussed the `metalsmith.js` file that defines the site build pipeline. Now let's explore one of the core components of Metalsmith: templating with Nunjucks.
+
               Templating is a fundamental concept in static site generation that bridges the gap between your content and how it appears on the web. For developers new to static site generators like [Metalsmith](https://metalsmith.io/), understanding templating is crucial to developing a complete mental model of the build process.
 
               ## What is Templating?
@@ -74,7 +76,14 @@ sections:
               - Applying it to a predefined structure (the template)
               - Generating the final HTML that browsers understand
 
-              This process is similar to how functions work in programming - they take inputs, process them according to defined rules, and produce outputs.
+              A critical advantage of templating is componentization - the ability to break down your site's interface into reusable parts. Rather than duplicating common elements like headers, footers, navigation bars, or content cards across multiple templates, you can define these components once and reuse them wherever needed. This approach offers several benefits:
+
+              - **Consistency**: Changes to a component automatically appear everywhere it's used
+              - **Maintainability**: Bug fixes only need to be applied in one place
+              - **Efficiency**: Less repetitive code means faster development and easier updates
+              - **Separation of logic**: Components can encapsulate their own presentation rules
+
+              This componentized approach aligns perfectly with functional programming principles, where small, focused functions compose together to create complex behaviors. In Nunjucks, this is achieved through macros and imports, creating a modular system that maintains clear boundaries between different parts of your template ecosystem.
 
               ## Why Nunjucks?
 
@@ -105,7 +114,7 @@ sections:
               This code configures the `@metalsmith/layouts` plugin to:
               - Look for templates in the `lib/layouts` directory
               - Use Nunjucks as the transformation engine
-              - Apply templates to all HTML files
+              - Apply templates to all HTML files (in any directory, as indicated by the **/*.html pattern)
               - Pass custom options to the Nunjucks engine
 
               The `engineOptions` object is particularly important:
@@ -129,7 +138,7 @@ sections:
 
               - **Base templates** that define the overall structure
               - **Child templates** that extend the base and fill in specific sections
-              - **Includes** for reusable components like headers and footers
+              - **Imports** of reusable components like headers and footers
 
               For example, if we look at the frontmatter of our `about.md` file:
 
@@ -140,7 +149,15 @@ sections:
               ---
               ```
 
-              This specifies that the content should use the `simple.njk` template, and in `simple.njk`, we extends a base template 'layout.njk' while adding page-specific elements. In effect, 'simple.njk' replaces the `{% block body %}` section in 'layout.njk' with the content from 'about.md'.
+              This specifies that the content should use the `simple.njk` template, and in `simple.njk`, we extends a base template `layout.njk` while adding page-specific elements. In effect, `simple.njk` replaces the `{% block body %}` section in `layout.njk` with the content from `about.md`.
+
+              The rendering chain works like this:
+
+              1. Metalsmith processes about.md to generate HTML content
+              2. The HTML content is passed to simple.njk as the contents variable
+              3. simple.njk extends layout.njk and places the content in its body block
+              4. The combined template is rendered to create the final HTML page
+
 
               ```nunjucks
               {% extends "layout.njk" %}
@@ -209,7 +226,15 @@ sections:
               {% from "components/post-card.njk" import postCard %}
 
               {# Then use it like a function with explicit parameters #}
-                {{ postCard(post) }}
+              {{ postCard({
+                title: post.title,
+                date: post.date,
+                excerpt: post.excerpt,
+                url: post.url
+              }) }}
+
+              {# Or with the entire post object if the macro is designed to accept it #}
+              {{ postCard(post) }}
               ```
 
               This import-based approach offers several key benefits:
@@ -243,7 +268,16 @@ sections:
 
               This functional approach to templating creates a modular system where each component has a single responsibility, interfaces are clearly defined, and composition is used to build more complex structures.
 
-              This translates to more maintainable templates, clearer separation between presentation logic and content, and a development experience that more closely resembles modern component-based frameworks while maintaining the simplicity and stability that makes Metalsmith valuable in 2025.
+              ## Debugging Nunjucks Templates
+              When working with Nunjucks in Metalsmith, debugging can sometimes be challenging. Here are a few techniques to help troubleshoot template issues:
+
+              - Use the `{% debug %}` tag to print out all variables available in the current context
+              - Create custom debug filters in your Metalsmith configuration to log variables
+              - Use `{{ variable | dump }}` to inspect complex objects
+              - Add comments with `{# This is a comment #}` to temporarily disable sections of code
+              - Check the Metalsmith console output for syntax errors in templates
+
+              Remember that template errors often don't provide line numbers, so systematic debugging by commenting out sections can help isolate issues.
               
               ## Conclusion
 

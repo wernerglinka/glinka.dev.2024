@@ -172,7 +172,6 @@ metalsmith
    */
   .use(
     prism( {
-      //lineNumbers: true,
       decode: true,
     } )
   )
@@ -228,14 +227,7 @@ metalsmith
       ]
     },
     overwrite: true,
-  } ) )
-
-
-  .use( ( files, metalsmith, done ) => {
-    //console.log( files );
-    //console.log( metalsmith.metadata() );
-    done();
-  } );
+  } ) );
 
 /**
  * PRODUCTION
