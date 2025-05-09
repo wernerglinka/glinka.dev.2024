@@ -115,7 +115,7 @@ metalsmith
         pattern: "blog/*.md",
         sortBy: "date",
         reverse: true,
-        limit: 50,
+        limit: 100,
       },
     } )
   )
