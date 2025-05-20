@@ -15,7 +15,7 @@ blogTitle: "Beyond Markdown: Adding Structured Components with Metalsmith MDN"
 date: 2025-05-09
 author: ""
 image:
-  src: "/v1711578702/m_n-header_yw6yhq.jpg"
+  src: "v1711578702/m_n-header_yw6yhq.jpg"
   alt: ""
   caption:
 excerpt: "We explore a common challenge when working with Markdown-based content: how do you include structured, reusable components within your long-text content?"
@@ -31,7 +31,7 @@ sections:
       inContainer: false
       background:
         color: ""
-        image: "/v1711578702/m_n-header_yw6yhq.jpg"
+        image: "v1711578702/m_n-header_yw6yhq.jpg"
         isDark: false
     columns:
       - column:
@@ -411,6 +411,32 @@ sections:
               In our next post, we'll explore an alternative approach to structured content using only frontmatter. But for now, try experimenting with MDN in your Metalsmith projects and see how it can enhance your content authoring experience.
 
               Would you like to see more examples of how MDN can be used in your Metalsmith projects? Let me know on [Bluesky](https://bsky.app/profile/wernerglinka.bsky.social).
+
+  - container: aside # section || article || aside
+    description: "social share links"
+    containerFields:
+      disabled: false
+      containerId: ""
+      containerClass: "share-links"
+      inContainer: false
+      background:
+        color: ""
+        image: ""
+        isDark: false
+    columns:
+      - column:
+        blocks:
+          - name: social-shares
+            blockClass: ""
+            text:
+              prefix: ""
+              title: "Share this post"
+              header: "h3"
+              subtitle: ""
+              prose: ""
+            url: "/blog/metalsmith-redux-beyond-markdown"
+            socialTitle: "Beyond Markdown: Adding Structured Components with Metalsmith MDN"
+            socialComment: "MDN is a Metalsmith plugin that provides a simple way to include structured Nunjucks components directly within your Markdown content"
 
   - container: aside # section || article || aside
     description: "section with related blogposts"
