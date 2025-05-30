@@ -408,7 +408,7 @@ sections:
               - **Flexibility**: Place components anywhere in your content
               - **Consistency**: Reuse the same components across your site
 
-              In our next post, we'll explore an alternative approach to structured content using only frontmatter. But for now, try experimenting with MDN in your Metalsmith projects and see how it can enhance your content authoring experience.
+              In a future post, we'll explore an alternative approach to long-form content by using only frontmatter. But for now, try experimenting with MDN in your Metalsmith projects and see how it can enhance your content authoring experience.
 
               Would you like to see more examples of how MDN can be used in your Metalsmith projects? Let me know on [Bluesky](https://bsky.app/profile/wernerglinka.bsky.social).
 
