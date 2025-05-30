@@ -667,7 +667,7 @@ sections:
 
               ## Next Steps
 
-              Now that you understand the heart of your Metalsmith project, you're ready to start customizing it to your needs. In our next post, we'll look at how to enhance your site with additional features and techniques.
+              In our [next post](/blog/metalsmith-redux-templating), we'll take a close look at templating with Nunjucks.
 
               Try making some small changes to `metalsmith.js` and see how they affect your site. The more you experiment, the better you'll understand how Metalsmith works and how you can use it to build exactly the site you want. Happy building!
 

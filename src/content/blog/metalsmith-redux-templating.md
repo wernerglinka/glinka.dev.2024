@@ -63,7 +63,7 @@ sections:
           - name: text
             blockClass: "blogpost-text"
             prose: |-
-              In our previous post we discussed the `metalsmith.js` file that defines the site build pipeline. Now let's explore one of the core components of Metalsmith: templating with Nunjucks.
+              In our [previous post](/blog/metalsmith-redux-build-pipeline) we discussed the `metalsmith.js` file that defines the site build pipeline. Now let's explore one of the core components of Metalsmith: templating with Nunjucks.
 
               Templating is a fundamental concept in static site generation that bridges the gap between your content and how it appears on the web. For developers new to static site generators like [Metalsmith](https://metalsmith.io/), understanding templating is crucial to developing a complete mental model of the build process.
 
@@ -285,7 +285,7 @@ sections:
 
               By understanding how Nunjucks works within Metalsmith, developers gain a clearer mental model of the static site generation process. This knowledge forms a foundation for more advanced techniques in future posts, where we'll explore creating and organizing blog content, customizing with CSS, and implementing advanced features.
 
-              In our next post, we'll dive deeper into creating and organizing blog content within the Metalsmith ecosystem, building on this understanding of Nunjucks templating.
+              In our [next post](/blog/metalsmith-redux-beyond-markdown), we'll dive deeper into creating and organizing blog content, building on this understanding of Nunjucks templating.
 
               Any comments? Find me on [Bluesky](https://bsky.app/profile/wernerglinka.bsky.social).
               

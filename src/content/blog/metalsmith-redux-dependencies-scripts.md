@@ -267,7 +267,7 @@ sections:
               - **metalsmith-simple-pagination**: A simple pagination plugin for folder content
               - **metalsmith-sitemap**: Generates a `sitemap.xml` file for search engines
               - **metalsmith-static-files**: Copies static files (CSS, images, etc.) to the build directory
-              - **metalsmith-unified-markdown**: Processes Markdown content with unified/remark/rehype. Uses retype plugins for code syntax highlighting
+              - **metalsmith-unified-markdown**: Processes Markdown content with unified/remark/rehype. Uses rehype plugin for code syntax highlighting
 
               ##### Supporting Packages
               - **marked**: A Markdown parser used by some Nunjucks filters
