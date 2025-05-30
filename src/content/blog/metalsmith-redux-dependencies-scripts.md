@@ -11,7 +11,7 @@ seo:
   socialImage: "https://res.cloudinary.com/glinkaco/image/upload/v1744827192/project-packages_ethu16.jpg"
   canonicalOverwrite: ""
 
-blogTitle: "Metalsmith Redux - Depednencies and Scripts"
+blogTitle: "Metalsmith Redux - Dependencies and Scripts"
 date: 2025-04-21
 author: ""
 image:
