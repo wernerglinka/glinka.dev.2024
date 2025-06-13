@@ -83,7 +83,7 @@ sections:
               - **Efficiency**: Less repetitive code means faster development and easier updates
               - **Separation of logic**: Components can encapsulate their own presentation rules
 
-              This componentized approach aligns perfectly with functional programming principles, where small, focused functions compose together to create complex behaviors. In Nunjucks, this is achieved through macros and imports, creating a modular system that maintains clear boundaries between different parts of your template ecosystem.
+              This componentized approach follows functional programming principles, where small, focused functions compose together to create complex behaviors. In Nunjucks, this is achieved through macros and imports, creating a modular system that maintains clear boundaries between different parts of your template ecosystem.
 
               ## Why Nunjucks?
 
@@ -92,9 +92,9 @@ sections:
               - **Powerful inheritance system**: Templates can extend other templates, allowing for consistent layouts without duplication.
               - **Rich feature set**: Includes loops, conditionals, filters, and macros for transforming content.
               - **JavaScript integration**: Seamlessly works with JavaScript objects and functions.
-              - **Active community**: Maintained and used broadly, ensuring stability and longevity.
+              - **Active community**: Maintained by [Mozilla](https://mozilla.github.io/nunjucks/) and used broadly, ensuring stability and longevity.
 
-              In our Metalsmith2025 Simple Starter, Nunjucks serves as the templating engine that transforms our Markdown content and metadata into a fully-formed website.
+              In our [Metalsmith2025 Simple Starter](https://github.com/wernerglinka/metalsmith2025-simple-starter), Nunjucks serves as the templating engine that transforms our Markdown content and metadata into a fully-formed website.
 
               ## Nunjucks in Metalsmith
 
@@ -121,23 +121,21 @@ sections:
 
               ```javascript
               const engineOptions = {
-                path: ['lib/layouts'],
                 filters: nunjucksFilters
               };
               ```
 
               This provides:
-              - The path where templates can be found
               - Custom filters for transforming data within templates
 
               ## Template Inheritance in Nunjucks
 
               One of Nunjucks' most powerful features is template inheritance, which allows us to create a base structure and extend it for different page types. This prevents duplication and ensures consistency across the site.
 
-              In our starter, this typically works through:
+              In our starter, this works through:
 
-              - **Base templates** that define the overall structure
-              - **Child templates** that extend the base and fill in specific sections
+              - **Base templates** (`layout.njk`) that define the overall structure
+              - **Child templates** (`simple.njk`, `blog.njk`, etc.) that extend the base and fill in specific sections
               - **Imports** of reusable components like headers and footers
 
               For example, if we look at the frontmatter of our `about.md` file:
@@ -149,14 +147,15 @@ sections:
               ---
               ```
 
-              This specifies that the content should use the `simple.njk` template, and in `simple.njk`, we extends a base template `layout.njk` while adding page-specific elements. In effect, `simple.njk` replaces the `{% block body %}` section in `layout.njk` with the content from `about.md`.
+              This specifies that content should use the `simple.njk` template, and in `simple.njk`, we extends a base template `layout.njk` while adding page-specific elements. In effect, `simple.njk` replaces the `{% block body %}` section in `layout.njk` with the content from `about.md`.
 
               The rendering chain works like this:
 
-              1. Metalsmith processes about.md to generate HTML content
-              2. The HTML content is passed to simple.njk as the contents variable
-              3. simple.njk extends layout.njk and places the content in its body block
-              4. The combined template is rendered to create the final HTML page
+              1. Metalsmith processes `about.md` to generate HTML content
+              2. The HTML content is passed to `simple.njk` as the `contents` variable
+              3. `simple.njk` places the content in its `body block`
+              4. `simple.njk` extends `layout.njk`
+              5. The combined template is rendered to create the final HTML page
 
 
               ```nunjucks
@@ -171,6 +170,7 @@ sections:
 
               Nunjucks uses a double curly brace syntax `{{ variable }}` to output variables. These variables come from several sources in a Metalsmith project:
 
+              - **Content**: The HTML generated from your Markdown files
               - **Frontmatter** in your content files (like `bodyClass: "about"`)
               - **Global metadata** defined in your Metalsmith configuration
               - **Computed values** generated during the build process
@@ -193,11 +193,11 @@ sections:
               Let's consider how our Metalsmith2025 Simple Starter might use Nunjucks to render blog posts. The process typically flows like this:
 
               1. Markdown files in the `blog` directory contain content and metadata
-              2. The Metalsmith build collects these into a collection
+              2. The Metalsmith build collects these into a collection, e.g. all files in the `blog` directory
               3. Nunjucks templates iterate through this collection to create:
                 - Individual post pages
                 - Index pages with post listings
-                - Pagination for browsing multiple posts
+                - Pagination to navigate between many index pages
 
               The simplePagination plugin in our `metalsmith.js` demonstrates this:
 
@@ -216,24 +216,20 @@ sections:
               )
               ```
 
-              This configures how our blog posts are paginated and which template (`blog.njk`) is used to render the listings.
+              This configures how our blog posts are paginated and which template (`blog.njk`) is used to render the index pages.
 
               ## Creating Reusable Components
 
-              One of Nunjucks' most powerful features is the ability to create truly reusable components through its macro system. Instead of merely including template fragments, Nunjucks allows you to import and use macros as self-contained, function-like templates.
+              One of Nunjucks' most powerful features is the ability to create truly reusable components through its macros. Instead of merely including template fragments, Nunjucks allows you to import and use macros as self-contained, function-like templates.
 
               ```nunjucks
               {% from "components/post-card.njk" import postCard %}
 
-              {# Then use it like a function with explicit parameters #}
-              {{ postCard({
-                title: post.title,
-                date: post.date,
-                excerpt: post.excerpt,
-                url: post.url
-              }) }}
+              {# 
+                Then use it like a function with post as the parameter
+                post.title, date: post.date, post.excerpt, post.url
+              #}
 
-              {# Or with the entire post object if the macro is designed to accept it #}
               {{ postCard(post) }}
               ```
 
@@ -271,7 +267,6 @@ sections:
               ## Debugging Nunjucks Templates
               When working with Nunjucks in Metalsmith, debugging can sometimes be challenging. Here are a few techniques to help troubleshoot template issues:
 
-              - Use the `{% debug %}` tag to print out all variables available in the current context
               - Create custom debug filters in your Metalsmith configuration to log variables
               - Use `{{ variable | dump }}` to inspect complex objects
               - Add comments with `{# This is a comment #}` to temporarily disable sections of code
@@ -281,9 +276,9 @@ sections:
               
               ## Conclusion
 
-              Templating with Nunjucks is central to how Metalsmith transforms your content into a polished website. It provides the structure and logic needed to create consistent, maintainable sites while keeping content separate from presentation.
+              Templating with Nunjucks is central to how Metalsmith transforms your content into a finished website. It provides the structure and logic needed to create consistent, maintainable sites while keeping content separate from presentation.
 
-              By understanding how Nunjucks works within Metalsmith, developers gain a clearer mental model of the static site generation process. This knowledge forms a foundation for more advanced techniques in future posts, where we'll explore creating and organizing blog content, customizing with CSS, and implementing advanced features.
+              By understanding how Nunjucks works within Metalsmith, developers gain a clearer mental model of the static site generation process. This knowledge forms a foundation for more advanced techniques in future posts, where we'll explore creating structured content, customizing with CSS, and implementing advanced features.
 
               In our [next post](/blog/metalsmith-redux-beyond-markdown), we'll dive deeper into creating and organizing blog content, building on this understanding of Nunjucks templating.
 

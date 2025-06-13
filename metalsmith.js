@@ -47,7 +47,6 @@ const __dirname = dirname( fileURLToPath( import.meta.url ) );
 import * as nunjucksFilters from './nunjucks-filters/index.js';
 
 const engineOptions = {
-  path: [ "templates" ],
   filters: nunjucksFilters
 };
 
