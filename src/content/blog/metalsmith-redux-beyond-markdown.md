@@ -80,7 +80,7 @@ sections:
 
               ## Introducing MDN: Markdown + Nunjucks
               
-              That's where the `metalsmith-mdn` plugin comes in. MDN stands for "Markdown + Nunjucks" and provides a simple way to include structured Nunjucks sections directly within your Markdown content. 
+              That's where the [metalsmith-mdn](https://github.com/wernerglinka/metalsmith-mdn) plugin comes in. MDN stands for **Markdown + Nunjucks** and provides a simple way to include structured Nunjucks sections directly within your Markdown content. 
 
               With MDN, you can:
 
@@ -97,7 +97,7 @@ sections:
               npm install --save metalsmith-mdn
               ```
 
-              Next, we need to update our `metalsmith.js` file to include the plugin in our build pipeline. Remember that **MDN must be added immediately before the markdown plugin**:
+              Next, we need to update our `metalsmith.js` file to include the plugin in our build pipeline. **MDN must be added immediately before the markdown plugin**:
 
               ```javascript
               // metalsmith.js
@@ -123,15 +123,15 @@ sections:
                 // ... rest of pipeline
                 ```
 
-              Notice that we're setting `templatesDir` to `lib/layouts` because that's where the Nunjucks templates are stored in the starter file system.
+              Notice that we're setting `templatesDir` to `lib/layouts` because that's where the Nunjucks templates are stored in the file system.
 
               ## Creating an About the Author Component
 
-              Now that we have MDN installed, let's create a reusable author Component that we can include in our blog posts.
+              Now that we have MDN installed, let's create a reusable author component that we can include in our blog posts.
 
               ### 1. Create the Component Template
               
-              First, we'll create a new Nunjucks template for our author Component. Create a new file at lib/layouts/sections/author.njk:
+              Create a new file at `lib/layouts/sections/author.njk`:
               
               ```html
               <aside class="blog-author">
@@ -156,7 +156,7 @@ sections:
 
               ### 2. Add Some Styling
 
-              Let's add some basic CSS to style our author bio component. Add this to your site's CSS file in `lib/assets/styles.css`:
+              Add some basic CSS to style our author bio component. Add this to your site's CSS file in `lib/assets/styles.css`:
               
               ```css
               /**
@@ -294,7 +294,7 @@ sections:
 
               - We added an `author` object to the frontmatter with all the properties our component needs
               - We included the `{#mdn "author" #}` tag in the Markdown content where we want the author section to appear
-              - The layout property inside author points to our template at  `secion/author.njk`
+              - The layout property inside author points to our template at `sections/author.njk`
 
               ### 4. How MDN Processes Your Content
 
@@ -304,7 +304,7 @@ sections:
               - **Renders each tag as HTML**: It uses Nunjucks to transform your component data into HTML
               - **Inserts the HTML directly into your content**: The MDN tag is replaced with the rendered HTML
 
-              The HTML that MDN generates becomes part of your Markdown content before the Markdown processor runs. Since almost allMarkdown processors are designed to pass through HTML unchanged, your component remains intact during Markdown processing.
+              The HTML that MDN generates becomes part of your Markdown content before the Markdown processor runs. Since almost all Markdown processors are designed to pass through HTML unchanged, your component remains intact during Markdown processing.
               
               For example, your content might transform like this:
 
@@ -329,7 +329,6 @@ sections:
 
               #### After Markdown Processing
               ```html
-              <h1>Before MDN Processing</h1>
               <p>Here's some text.</p>
               <div class="author-bio">
                 <div class="author-bio__avatar">
@@ -347,12 +346,12 @@ sections:
               Understanding how MDN works is relatively simple:
 
               - **Configuration**: You set up the plugin with the location of your templates and any custom filters
-              - **Tag Placement**: You place {#mdn "componentName" #} tags in your Markdown content
+              - **Tag Placement**: You place `{#mdn "componentName" #}` tags in your Markdown content
               - **Data Definition**: You define the component data in your frontmatter
-              - **Processing**: The plugin processes all MDN tags, rendering them as HTML that's perfectly valid within Markdown syntax
-              - **Markdown Conversion**: After MDN processing, the Markdown plugin converts the content to HTML, preserving your component's structure
+              - **Processing**: The plugin processes all MDN tags, rendering them as valid HTML within Markdown syntax
+              - **Markdown Conversion**: After MDN processing, the Markdown plugin converts the remaining content to HTML, preserving your component's structure
 
-              The important thing to remember is that most Markdown processors are designed to pass HTML through unchanged. MDN leverages this behavior by inserting fully-formed HTML before the Markdown processing step, allowing you to seamlessly mix Markdown's simplicity with the power of structured components.
+              The important thing to remember is that most Markdown processors are designed to pass HTML through unchanged. MDN leverages this behavior by inserting fully-formed HTML before the Markdown processing step, allowing you to mix Markdown's simplicity with the power of structured components.
 
               ## Beyond Author Bios: Other Component Ideas
 
