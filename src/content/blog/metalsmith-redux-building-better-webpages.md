@@ -111,7 +111,7 @@ sections:
               ---
               ```
 
-              Each section defines a self-contained component with its configuration, styling, and behavior. The page becomes a composition of these sections rather than a monolithic template. This architectural shift transforms web content from static documents to dynamic compositions.
+              Each section defines a self-contained component with its configuration, styling, and behavior. The page becomes a composition of these sections rather than a monolithic template. This architectural shift transforms web content from static documents to dynamic compositions. We will dissect this in more detail in the next section.
 
               Notice there's no markdown body at all. The entire page is defined through structured data, which opens up possibilities we'll explore in future posts about headless content management.
 
