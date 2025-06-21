@@ -67,13 +67,11 @@ sections:
             prose: |-
               While working on my blog series [Metalsmith Redux - Static Site Generation in 2025](https://wernerglinka.com/blog/metalsmith-redux-intro), I developed several new plugins with the assistance of Claude AI. I found myself repeatedly modifying the [Metalsmith core plugin](https://github.com/metalsmith/core-plugin) structure for each new project, which led me to create a standardized template. This starter template simplified my plugin development and ensured consistency across my plugins.
 
-              This standardized approach delivers several key benefits to both developers and users. Developers will appreciate the reduced development time, as there's no need to recreate configuration files and project structure for each new plugin. Users benefit from a consistent experience across plugins that follow the same patterns, making it easier to adopt new tools as they're released. The entire community gains from improved maintainability through standard testing and documentation practices. The template also embraces modern practices with dual ESM/CommonJS support, GitHub Actions workflows, and comprehensive testing approaches baked in from the start.
-
               ## What's Included in the Template?
 
-              The template provides a complete foundation for a modern [Metalsmith plugin](https://metalsmith.io/plugins/). You'll find dual module support for both ESM and CommonJS to ensure maximum compatibility across different Node.js environments. The template comes with pre-configured [GitHub Actions](https://github.com/features/actions) workflows for automated testing and coverage reporting, saving you the trouble of setting up CI/CD pipelines from scratch. The testing setup is comprehensive, covering both ESM and CommonJS imports to ensure your plugin works in all environments.
+              The template provides a complete foundation for a modern [Metalsmith plugin](https://metalsmith.io/plugins/). You'll find dual module support for both ESM and CommonJS to ensure maximum compatibility across different Node.js environments. The template comes with pre-configured [GitHub Actions](https://github.com/features/actions) workflows for automated testing and coverage reporting, saving you the trouble of setting up CI/CD pipelines from scratch. The testing setup covers both ESM and CommonJS imports to ensure your plugin works in all environments and gives you a good starting point for your own tests.
 
-              For code quality and consistency, the template includes modern tooling with [ESLint](https://eslint.org/) 9.x and [Prettier](https://prettier.io/) configurations. Release management is simplified through integration with [release-it](https://github.com/release-it/release-it) and conventional changelog generation. Developer experience is enhanced with [JSDoc](https://jsdoc.app/) typing that provides excellent IDE support without requiring TypeScript. All of this is wrapped in a standard documentation structure that ensures a consistent experience for users of your plugin.
+              For code quality and consistency, the template includes [ESLint](https://eslint.org/) 9.x and [Prettier](https://prettier.io/) configurations. Release management is simplified through integration with [release-it](https://github.com/release-it/release-it) and conventional changelog generation. Developer experience is enhanced with [JSDoc](https://jsdoc.app/) typing that provides excellent IDE support without requiring TypeScript. All of this is wrapped in a standard documentation structure that ensures a consistent experience for users of your plugin.
 
               ## How to Use the Template
 
@@ -165,17 +163,11 @@ sections:
 
               The prompt template guides AI systems with clear instructions on plugin requirements and architecture, code standards and implementation patterns, testing approaches, and documentation needs. It also helps AI assistants avoid common pitfalls in Metalsmith plugin development. This approach has helped me develop several robust plugins in a fraction of the time it would typically take, and I believe it can do the same for you.
 
-              ## Contributing to the Metalsmith Ecosystem
-
-              By using this template, you're contributing to a more consistent and maintainable Metalsmith ecosystem. The community benefits from a lower barrier to entry for new plugin developers, while also gaining improved code quality through standardized testing and linting practices. Users enjoy a better experience with consistent documentation and interfaces across plugins, and everyone benefits from the future-proof architecture that supports modern JavaScript environments.
-
               ## Getting Started
 
               The Metalsmith Plugin Template is available now on GitHub at [wernerglinka/metalsmith-plugin-template](https://github.com/wernerglinka/metalsmith-plugin-template).
 
-              Whether you're building your first plugin or your tenth, this template makes the development process smoother and more enjoyable. I welcome your contributions and feedback to make this template even better.
-
-              Happy building!
+              I hope that this template makes your development process smoother and more enjoyable. 
 
               I'd love to hear your feedback on this template and how it could be improved. Let me know on [Bluesky](https://bsky.app/profile/wernerglinka.bsky.social) or open an issue on GitHub.
   
