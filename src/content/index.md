@@ -312,4 +312,7 @@ sections:
             - label: "Github"
               icon: github
               url: "https://github.com/wernerglinka"
+            - label: "Substack"
+              icon: substack
+              url: "https://wernerglinka.substack.com"
 ---

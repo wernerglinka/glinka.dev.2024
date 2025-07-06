@@ -1,0 +1,14 @@
+{# Pagination macro - used twice in this template #}
+{% macro paginationLinks(numberOfPages, pageNumber) %}
+  <ul class="blogs-pagination">
+    {% for i in range(0, numberOfPages) -%}
+      <li {% if ((i + 1) == pageNumber) %}class="active"{% endif %}>
+        {% if i == 0 %}
+          <a href="/blog/">1</a>
+        {% else %}
+          <a href="/blog/{{ i + 1 }}/">{{ i + 1 }}</a>
+        {% endif %}
+      </li>
+    {%- endfor %}
+  </ul>
+{% endmacro %}

@@ -20,77 +20,39 @@
 #}
 
 {% from "../partials/card.njk" import card %}
+{% from "../partials/pagination.njk" import paginationLinks %}
 
 <div class="block block-all-blogposts {% if params.blockClass %} {{ params.blockClass }}{% endif %}">
 
 {% if params.numberOfPages > 1 %}
-  <ul class="blogs-pagination">
-    {% for i in range(0, params.numberOfPages) -%}
-      <li {% if ((i + 1) == params.pageNumber) %}class="active"{% endif %}>
-        {% if i == 0 %}
-          <a href="/blog/">1</a>
-        {% else %}
-          <a href="/blog/{{ i + 1 }}/">{{ i + 1 }}</a>
-        {% endif %}
-      </li>
-    {%- endfor %}
-  </ul>
-
-  <ul class="all-blogposts cards">
-    {% for blogPost in collections.blog %}
-
-      {% set startPage = params.pageStart %}
-      {% set endPage = startPage + params.pageLength %}
-
-      {% if loop.index > startPage  and loop.index <= endPage %}
-
-        {% set thisCard = {
-          title: blogPost.blogTitle,
-          prose: blogPost.excerpt,
-          thumbnail: blogPost.image.src,
-          link: "/" ~ blogPost.permalink,
-          horizontal: params.horizontal,
-          date: blogPost.date
-        } %}  
-        <li class="simple-card{% if params.horizontal %} is-horizontal{% endif %}">
-          {{ card(thisCard, metadata.site.imagePrefix) }}
-        </li>
-      {% endif %}
-      
-    {% endfor %}
-  </ul>
-
-  <ul class="blogs-pagination">
-    {% for i in range(0, params.numberOfPages) -%}
-      <li {% if ((i + 1) == params.pageNumber) %}class="active"{% endif %}>
-        {% if i == 0 %}
-          <a href="/blog/">1</a>
-        {% else %}
-          <a href="/blog/{{ i + 1 }}/">{{ i + 1 }}</a>
-        {% endif %}
-      </li>
-    {%- endfor %}
-  </ul>
+  {{ paginationLinks(params.numberOfPages, params.pageNumber) }}
+  {% set startPage = params.pageStart %}
+  {% set endPage = startPage + params.pageLength %}
 {% else %}
+  {% set startPage = 0 %}
+  {% set endPage = collections.blog.length %}
+{% endif %}
 
-  <ul class="all-blogposts cards">
+<ul class="all-blogposts cards">
   {% for blogPost in collections.blog %}
-    {% set thisCard = {
-      title: blogPost.blogTitle,
-      prose: blogPost.excerpt,
-      thumbnail: blogPost.image.src,
-      link: "/" ~ blogPost.permalink,
-      horizontal: params.horizontal,
-      date: blogPost.date
-    } %}  
-    <li class="simple-card{% if params.horizontal %} is-horizontal{% endif %}">
-      {{ card(thisCard, metadata.site.imagePrefix) }}
-    </li> 
+    {% if loop.index > startPage and loop.index <= endPage %}
+      {% set thisCard = {
+        title: blogPost.blogTitle,
+        prose: blogPost.excerpt,
+        thumbnail: blogPost.image.src,
+        link: "/" ~ blogPost.permalink,
+        horizontal: params.horizontal,
+        date: blogPost.date
+      } %}
+      <li class="simple-card{% if params.horizontal %} is-horizontal{% endif %}">
+        {{ card(thisCard, metadata.site.imagePrefix) }}
+      </li>
+    {% endif %}
   {% endfor %}
-  </ul>
+</ul>
 
-
-
+{% if params.numberOfPages > 1 %}
+  {{ paginationLinks(params.numberOfPages, params.pageNumber) }}
 {% endif %}
 
 </div>
