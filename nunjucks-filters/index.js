@@ -89,6 +89,10 @@ const trimString = ( string, length ) => {
   return string;
 };
 
+const currentYear = () => {
+  return new Date().getFullYear();
+};
+
 export {
   toUpper,
   spaceToDash,
@@ -103,5 +107,6 @@ export {
   dump,
   isRelated,
   objToString,
-  trimString
+  trimString,
+  currentYear
 };
