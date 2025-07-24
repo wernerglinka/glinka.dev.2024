@@ -158,10 +158,10 @@ sections:
 
               The plugin worked - it reversed the word order in titles. "Metalsmith First" became "First Metalsmith". But wait... I actually wanted character reversal as well, not just word reversal. Looking at my prompt, I realized the issues:
               - "Revert" isn't the right word - I meant "reverse"
-              - My description was clear about what to reverse
+              - My description was not clear about what to reverse
 
               ### Test 3: Clear Requirements
-              Me: **name is revert-titles and it should reverse the order of all words and reverse the alphabetical order of characters for all titles in the page content**
+              Me: **name is reverse-titles and it should reverse the order of all words and reverse the alphabetical order of characters for all titles in the page content**
 
               This time the result was exactly what I expected. "_Metalsmith First_" became "_tsriF htimslateM_" and "_Oh, and One More Thing_" became "_gnihT eroM enO dna ,hO_".
 
