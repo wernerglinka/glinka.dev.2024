@@ -180,7 +180,7 @@ sections:
               ## A Living Tool
               **This isn't a final answer** - it's a great beginning. As developers use this tool and build more plugins, we'll discover new use cases and patterns that aren't available yet. The beauty of open source is that the tool can evolve with the community's needs.
 
-              I all my testing so far, the results have been consistently good. I'll be building all my future production plugins this way, and I'd love to [get feedback](https://github.com/wernerglinka/metalsmith-plugin-mcp-server/issues) from other developers who try it.
+              In all my testing so far, the results have been consistently good. I'll be building all my future production plugins this way, and I'd love to [get feedback](https://github.com/wernerglinka/metalsmith-plugin-mcp-server/issues) from other developers who try it.
 
               ## Try It Yourself
               The metalsmith-plugin-mcp-server is now [available on npm](https://www.npmjs.com/package/metalsmith-plugin-mcp-server):
