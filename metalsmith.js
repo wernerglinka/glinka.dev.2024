@@ -73,7 +73,7 @@ const metalsmith = Metalsmith( thisDirectory );
  */
 metalsmith
   .clean( true )
-  .ignore( [ '**/.DS_Store' ] )
+  .ignore( [ '**/.DS_Store', '.DS_Store' ] )
   .watch( isProduction ? false : [ 'src', [ 'templates' ] ] )
   //.env( 'DEBUG', process.env.DEBUG )
   .env( 'NODE_ENV', process.env.NODE_ENV )
