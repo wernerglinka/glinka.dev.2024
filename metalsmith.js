@@ -33,7 +33,7 @@ const mainFile = process.argv[ 1 ]; // Gets the file that was executed by Node.j
 
 // ESM does not currently import JSON modules by default.;
 // Ergo we'll JSON.parse the file manually
-import * as fs from 'fs';
+import * as fs from 'node:fs';
 const { dependencies } = JSON.parse( fs.readFileSync( './package.json' ) );
 /* eslint-disable no-underscore-dangle */
 const __dirname = dirname( fileURLToPath( import.meta.url ) );
