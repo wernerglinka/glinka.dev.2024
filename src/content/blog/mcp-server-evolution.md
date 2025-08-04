@@ -64,7 +64,7 @@ sections:
           - name: text
             blockClass: "blogpost-text"
             prose: |-
-              When I first wrote about [building `metalsmith-plugin-mcp-server`](/blog/mcp-server-development-integrating-claude-ai-with-metalsmith) over a weekend, I thought I was finished. The tool worked, it saved time, and it was a great showcase of how AI can assist in development. But as any developer knows, you don’t really know what you’ve built until you use it in production.
+              When I first [wrote about](/blog/mcp-server-development-integrating-claude-ai-with-metalsmith) building [metalsmith-plugin-mcp-server](https://github.com/wernerglinka/metalsmith-plugin-mcp-server) over a weekend, I thought I was finished. The tool worked, it saved time, and it was a great showcase of how AI can assist in development. But as any developer knows, you don’t really know what you’ve built until you use it in production.
 
               What followed was a period of discovery, equal parts frustration and progress, that reshaped the project. What started as a quick utility turned into a foundational development framework, proven by real-world usage, trial-and-error, and a growing understanding of how AI needs to be guided, not just invited.
 
