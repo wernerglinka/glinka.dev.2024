@@ -195,7 +195,7 @@ sections:
 
               2. Ask Claude to read and summarize it.
 
-              3. Let Claude discover available tools via `validate-plugin`.
+              3. Let Claude discover available tools via `help`.
 
               4. Begin development using the phased model above.
 
