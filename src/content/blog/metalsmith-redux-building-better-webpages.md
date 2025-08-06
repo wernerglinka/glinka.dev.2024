@@ -86,7 +86,7 @@ sections:
               Sectioned pages solve this by treating the page as a composition of reusable components rather than a single content block. Instead of a markdown body, the entire page structure lives in structured frontmatter as a collection of sections.
 
               Here's what a sectioned page looks like:
-              
+
               ```yaml
               ---
               layout: sections.njk
@@ -121,7 +121,7 @@ sections:
 
               Frontmatter objects provide structured content for page section components. A section encapsulates its functionality, including templates, styles, and behavior, and it is self-contained and reusable. It's designed to be a building block that can be used on different website pages or even in other projects without needing to be rewritten or reconfigured each time.
 
-              A media section component can be used across dozens of pages with different content but consistent styling and behavior. Instead of maintaining dozens of specialized page templates, you maintain a smaller set of well-designed components that can be combined in countless ways.
+              A media section component can be used across dozens of pages with different content but consistent styling and behavior. **Instead of maintaining dozens of specialized page templates, you maintain a smaller set of well-designed components that can be combined in countless ways**.
 
               This becomes even more powerful when combined with the component bundling approach I'll detail in an upcoming post. Each section can include its own CSS and JavaScript, with automatic dependency resolution ensuring everything loads in the correct order without conflicts.
 
@@ -141,7 +141,7 @@ sections:
               Content creators get an editing experience without fear of breaking the site, the ability to focus on content rather than code, immediate visual feedback, and flexibility within guardrails.
               Organizations get consistent brand expression across all pages, faster editing times for new content, reduced maintenance overhead, better site performance and security, and scalable content workflows.
               The constraint-based approach means brand guidelines are enforced at the architectural level rather than relying on training and documentation that gets forgotten under deadline pressure.
-              
+
               ## The Technical Implementation
               The beauty of sectioned pages lies in their simplicity. Building a page becomes straightforward by parsing the frontmatter to extract the sections array, iterating through each section in your template, rendering each section using its corresponding component template, and combining the rendered sections into the final page.
               In Nunjucks, this orchestration might look like:
@@ -155,7 +155,7 @@ sections:
               ```
 
               Each component template handles its own styling, structure, and behavior, while the page template simply orchestrates its composition. This separation of concerns means components can be developed, tested, and maintained independently while still working together.
-              
+
               The approach scales naturally as your site grows. Adding a new section type means creating a single new component template. That component immediately becomes available across your entire site. Updating the styling or behavior of a section type updates it everywhere.
 
               ### Practical Example: From Traditional to Sectioned
@@ -169,10 +169,10 @@ sections:
               ├── services.njk       # Services page layout
               └── contact.njk        # Contact page layout
               ```
-              
+
               Each template contains mostly duplicated code with slight variations. Adding a new page type means creating another template.
               With sectioned pages, you have:
-              
+
               ```
               templates/
               ├── default.njk        # Single page template
@@ -183,7 +183,7 @@ sections:
                   ├── media.njk      # Media section
                   └── contact.njk    # Contact form
               ```
-              
+
               Now, any page can use any combination of these sections. A homepage might use hero + features + testimonial. An about page might use hero + media + contact. A services page might use hero + features + media. The combinations are limitless, but each piece is professionally designed and thoroughly tested.
 
               This sectioned approach builds on what we've discussed in the Metalsmith Redux series. We started with basic templating and moved to structured content with MDN, and now we're seeing how to architect entire sites around reusable components.
