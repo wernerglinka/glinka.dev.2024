@@ -67,7 +67,8 @@ sections:
             prose: |-
               In a [previous post](/blog/metalsmith-redux-building-better-webpages), we explored the concept of sectioned pages – treating web pages as compositions of reusable components rather than documents with embedded elements.
 
-              And here is a starter to use: the [Metalsmith2025 Structured Content Starter](https://github.com/wernerglinka/metalsmith2025-structured-content-starter).
+              [Have a look at it](https://ms2025-structured-content-starter.netlify.app/), or check out the starter repo: [Metalsmith2025 Structured Content Starter](https://github.com/wernerglinka/metalsmith2025-structured-content-starter).
+
 
               This isn't just another boilerplate. It's a fully-realized implementation of the sectioned page philosophy, complete with intelligent dependency management, component architecture, and all the patterns we've been discussing throughout this series. Let me walk you through what makes this starter special and how it transforms the ideas we've explored into practical reality.
 
