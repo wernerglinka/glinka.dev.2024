@@ -1,11 +1,10 @@
 .block-image {
-  //height: 100%;
   &.limit-width {
     padding: var(--default-padding);
     max-width: 800px;
     margin: 0 auto;
   }
-  
+
   cloudinary-image {
     --image-height: auto;
   }

@@ -265,7 +265,7 @@ sections:
               - **PostCSS Processing**: Autoprefixing and optimization built-in
               - **ESLint & Prettier**: Consistent code formatting
               - **Logical Organization**: Clear separation between content, components, and assets
-              - **Pre Deployment Tests**: Test before you build and and commit
+              - **Pre-Deployment Tests**: Test before you build and commit
 
               But here's what I love most: it's all understandable. No webpack configs to decipher. No complex build pipeline to debug. Just a straightforward Metalsmith build file that you can read and modify.
 

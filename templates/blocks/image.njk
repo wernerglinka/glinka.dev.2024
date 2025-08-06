@@ -33,5 +33,7 @@
     alt="{{ params.alt }}"
     {% if params.fitimage %}fitimage{% endif%}
   ></cloudinary-image>
-  <p class="caption">{{ params.caption }}</p>
+  {% if params.caption %}
+    <p class="caption">{{ params.caption }}</p>
+  {% endif %}
 </div>

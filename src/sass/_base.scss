@@ -29,13 +29,14 @@ ul {
 }
 
 // class attached to body when overlay is open. prevents scrolling under overlay
-.modal-active, .menu-active {
+.modal-active,
+.menu-active {
   overflow: hidden;
 }
 
 .container {
   max-width: var(--max-content-width);
-  padding: 0 clamp(2rem, 1.0000rem + 2.5000vw, 4rem);
+  padding: 0 clamp(2rem, 1rem + 2.5vw, 4rem);
   width: 100%;
   margin: 0 auto;
 
@@ -53,7 +54,6 @@ img {
   max-width: 100%;
   height: auto;
 }
-
 
 /*
  * Images are shown with the cloudinary-image web component. The are shown in
@@ -80,11 +80,11 @@ cloudinary-image {
  * "sr" meaning "screen-reader" 
  */
 .sr-only:not(:focus):not(:active) {
-  clip: rect(0 0 0 0); 
+  clip: rect(0 0 0 0);
   clip-path: inset(50%);
   height: 1px;
   overflow: hidden;
   position: absolute;
-  white-space: nowrap; 
+  white-space: nowrap;
   width: 1px;
 }
