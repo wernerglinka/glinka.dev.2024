@@ -65,7 +65,7 @@ sections:
           - name: text
             blockClass: "blogpost-text"
             prose: |-
-              In a [previous post](/blog/metalsmith-redux-building-better-webpages), we explored the concept of sectioned pages – treating web pages as compositions of reusable components rather than documents with embedded elements.
+              In a [previous post](/blog/metalsmith-redux-building-better-webpages), we explored the concept of sectioned pages – treating web pages as compositions of reusable components rather than documents with embedded elements. What was missing was a reference implementation. Well, here it is.
 
               [Have a look at it](https://ms2025-structured-content-starter.netlify.app/), or check out the starter repo: [Metalsmith2025 Structured Content Starter](https://github.com/wernerglinka/metalsmith2025-structured-content-starter).
 
