@@ -77,7 +77,7 @@ sections:
 
               **Intelligent Automation**: The plugin analyzes your content and automatically detects whether a page is an article, product, or general page. It then generates appropriate structured data, social media tags, and sitemap entries without any manual intervention.
 
-              **`site.json` Integration**: If you're already using `@metalsmith/metadata` with a `site.json` file, Metalsmith SEO seamlessly integrates with your existing configuration. Your site name, description, and other metadata automatically populate all SEO tags.
+              **site.json Integration**: If you're already using `@metalsmith/metadata` with a `site.json` file, Metalsmith SEO seamlessly integrates with your existing configuration. Your site name, description, and other metadata automatically populate all SEO tags.
 
               **Smart Sitemap Generation**: Unlike other sitemap generators, Metalsmith SEO calculates intelligent priority and change frequency values based on content depth, type, and freshness. Your homepage gets higher priority than a deeply nested archive page, and your blog posts get more frequent crawling than your about page.
 
