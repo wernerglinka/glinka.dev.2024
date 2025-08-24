@@ -7,7 +7,7 @@ item: "Metalsmith SEO-plugin" # used as a key for bloglist filters
 
 seo:
   title: "Introducing Metalsmith SEO: The Complete SEO Solution for Metalsmith | Werner Glinka"
-  description: "The Metalsmith SEO plugin automatically generates HTML meta tags, Open Graph properties, Twitter Cards, JSON-LD structured data, a rotos.txt file and a sitemaps from a single source of truth."
+  description: "The Metalsmith SEO plugin automatically generates HTML meta tags, Open Graph properties, Twitter Cards, JSON-LD structured data, a robots.txt file and a sitemap from a single source of truth."
   socialImage: "https://res.cloudinary.com/glinkaco/image/upload/v1755896007/seo-plugin_k6qaki.jpg"
   canonicalOverwrite: ""
 
@@ -18,7 +18,7 @@ image:
   src: "v1755896007/seo-plugin_k6qaki.jpg"
   alt: ""
   caption:
-excerpt: "The Metalsmith SEO plugin automatically generates HTML meta tags, Open Graph properties, Twitter Cards, JSON-LD structured data, a rotos.txt file and a sitemaps from a single source of truth."
+excerpt: "The Metalsmith SEO plugin automatically generates HTML meta tags, Open Graph properties, Twitter Cards, JSON-LD structured data, a robots.txt file and a sitemap from a single source of truth."
 
 sections:
   - container: section # section || article || aside
@@ -175,7 +175,7 @@ sections:
               prose: ""
             url: "/blog/metalsmith-seo-plugin"
             socialTitle: "Introducing Metalsmith SEO: The Complete SEO Solution for Metalsmith"
-            socialComment: "The Metalsmith SEO plugin automatically generates HTML meta tags, Open Graph properties, Twitter Cards, JSON-LD structured data, a rotos.txt file and a sitemaps from a single source of truth."
+            socialComment: "The Metalsmith SEO plugin automatically generates HTML meta tags, Open Graph properties, Twitter Cards, JSON-LD structured data, a robots.txt file and a sitemap from a single source of truth."
 
   - container: aside # section || article || aside
     description: "section with related blogposts"
