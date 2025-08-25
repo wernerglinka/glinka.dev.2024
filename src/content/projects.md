@@ -261,8 +261,7 @@ sections:
               This is a simple, functional blog starter built with Metalsmith, designed to serve as a learning resource for web developers exploring static site generation. It demonstrates the core concepts of Metalsmith with minimal complexity, making it perfect for beginners while still showcasing the power and flexibility that make Metalsmith a valuable tool in 2025. [A demo is available here](https://ms2025-simple-starter.netlify.app/).
 
 
-              The following starters are still available but are now deprecated in favor of the starters listed above.The following starters are still available but are now deprecated in favor of the above.
-
+              The following starters are still available but are now deprecated in favor of the starters listed above.
 
               **[Metalsmith Bare-bones Starter](https://github.com/wernerglinka/metalsmith-bare-bones-starter):**
               As the name says, this starter is providing a bare-bones setup to get you started. It uses Markdown content and Nunjucks templating and has a couple of pages. The rest is up to you.
