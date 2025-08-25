@@ -313,7 +313,7 @@ sections:
 
               ## What's Next
 
-              In the next post, we'll dive deep into the anatomy of section components – understanding how they're built, how data flows through them, and the patterns that make them so powerful. We'll dissect real components from the starter and see how the Metalsmith Bundled Components plugin works its magic.
+              In the [next post](/blog/metalsmith-redux-section-anatomy), we'll dive deep into the anatomy of section components – understanding how they're built, how data flows through them, and the patterns that make them so powerful. We'll dissect real components from the starter and see how the Metalsmith Bundled Components plugin works its magic.
 
               The shift from document-oriented to component-oriented content isn't just a technical change. It's a fundamental rethinking of how we build websites. The structured content starter makes this shift practical, providing a complete foundation for building modern sites without modern complexity.
 
