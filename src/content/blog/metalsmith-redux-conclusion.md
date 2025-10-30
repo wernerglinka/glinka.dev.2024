@@ -11,7 +11,7 @@ seo:
   socialImage: "https://res.cloudinary.com/glinkaco/image/upload/v1761081921/conclusion_ppzzmr.jpg"
   canonicalOverwrite: ""
 
-blogTitle: "Beyond Markdown: Building Sectioned Webpages"
+blogTitle: "Metalsmith Redux: Conclusion"
 date: 2025-10-30
 author: ""
 image:
