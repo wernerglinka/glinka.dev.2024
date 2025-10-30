@@ -26,7 +26,7 @@
         {% if info.titleCase %}
         <truncated-aptitle {% if info.apstyle %}apstyle{% endif %} {% if info.textlength %}textlength='{{ info.textlength }}'{% endif %}>{{ info.title }}</truncated-aptitle>
         {% else %}
-        {{ info.title | trimString(80)}}
+        {{ info.title | trimString(60)}}
         {% endif %}
       </h3>
     {% endif %}
