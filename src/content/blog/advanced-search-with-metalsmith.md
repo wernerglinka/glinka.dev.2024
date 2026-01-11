@@ -430,7 +430,7 @@ sections:
               header: "h3"
               subtitle: ""
               prose: ""
-            url: "/blog/advanced-search-for-metalsmith"
+            url: "/blog/advanced-search-with-metalsmith"
             socialTitle: "Building Advanced Search for Metalsmith"
             socialComment: "Existing search plugins for Metalsmith are ancient—most are effectively abandoned. This new metalsmith plugin uses Fuse.js as the foundation"
 
