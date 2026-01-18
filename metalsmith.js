@@ -113,8 +113,7 @@ metalsmith
     collections( {
       blog: {
         pattern: "blog/*.md",
-        sortBy: "date",
-        reverse: true
+        sort: "date:desc"
       },
     } )
   )
