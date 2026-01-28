@@ -38,10 +38,10 @@ sections:
           - name: blog-banner
             blockClass: ""
             text:
-              prefix: ""
-              title: "From Metalsmith to Eleventy"
+              prefix: "From Metalsmith to Eleventy"
+              title: "A Natural Progression"
               header: "h1"
-              subtitle: "A Natural Progression"
+              subtitle: ""
               prose: ""
             date: 2026-01-27
 
@@ -63,15 +63,15 @@ sections:
           - name: text
             blockClass: "blogpost-text"
             prose: |-
-              For the past several years, Metalsmith has been my static site generator of choice. I built client sites with it, created starters, wrote plugins, and lately published the "Metalsmith in 2025" blog series. Metalsmith taught me a lot about how static sites work under the hood, its transparent, pipeline-based architecture forces you to understand every step of the build process. It also helped keep my sanity amid the framework explosion that has inundated developers.
+              For the past several years, [Metalsmith](https://metalsmith.io/) has been my static site generator of choice. I built client sites with it, created starters, wrote plugins, and lately published the [Metalsmith Redux blog series](/blog/metalsmith-redux-intro/). Metalsmith taught me a lot about how static sites work under the hood. Its transparent, pipeline-based architecture forces you to understand every step of the build process. It also helped keep my sanity amid the framework explosion that has inundated developers.
 
               That understanding doesn't go away when you move to a different tool. It travels with you.
 
-              I recently rebuilt my [art website](https://wernerglinka.com) using Eleventy, and I want to share why I made that shift and what it looked like in practice.
+              I recently rebuilt my [art website](https://wernerglinka.com) using [Eleventy](https://www.11ty.dev/), and I want to share why I made that shift and what it looked like in practice.
 
               ## Why Move?
 
-              Metalsmith is elegant. Its core idea—files in, transformations applied, files out—is as clean as it gets. But elegance alone doesn't sustain a project. The community has thinned, plugin maintenance has slowed, and I found myself solving problems that other ecosystems had addressed years ago.
+              Metalsmith is elegant. Its core idea—files in, transformations applied, files out—is as clean as it gets. But elegance alone doesn't sustain a project. The community has thinned, plugin maintenance has slowed, and I've found myself solving problems other ecosystems addressed years ago.
 
               I wasn't looking to abandon Metalsmith. I was looking to apply what I'd learned somewhere with more momentum.
 
@@ -95,7 +95,7 @@ sections:
 
               This post is the first in a short series. I'll follow up with the story of how the component library turned out to be platform-agnostic—an accidental abstraction that made the migration possible—and then walk through the actual process of porting my art website, including building a bilingual version and implementing SEO using Eleventy's native capabilities.
 
-              If you're a Metalsmith user wondering whether to explore other options: the skills transfer. The mental models transfer. You're not starting over; you're applying what you know in a new context.
+              Suppose you're a Metalsmith user, exploring other options: how skills or mental models transfer, you're not starting over; you're applying what you know in a new context.
 
               And if you're happily building with Metalsmith: keep going. It still works. The choice to move isn't about Metalsmith being wrong—it's about finding where the momentum is for the kind of work you want to do.
 
