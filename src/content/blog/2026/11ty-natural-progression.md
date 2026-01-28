@@ -6,8 +6,8 @@ disableDefaultFooter: true
 item: "11ty-natural-progression" # used as a key for bloglist filters
 
 seo:
-  title: Adding Netlify CMS to Metalsmith | Werner Glinka
-  description: " recently rebuilt my art website using Eleventy, and I want to share why I made that shift and what it looked like in practice."
+  title: From Metalsmith to Eleventy - A Natural Progression | Werner Glinka
+  description: "I recently rebuilt my art website using Eleventy, and I want to share why I made that shift and what it looked like in practice."
   socialImage: "https://res.cloudinary.com/glinkaco/image/upload/v1769561388/progression_pnxbae.jpg"
   canonicalOverwrite: ""
 
