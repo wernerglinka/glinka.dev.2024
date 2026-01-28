@@ -1,7 +1,7 @@
 /* eslint-disable import/no-extraneous-dependencies */
 
 import { fileURLToPath } from 'node:url';
-import { dirname } from 'node:path';
+import { dirname, basename } from 'node:path';
 import Metalsmith from "metalsmith";
 import metadata from "@metalsmith/metadata";
 import drafts from "@metalsmith/drafts";
@@ -112,7 +112,7 @@ metalsmith
   .use(
     collections( {
       blog: {
-        pattern: "blog/*.md",
+        pattern: "blog/**/*.md",
         sort: "date:desc"
       },
     } )
@@ -130,13 +130,31 @@ metalsmith
   } ) )
 
   /**
+   * Add slug property to blog posts for use in permalinks pattern.
+   * This extracts the filename without extension for flat URL generation.
+   */
+  .use( ( files ) => {
+    Object.keys( files ).forEach( ( file ) => {
+      if ( file.startsWith( 'blog/' ) && file.endsWith( '.md' ) ) {
+        files[ file ].slug = basename( file, '.md' );
+      }
+    } );
+  } )
+
+  /**
    * We are not using any markdown contents, only frontmatter
    * to define structured pages. Markdown content of section
    * properties will be done with a Nunjucks filter
    * Learn more: https://github.com/metalsmith/permalinks
    */
   .use( permalinks( {
-    match: "**/*.md"
+    match: "**/*.md",
+    linksets: [
+      {
+        match: "blog/[0-9][0-9][0-9][0-9]/*.md",
+        pattern: "blog/:slug"
+      }
+    ]
   } ) )
 
   /**
