@@ -13,12 +13,12 @@ sections:
     description: hidden page title when using a full page image banner
     containerFields:
       disabled: false
-      containerId: ''
-      containerClass: 'sr-only page-title'
+      containerId: ""
+      containerClass: "sr-only page-title"
       inContainer: false
       background:
-        color: ''
-        image: ''
+        color: ""
+        image: ""
         isDark: false
     columns:
       - column:
@@ -27,7 +27,7 @@ sections:
             blockClass: ""
             title: "Werner Glinka - Web Developer - Portfolio"
             header: "h1"
-            textlength: '60'
+            textlength: "60"
             apstyle: true
             subtitle: ""
             prose: >-
@@ -48,24 +48,24 @@ sections:
         blocks:
           - name: full-page-image
             blockClass: ""
-            image: 
-              src: "v1744754995/metalsmith-in-action_lbtfuc.jpg"
-              alt: "Metalsmith in action"
-              caption: "Photo by Robert Schwarz on unsplash.com"
+            image:
+              src: "v1769560622/new-horizon_kdf14o.jpg"
+              alt: "New Horizons"
+              caption: "Photo by Stephen Leonardi on pexels.com"
             text:
               prefix: "My Latest Project"
-              title: Metalsmith Redux
+              title: Exploring 11ty
               header: "h2"
-              subtitle: "Metalsmith Redux is a series of blogpost re-introducing the Metalsmith static site generator as a valid choice for building websites in 2025."
+              subtitle: "Eleventy is a Static Site Generator that is very similar to Metalsmith. They both prioritize a 'bring your own' approach to structure and templating, allowing for high customization. "
               prose: ""
             ctas:
-              - url: "/blog/metalsmith-redux-intro/"
+              - url: "/blog/11ty-natural-progression/"
                 label: "Read about it here"
                 isExternal: false
                 isButton: false
                 buttonStyle: ""
-            scrollTarget: "section1" 
-  
+            scrollTarget: "section1"
+
   - container: section # section || article || aside
     description: "section with about header"
     containerFields:
@@ -121,7 +121,7 @@ sections:
               - item: "1185"
               - item: "busse"
               - item: "loma"
-              - item: "ltse"     
+              - item: "ltse"
       - column:
         blocks:
           - name: tabs
@@ -131,7 +131,7 @@ sections:
               - item: "skills"
               - item: "clients"
               - item: "openSource"
-            
+
     columnsDirection: "reverse" # reverse || "" (default)
 
   - container: section # section || article || aside
@@ -191,7 +191,7 @@ sections:
               - item: "ruhrpott"
               - item: "mpls"
               - item: "components"
-              - item: "redux" 
+              - item: "redux"
 
   - container: section # section || article || aside
     description: "section with portfolio header"
@@ -226,7 +226,7 @@ sections:
 
               <a class="featured-link" href="/portfolio">See my portfolio</a>
     columnsDirection: "reverse" # reverse || "" (default)
-              
+
   - container: section # section || article || aside
     description: "section recent blogs header"
     containerFields:
@@ -257,7 +257,7 @@ sections:
             prose: |-
               ## Recent Blogs
               My blog is a random string of notes to myself, but who knows, someone else may benefit... No guarantees! 
-              
+
               <a class="featured-link" href="/blog">See all blog posts</a>
     columnsDirection: "" # reverse || "" (default)
 
@@ -306,13 +306,13 @@ sections:
               tel: "650.867.0778"
               notice: "© 2023 Werner Glinka"
             socialLinks:
-            - label: "LinkedIn"
-              icon: linkedin
-              url: "https://www.linkedin.com/in/werner-glinka-2a427/"
-            - label: "Github"
-              icon: github
-              url: "https://github.com/wernerglinka"
-            - label: "Substack"
-              icon: substack
-              url: "https://wernerglinka.substack.com"
+              - label: "LinkedIn"
+                icon: linkedin
+                url: "https://www.linkedin.com/in/werner-glinka-2a427/"
+              - label: "Github"
+                icon: github
+                url: "https://github.com/wernerglinka"
+              - label: "Substack"
+                icon: substack
+                url: "https://wernerglinka.substack.com"
 ---
