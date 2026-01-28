@@ -1,6 +1,5 @@
 ---
 layout: blocks.njk
-draft: false
 pageType: "blog-post"
 disableDefaultFooter: true
 item: "web-component-truncated-ap-title-span" # used as a key for bloglist filters

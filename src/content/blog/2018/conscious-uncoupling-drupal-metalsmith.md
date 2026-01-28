@@ -1,6 +1,5 @@
 ---
 layout: blocks.njk
-draft: false
 pageType: "blog-post"
 disableDefaultFooter: true
 item: "conscious-uncoupling-drupal-metalsmith" # used as a key for bloglist filters

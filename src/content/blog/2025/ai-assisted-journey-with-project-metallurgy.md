@@ -1,6 +1,5 @@
 ---
 layout: blocks.njk
-draft: false
 pageType: "blog-post"
 disableDefaultFooter: true
 item: "ai-assisted-journey-with-project-metallurgy" # used as a key for bloglist filters

@@ -1,6 +1,5 @@
 ---
 layout: blocks.njk
-draft: false
 pageType: "blog-post"
 disableDefaultFooter: true
 item: "mcp-server-development-integrating-claude-ai-with-metalsmith" # used as a key for bloglist filters

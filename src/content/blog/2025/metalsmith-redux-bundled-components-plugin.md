@@ -1,6 +1,5 @@
 ---
 layout: blocks.njk
-draft: false
 pageType: "blog-post"
 disableDefaultFooter: true
 item: "metalsmith-redux-bundled-components-plugin" # used as a key for bloglist filters

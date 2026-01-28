@@ -1,6 +1,5 @@
 ---
 layout: blocks.njk
-draft: false
 pageType: "blog-post"
 disableDefaultFooter: true
 item: "ruhrpott-it-starts-with-metalsmith" # used as a key for bloglist filters

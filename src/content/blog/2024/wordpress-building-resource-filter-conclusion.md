@@ -1,6 +1,5 @@
 ---
 layout: blocks.njk
-draft: false
 pageType: "blog-post"
 disableDefaultFooter: true
 item: "wordpress-building-resource-filter-conclusion" # used as a key for bloglist filters

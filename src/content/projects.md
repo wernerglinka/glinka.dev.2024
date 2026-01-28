@@ -1,6 +1,5 @@
 ---
 layout: blocks.njk
-draft: false
 pageType: page
 
 seo:

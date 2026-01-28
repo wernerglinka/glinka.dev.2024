@@ -1,6 +1,5 @@
 ---
 layout: blocks.njk
-draft: false
 pageType: "blog-post"
 disableDefaultFooter: true
 item: "using-forestry-cms-with-metalsmith" # used as a key for bloglist filters

@@ -99,11 +99,45 @@ metalsmith
   )
 
   /**
+   * Filter scheduled content in production mode
+   * Files with a future scheduledDate are excluded from the build.
+   * Files ready to publish have scheduledDate removed from metadata.
+   */
+  .use( ( files, metalsmith, done ) => {
+    if ( !isProduction ) {
+      done();
+      return;
+    }
+
+    const today = new Date();
+    today.setHours( 0, 0, 0, 0 );
+
+    for ( const filepath of Object.keys( files ) ) {
+      const scheduledDate = files[ filepath ].scheduledDate;
+
+      if ( !scheduledDate ) {
+        continue;
+      }
+
+      const scheduled = new Date( scheduledDate );
+      scheduled.setHours( 0, 0, 0, 0 );
+
+      if ( scheduled > today ) {
+        delete files[ filepath ];
+      } else {
+        delete files[ filepath ].scheduledDate;
+      }
+    }
+
+    done();
+  } )
+
+  /**
    * Exclude draft content in production mode
    * Learn more: https://github.com/metalsmith/drafts
-   */
-
+   
   .use( drafts( !isProduction ) )
+  */
 
   /**
    * Create a collection of blog posts

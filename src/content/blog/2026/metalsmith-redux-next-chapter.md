@@ -1,6 +1,6 @@
 ---
 layout: blocks.njk
-draft: false
+scheduledDate: today
 pageType: "blog-post"
 disableDefaultFooter: true
 item: "metalsmith-redux-the-next-chapter" # used as a key for bloglist filters
