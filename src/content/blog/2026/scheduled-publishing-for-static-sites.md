@@ -85,7 +85,7 @@ sections:
 
               For my Metalsmith blog, I went with scheduled builds. The implementation has two parts: a plugin that filters content by date and an automated trigger that rebuilds the site daily.
 
-              The key insight is that you don't need a separate `draft` property alongside a scheduled date. The scheduled date itself tells you everything: if it's in the future, exclude the content; if it's today or past, include it. One property serves as the single source of truth, preventing confusion when `draft: true` appears in a file that's been live for months.
+              You actually don't need a separate `draft` property alongside a scheduled date. The scheduled date itself tells you everything: if it's in the future, exclude the content; if it's today or past, include it. One property serves as the single source of truth, preventing confusion when `draft: true` appears in a file that's been live for months.
 
               The inline plugin runs early in the build pipeline:
 
