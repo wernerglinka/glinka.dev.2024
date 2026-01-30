@@ -212,44 +212,24 @@ sections:
 
               For truly critical timing where even an hour's variance is unacceptable, a headless CMS with minute-level scheduling or a small serverless function might be more appropriate. But for many business needs, hourly builds strike a reasonable balance between precision and simplicity.
 
-              ## Considerations
+              ## Local Scheduling with macOS
 
-              GitHub Actions scheduled workflows aren't guaranteed to run at exact times. If their runners are busy, your build might be a few minutes late. For daily blog publishing, this is negligible. For a product launch coordinated with a press release, you should trigger the build slightly early and let the content filtering handle the rest, or use a more reliable trigger mechanism.
+              If you prefer keeping everything local without external services, macOS offers a few options for triggering builds on a schedule.
 
-              If you're working on a series of connected posts, consider keeping them in a branch until you're satisfied with all of them. Merge to main when they're ready, and let the scheduled dates roll them out. That way, your main branch doesn't contain half-finished thoughts even if they're not yet being published.
+              **Lingon** (from [peterborgapps.com/lingon](https://www.peterborgapps.com/lingon/)) provides a GUI for macOS's `launchd` system. You point it at a shell script, set a schedule, and it runs reliably in the background—even when you're logged out or no apps are open. This is the closest thing to a proper cron job on macOS and the most reliable local option.
 
-              This approach works best when you control the entire pipeline. If you're collaborating with others, make sure everyone understands that `scheduledDate` determines publication. The absence of a visible `draft` flag might confuse contributors who expect to see it.
+              The script itself is simple:
 
-              For business sites with compliance requirements, document the scheduling mechanism so stakeholders understand how and when content goes live. The simplicity of the approach—a date in frontmatter, a daily build—is easy to explain and audit.
-
-              ## A Quick Manual Alternative
-
-              If scheduled builds feel like overkill for your workflow, or you simply want a fast way to trigger a build when you're ready, a browser bookmarklet offers the simplest possible solution. Create a bookmark with this as the URL:
-
-              ```javascript
-              javascript:fetch('https://api.netlify.com/build_hooks/your-hook-id',{method:'POST'}).then(()=>alert('Build triggered')).catch(()=>alert('Failed'));void(0)
-              ```
-
-              Replace `your-hook-id` with your actual Netlify build hook ID. One click triggers a deploy. No GitHub Actions, no cron schedules, no waiting for the next automated run. You publish when you decide to publish.
-
-              This pairs well with the date-based filtering plugin. Write your posts with `scheduledDate` set to today or in the past, click your bookmarklet, and the content goes live within minutes. It's the manual approach without the friction of navigating to Netlify's dashboard or remembering curl commands.
-
-              Years ago, I used this approach after a service outage made an executive nervous about an upcoming press release. She didn't want to depend on automated systems or wait for someone else to be available at the critical moment. We added the bookmarklet to her browser, and she triggered the build herself early that morning. One click, complete control, no anxiety. Sometimes the simplest solution is the right one.
-
-              ## Local Scheduling with macOS Calendar
-              If you prefer keeping everything local without external services, macOS Calendar can trigger builds on a schedule. Calendar events can open files when they fire, so a small shell script becomes your build trigger.
-
-              Create a script named `netlify-build.command` (the `.command` extension tells macOS to execute it in Terminal):
               ```bash
               #!/bin/zsh
 
               curl -X POST https://api.netlify.com/build_hooks/YOUR_HOOK_ID
               ```
 
-              Make it executable with `chmod +x netlify-build.command` and place it somewhere stable like `~/bin/`.
+              Make it executable with `chmod +x netlify-build.sh` and configure Lingon to run it on your preferred schedule.
 
-              In Calendar, create an event at your desired time—daily, weekly, whatever suits your publishing rhythm. Add a custom alert, set the action to "Open file," and point it at your script. When the event fires, macOS executes the script and triggers the Netlify build.
-              
+              **Calendar** can also trigger builds if you don't want to install additional software. Calendar events can open files when they fire, so the same shell script works (**use the `.command` extension so macOS executes it in Terminal**). Create an event, add a custom alert set to "Open file," and point it at your script.
+
               You can enhance the script with logging and notifications:
 
               ```bash
@@ -264,8 +244,30 @@ sections:
                 osascript -e 'display notification "Netlify build failed" with title "Calendar Build"'
               fi
               ```
-              
-              This approach has limitations. Calendar alerts require the Calendar app to be running and your Mac to be awake. If your laptop is closed, asleep, or you're logged out, the event won't fire. For a personal blog where your computer is typically open during the day, this works fine. For guaranteed daily builds regardless of circumstances, GitHub Actions is more reliable.
+
+              The limitation is that Calendar must be running and your Mac awake—if your laptop is closed or asleep, the event won't fire. For casual personal use this is often fine, but it's not as dependable as Lingon or GitHub Actions.
+
+              **Bookmarklets** offer the most portable option. Save this as a bookmark:
+
+              ```javascript
+              javascript:fetch('https://api.netlify.com/build_hooks/your-hook-id',{method:'POST'});void(0)
+              ```
+
+              One click triggers the build from any browser. This works on any device—Mac, iPad, phone—wherever you have a browser. It's manual rather than scheduled, but sometimes that's exactly what you want.
+
+              Years ago, I used this approach after a service outage made an executive nervous about an upcoming press release. She didn't want to depend on automated systems or wait for someone else to be available at the critical moment. We added the bookmarklet to her browser, and she triggered the build herself early that morning. Sometimes the simplest solution is the most reliable one.
+
+              None of these local approaches travel as well as GitHub Actions. If your Mac is off, asleep, or you're away with only a phone, the scheduled builds won't happen. For guaranteed daily builds regardless of circumstances, a server-side solution remains the most dependable choice. But for writers who are typically at their desk and want to avoid external dependencies, local scheduling works well.
+
+              ## Considerations
+
+              GitHub Actions scheduled workflows aren't guaranteed to run at exact times. If their runners are busy, your build might be a few minutes late. For daily blog publishing, this is negligible. For a product launch coordinated with a press release, you should trigger the build slightly early and let the content filtering handle the rest, or use a more reliable trigger mechanism.
+
+              If you're working on a series of connected posts, consider keeping them in a branch until you're satisfied with all of them. Merge to main when they're ready, and let the scheduled dates roll them out. That way, your main branch doesn't contain half-finished thoughts even if they're not yet being published.
+
+              This approach works best when you control the entire pipeline. If you're collaborating with others, make sure everyone understands that `scheduledDate` determines publication. The absence of a visible `draft` flag might confuse contributors who expect to see it.
+
+              For business sites with compliance requirements, document the scheduling mechanism so stakeholders understand how and when content goes live. The simplicity of the approach—a date in frontmatter, a daily build—is easy to explain and audit.
 
   - container: aside # section || article || aside
     description: "social share links"
