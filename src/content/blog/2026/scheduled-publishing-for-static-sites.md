@@ -222,6 +222,20 @@ sections:
 
               For business sites with compliance requirements, document the scheduling mechanism so stakeholders understand how and when content goes live. The simplicity of the approach—a date in frontmatter, a daily build—is easy to explain and audit.
 
+              ## A Quick Manual Alternative
+
+              If scheduled builds feel like overkill for your workflow, or you simply want a fast way to trigger a build when you're ready, a browser bookmarklet offers the simplest possible solution. Create a bookmark with this as the URL:
+
+              ```javascript
+              javascript:fetch('https://api.netlify.com/build_hooks/your-hook-id',{method:'POST'}).then(()=>alert('Build triggered')).catch(()=>alert('Failed'));void(0)
+              ```
+
+              Replace `your-hook-id` with your actual Netlify build hook ID. One click triggers a deploy. No GitHub Actions, no cron schedules, no waiting for the next automated run. You publish when you decide to publish.
+
+              This pairs well with the date-based filtering plugin. Write your posts with `scheduledDate` set to today or in the past, click your bookmarklet, and the content goes live within minutes. It's the manual approach without the friction of navigating to Netlify's dashboard or remembering curl commands.
+
+              Years ago, I used this approach after a service outage made an executive nervous about an upcoming press release. She didn't want to depend on automated systems or wait for someone else to be available at the critical moment. We added the bookmarklet to her browser, and she triggered the build herself early that morning. One click, complete control, no anxiety. Sometimes the simplest solution is the right one.
+
   - container: aside # section || article || aside
     description: "social share links"
     containerFields:
