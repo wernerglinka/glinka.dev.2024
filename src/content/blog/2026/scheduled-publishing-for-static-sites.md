@@ -236,6 +236,37 @@ sections:
 
               Years ago, I used this approach after a service outage made an executive nervous about an upcoming press release. She didn't want to depend on automated systems or wait for someone else to be available at the critical moment. We added the bookmarklet to her browser, and she triggered the build herself early that morning. One click, complete control, no anxiety. Sometimes the simplest solution is the right one.
 
+              ## Local Scheduling with macOS Calendar
+              If you prefer keeping everything local without external services, macOS Calendar can trigger builds on a schedule. Calendar events can open files when they fire, so a small shell script becomes your build trigger.
+
+              Create a script named `netlify-build.command` (the `.command` extension tells macOS to execute it in Terminal):
+              ```bash
+              #!/bin/zsh
+
+              curl -X POST https://api.netlify.com/build_hooks/YOUR_HOOK_ID
+              ```
+
+              Make it executable with `chmod +x netlify-build.command` and place it somewhere stable like `~/bin/`.
+
+              In Calendar, create an event at your desired time—daily, weekly, whatever suits your publishing rhythm. Add a custom alert, set the action to "Open file," and point it at your script. When the event fires, macOS executes the script and triggers the Netlify build.
+              
+              You can enhance the script with logging and notifications:
+
+              ```bash
+              #!/bin/zsh
+
+              LOG="$HOME/netlify-build.log"
+
+              if curl -fsS -X POST https://api.netlify.com/build_hooks/YOUR_HOOK_ID; then
+                echo "$(date): build triggered" >> "$LOG"
+              else
+                echo "$(date): build FAILED" >> "$LOG"
+                osascript -e 'display notification "Netlify build failed" with title "Calendar Build"'
+              fi
+              ```
+              
+              This approach has limitations. Calendar alerts require the Calendar app to be running and your Mac to be awake. If your laptop is closed, asleep, or you're logged out, the event won't fire. For a personal blog where your computer is typically open during the day, this works fine. For guaranteed daily builds regardless of circumstances, GitHub Actions is more reliable.
+
   - container: aside # section || article || aside
     description: "social share links"
     containerFields:
