@@ -49,64 +49,21 @@ sections:
         blocks:
           - name: text
             blockClass: "more-space page-intro"
-            title: "Metalsmith: The Engine Behind My Work"
+            title: "Metalsmith + Claude"
             header: ""
             subtitle: ""
             prose: |-
               My work centers on Metalsmith, a static site generator that distinguishes itself through architectural simplicity and extensibility.
 
               The plugin-based architecture sets Metalsmith apart from monolithic generators like Gatsby or Hugo. Each plugin performs a focused transformation, making the build process modular and comprehensible. Complex functionality emerges from combining simple, single-purpose plugins rather than navigating opaque internal systems.
-                  
+
               This transparency extends to plugin development. Creating custom plugins requires understanding just one pattern: accept a files object, transform it, return it. This simplicity enables rapid prototyping and encourages experimentation.
 
-    columnsDirection: ""
+              Over the past two years, Claude has become my primary development partner—less assistant, more co-conspirator. What started as curiosity about AI-assisted coding evolved into genuine collaboration.
 
-  - container: section
-    description: image only section
-    containerFields:
-      disabled: false
-      containerId: ""
-      containerClass: ""
-      inContainer: true
-      background:
-        color: ""
-        image: ""
-        isDark: false
-    columns:
-      - column:
-        blocks:
-          - name: image
-            blockClass: "limit-width"
-            src: "v1645224179/tgc2022/blogImages/orca1/what-is-metalsmith_co5vzn.jpg"
-            alt: "How Metalsmith Works"
-            caption: "How Metalsmith Works"
-            fitimage: false
+              The pairing works because Metalsmith's patterns are explicit. When I describe a plugin's intended transformation, Claude grasps the files-in, files-out contract immediately. We iterate on implementations, debate edge cases, and occasionally argue about naming conventions. The AI catches my blind spots; I catch its tendency toward over-engineering.
 
-  - container: section
-    description: text only section
-    containerFields:
-      disabled: false
-      containerId: ""
-      containerClass: ""
-      inContainer: false
-      background:
-        color: ""
-        image: ""
-        isDark: false
-    columns:
-      - column:
-        blocks:
-          - name: text
-            blockClass: "page-intro"
-            title: ""
-            header: ""
-            subtitle: ""
-            prose: |-
-              Segment created Metalsmith in early 2014, establishing its foundational architecture. After the initial development phase, the project entered a quieter period until 2022, when Kevin Van Lierde AKA [webketje](https://github.com/webketje) assumed leadership as maintainer. Under his stewardship, Metalsmith has returned to active development with regular updates, modernized tooling, and renewed community engagement.
-
-              Since 2023, my Metalsmith work has evolved to incorporate AI collaboration. After experimenting with various tools including [ChatGPT](https://openai.com/index/chatgpt/), [Github Co-pilot](https://github.com/features/copilot) and [Augment Code](https://www.augmentcode.com/), I've settled on [Claude](https://claude.ai/) and [Claude Code](https://www.anthropic.com/claude-code) as primary development partners. This collaboration accelerates plugin development, improves code quality through pair programming patterns, and enables rapid exploration of architectural approaches.
-
-              The combination of Metalsmith's transparent architecture and AI assistance creates an efficient development environment. The AI understands the plugin patterns quickly, while Metalsmith's simplicity makes the generated code easy to verify and refine.
+              Most of the plugins and MCP servers documented here emerged from this collaboration. The workflow is simple: I bring the architectural intent and domain knowledge, Claude brings tireless iteration and fresh perspective. Neither of us could move as fast alone.
 
     columnsDirection: ""
 
@@ -188,7 +145,7 @@ sections:
             header: "h2"
             subtitle: ""
             prose: |-
-              Over the years, I've created several plugins that I've made available to the community. I also frequently contribute to existing plugins. All my plugins and starters  are available on [GitHub](https://github.com/wernerglinka) and [NPM](https://www.npmjs.com/~wernerglinka). Here are a few of my projects:
+              Over the years, I've created several plugins. All my plugins and starters  are available on [GitHub](https://github.com/wernerglinka) and [NPM](https://www.npmjs.com/~wernerglinka). Here are a few of my projects:
 
               **[Metalsmith Bundled Components](https://github.com/wernerglinka/metalsmith-bundled-components):**
               This plugin automates asset management for component-based architectures through intelligent discovery and bundling. It scans component directories for CSS and JavaScript files, resolves dependencies with circular reference detection, and generates correctly-ordered bundles with scope isolation through IIFEs. The plugin supports both ESM and CommonJS modules, integrates with PostCSS for CSS processing, and follows convention-over-configuration principles to minimize setup complexity.
@@ -224,7 +181,9 @@ sections:
               Originally developed by Robert McGuinness with sponsorship from Availity, I assumed maintenance responsibilities in March 2022. Under my stewardship, the plugin has been updated for compatibility with current Metalsmith versions and modern Node.js environments, ensuring continued reliability for technical documentation and developer-focused sites.
 
 
-              **[Metalsmith Static Files](https://github.com/wernerglinka/metalsmith-static-files):** 
+              **[Metalsmith Static Files](https://github.com/wernerglinka/metalsmith-static-files):** **Deprecated. Use the `metalsmith.statik()` method to manage static assets.**
+
+
               This plugin handles static asset management in Metalsmith projects, copying directories of unchanging files—images, fonts, downloads, vendor scripts—directly from source to build without processing. It provides fine-grained control over which directories to copy and where to place them in the build output.
 
               Created as a modern replacement for the deprecated metalsmith-assets plugin, it maintains compatibility with current Metalsmith versions while adding improved error handling and clearer configuration options. The plugin streamlines asset management by keeping static files separate from processed content, preventing unnecessary processing overhead and maintaining clean project organization.
@@ -260,7 +219,8 @@ sections:
               This is a simple, functional blog starter built with Metalsmith, designed to serve as a learning resource for web developers exploring static site generation. It demonstrates the core concepts of Metalsmith with minimal complexity, making it perfect for beginners while still showcasing the power and flexibility that make Metalsmith a valuable tool in 2025. [A demo is available here](https://ms2025-simple-starter.netlify.app/).
 
 
-              The following starters are still available but are now deprecated in favor of the starters listed above.
+              > The following starters are still available but are now deprecated in favor of the starters listed above.
+
 
               **[Metalsmith Bare-bones Starter](https://github.com/wernerglinka/metalsmith-bare-bones-starter):**
               As the name says, this starter is providing a bare-bones setup to get you started. It uses Markdown content and Nunjucks templating and has a couple of pages. The rest is up to you.

@@ -81,6 +81,18 @@ Images use Cloudinary CDN. The prefix URL is in `src/content/data/site.json` as 
 - Prettier: 2-space indent, 120 char line width, trailing commas
 - Node.js >= 20.0.0 required
 
+## Workflow
+
+Before implementing solutions, confirm the full scope of requirements with the user—wait for them to finish specifying before starting work.
+
+## Verification
+
+When counting items (files, posts, issues, etc.), always verify the count by listing them explicitly before stating a number.
+
+## Project-Specific Notes
+
+For Metalsmith/Eleventy projects: verify that template placeholders and variables are actually supported by the framework before using them in implementations.
+
 ## Skills
 
 When writing JavaScript or CSS for this project, use these skills:

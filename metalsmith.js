@@ -11,7 +11,6 @@ import permalinks from "@metalsmith/permalinks";
 import layouts from "@metalsmith/layouts";
 import externalLinks from "metalsmith-safe-links";
 import prism from "metalsmith-prism";
-import assets from "metalsmith-static-files";
 import sass from "@metalsmith/sass";
 import postcss from "@metalsmith/postcss";
 import esbuild from "@metalsmith/js-bundle";
@@ -79,6 +78,7 @@ metalsmith
   .env( 'NODE_ENV', process.env.NODE_ENV )
   .source( "./src/content" )
   .destination( "./build" )
+  .statik( [ 'assets' ] )  // Static files copied without plugin processing
   .metadata( {
     msVersion: dependencies.metalsmith,
     nodeVersion: process.version,
@@ -226,17 +226,7 @@ metalsmith
     } )
   )
 
-  /**
-   * Move static assets to the build directory
-   * Learn more: https://github.com/wernerglinka/metalsmith-static-files
-   */
-  .use(
-    assets( {
-      source: "src/assets/",
-      destination: "assets/",
-    } )
-  )
-  /**
+    /**
    * Compile Sass to CSS and apply PostCSS plugins
    * Learn more: https://github.com/metalsmith/sass
    * Learn more: https://github.com/metalsmith/postcss
