@@ -71,7 +71,7 @@ const metalsmith = Metalsmith( thisDirectory );
  * These determine how Metalsmith will process files
  */
 metalsmith
-  .clean( true )
+  .clean( isProduction )
   .ignore( [ '**/.DS_Store', '.DS_Store' ] )
   .watch( isProduction ? false : [ 'src', [ 'templates' ] ] )
   //.env( 'DEBUG', process.env.DEBUG )
@@ -226,7 +226,7 @@ metalsmith
     } )
   )
 
-    /**
+  /**
    * Compile Sass to CSS and apply PostCSS plugins
    * Learn more: https://github.com/metalsmith/sass
    * Learn more: https://github.com/metalsmith/postcss
